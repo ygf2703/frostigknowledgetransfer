@@ -79,6 +79,8 @@
     display: none;
     padding-top: 70px;
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
   }
   .page.active {
     display: block;
@@ -291,6 +293,7 @@
     align-items: center;
     padding: clamp(2.7rem, 4.8vh, 5rem) clamp(3rem, 5vw, 5rem);
     position: relative; overflow: hidden;
+    isolation: isolate;
   }
   .hero::before {
     content: '';
@@ -299,6 +302,21 @@
     width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(245,213,71,0.08) 0%, transparent 70%);
     pointer-events: none;
+    z-index: 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: clamp(32px, 7vh, 88px);
+    left: clamp(-210px, -11vw, -120px);
+    width: clamp(360px, 34vw, 650px);
+    aspect-ratio: 1;
+    background: url('frostig-logo-bg.png') center / contain no-repeat;
+    opacity: 0.5;
+    filter: invert(1);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    z-index: 0;
   }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -348,10 +366,14 @@
     justify-self: start;
     text-align: right;
     max-width: 760px;
+    position: relative;
+    z-index: 1;
   }
   .hero-visual {
     justify-self: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
   }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
   .hero-btns .btn-primary,
@@ -967,6 +989,12 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
+    .hero::after {
+      top: 70px;
+      left: -36vw;
+      width: 74vw;
+      opacity: 0.34;
+    }
     nav { padding: 1rem 1.5rem; }
     .nav-links {
       display: none;
