@@ -675,14 +675,14 @@
     overflow: hidden;
   }
   .venture-logo.dark { background: #050607; }
-  .venture-logo.florentin { padding: 0; }
+  .venture-logo.mindinbox { background: #f8fafc; padding: 0.45rem; }
   .venture-logo img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     display: block;
   }
-  .venture-logo.florentin img { transform: scale(2.25); }
+  .venture-logo.mindinbox img { transform: scale(1.04); }
   .venture-card h3 {
     color: var(--text);
     font-size: 1.05rem;
@@ -741,6 +741,15 @@
     background: var(--accent2);
     transform: translateY(-1px);
     box-shadow: 0 8px 24px rgba(245,213,71,0.22);
+  }
+  .app-link-disabled,
+  .app-link-disabled:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+    border: 1px solid var(--border2);
+    box-shadow: none;
+    cursor: default;
+    transform: none;
   }
   .app-link span {
     direction: ltr;
@@ -1180,12 +1189,12 @@
           <a class="app-link" href="https://chatscope.netlify.app" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית ChatScope">מעבר לאפליקציה <span>↗</span></a>
         </div>
         <div class="venture-card">
-          <div class="venture-logo florentin"><img src="Florentin.png" alt="Florentin"></div>
-          <h3>Florentin</h3>
-          <div class="venture-kicker">AI street art</div>
-          <p>הופכת כל תמונה ליצירת אומנות רחוב וירטואלית בהתאמה אישית, ומקימה אותה לתחייה באמצעות סרטון AI סינמטי.</p>
-          <div class="venture-tags"><span>AI Video</span><span>Experience</span></div>
-          <a class="app-link" href="https://florentini.netlify.app" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית Florentin">מעבר לאפליקציה <span>↗</span></a>
+          <div class="venture-logo mindinbox"><img src="mindinbox.png" alt="MindInbox"></div>
+          <h3>MindInbox</h3>
+          <div class="venture-kicker">AI Gmail organizer</div>
+          <p>הופכים את תיבת <span class="latin">Gmail</span> שלכם למערכת ניהול חכמה. סיווג אוטומטי, תעדוף משימות וסנכרון ל-<span class="latin">Drive</span> וליומן – בשביל שתוכלו להתמקד במה שחשוב באמת.</p>
+          <div class="venture-tags"><span>AI</span><span>Gmail</span><span>Productivity</span></div>
+          <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
         </div>
         <div class="venture-card">
           <div class="venture-logo"><img src="riskscore.png" alt="RiskScore"></div>
@@ -1305,7 +1314,7 @@
         <div>
           <div class="label">מיזמים דיגיטליים · Live Apps</div>
           <h2 class="section-title">אפליקציות עובדות, לא רק רעיונות</h2>
-          <span class="en-small">Click any app to open the live product.</span>
+          <span class="en-small">Live products open directly; upcoming products are clearly marked.</span>
         </div>
         <p class="ventures-intro">
           הצד היזמי של Frostig Knowledge Transfer מתמקד בבניית כלים דיגיטליים שמתרגמים מורכבות לפעולה. כל מיזם מתחיל בשאלה אנושית וממשיך למוצר חי שאפשר לפתוח, לבדוק ולהשתמש בו. הכפתור בכל כרטיס מוביל לאתר האפליקציה הרלוונטית.
@@ -1330,12 +1339,12 @@
           <a class="app-link" href="https://chatscope.netlify.app" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית ChatScope">מעבר לאפליקציה <span>↗</span></a>
         </div>
         <div class="venture-card">
-          <div class="venture-logo florentin"><img src="Florentin.png" alt="Florentin logo"></div>
-          <h3>Florentin</h3>
-          <div class="venture-kicker">AI street art</div>
-          <p>הופכת כל תמונה ליצירת אומנות רחוב וירטואלית בהתאמה אישית, ומקימה אותה לתחייה באמצעות סרטון AI סינמטי.</p>
-          <div class="venture-tags"><span>AI Video</span><span>Experience</span><span>Creative</span></div>
-          <a class="app-link" href="https://florentini.netlify.app" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית Florentin">מעבר לאפליקציה <span>↗</span></a>
+          <div class="venture-logo mindinbox"><img src="mindinbox.png" alt="MindInbox logo"></div>
+          <h3>MindInbox</h3>
+          <div class="venture-kicker">AI Gmail organizer</div>
+          <p>הופכים את תיבת <span class="latin">Gmail</span> שלכם למערכת ניהול חכמה. סיווג אוטומטי, תעדוף משימות וסנכרון ל-<span class="latin">Drive</span> וליומן – בשביל שתוכלו להתמקד במה שחשוב באמת.</p>
+          <div class="venture-tags"><span>AI</span><span>Gmail</span><span>Productivity</span></div>
+          <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
         </div>
         <div class="venture-card">
           <div class="venture-logo"><img src="riskscore.png" alt="RiskScore logo"></div>
@@ -1965,7 +1974,7 @@
         </p>
         <p class="about-para">
           במקביל, אני מפתח מיזמים ואפליקציות דיגיטליות. החיבור בין בניית מוצרים לבין הוראה מאפשר להביא להרצאות לא רק ידע תאורטי, אלא גם ניסיון חי: איך רעיון הופך לממשק, איך מורכבות הופכת לשפה, ואיך טכנולוגיה נשארת אנושית.
-          <span class="en-small">Built so far: KeySwitch · ChatScope · Florentin · RiskScore.</span>
+          <span class="en-small">Built so far: KeySwitch · ChatScope · MindInbox · RiskScore.</span>
         </p>
         <p class="about-para">
           העבודה שלי מתמקדת בגשר שבין טכנולוגיה מתקדמת לבין אנשים וארגונים – כיצד להבין את הכלים החדשים שמעצבים את העולם, כיצד לבנות איתם פתרונות, וכיצד להשתמש בהם בצורה חכמה, אחראית ויעילה.
