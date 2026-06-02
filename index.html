@@ -644,7 +644,7 @@
   }
   .ventures-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
   }
   .venture-card {
@@ -676,6 +676,13 @@
   }
   .venture-logo.dark { background: #050607; }
   .venture-logo.mindinbox { background: #f8fafc; padding: 0.45rem; }
+  .venture-logo.mundial {
+    background:
+      linear-gradient(135deg, rgba(14,107,77,0.22), rgba(245,213,71,0.12)),
+      #07110f;
+    padding: 0;
+    position: relative;
+  }
   .venture-logo img {
     max-width: 100%;
     max-height: 100%;
@@ -683,6 +690,68 @@
     display: block;
   }
   .venture-logo.mindinbox img { transform: scale(1.04); }
+  .mundial-mark {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--text);
+    text-align: center;
+  }
+  .mundial-mark::before,
+  .mundial-mark::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(245,213,71,0.28);
+    border-radius: 50%;
+  }
+  .mundial-mark::before {
+    width: 86px;
+    height: 86px;
+    top: 14px;
+    right: 18px;
+  }
+  .mundial-mark::after {
+    width: 160px;
+    height: 160px;
+    bottom: -84px;
+    left: -42px;
+  }
+  .mundial-ball {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid rgba(245,213,71,0.95);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(245,213,71,0.95) 0 4px, transparent 5px),
+      linear-gradient(90deg, transparent 46%, rgba(245,213,71,0.5) 47% 53%, transparent 54%),
+      linear-gradient(0deg, transparent 46%, rgba(245,213,71,0.5) 47% 53%, transparent 54%),
+      rgba(255,255,255,0.05);
+    box-shadow: 0 0 22px rgba(245,213,71,0.16);
+    margin: 0 auto 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .mundial-title {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1.05;
+    position: relative;
+    z-index: 1;
+  }
+  .mundial-sub {
+    color: var(--accent);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-top: 0.35rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
   .venture-card h3 {
     color: var(--text);
     font-size: 1.05rem;
@@ -1167,7 +1236,7 @@
           <span class="en-small">Live apps, real links, working products.</span>
         </div>
         <p class="ventures-intro">
-          לצד ההרצאות והסדנאות, FROSTIG מובילה גם בנייה של מוצרים דיגיטליים. כל כרטיס כאן כולל כפתור מעבר לאפליקציה עצמה, כדי לראות את הפתרון עובד ולא רק לקרוא עליו.
+          לצד ההרצאות והסדנאות, FROSTIG מובילה גם בנייה של מוצרים דיגיטליים. מוצרים חיים כוללים כפתור מעבר לאפליקציה עצמה, כדי לראות את הפתרון עובד ולא רק לקרוא עליו.
         </p>
       </div>
 
@@ -1195,6 +1264,22 @@
           <p>הופכים את תיבת <span class="latin">Gmail</span> שלכם למערכת ניהול חכמה. סיווג אוטומטי, תעדוף משימות וסנכרון ל-<span class="latin">Drive</span> וליומן – בשביל שתוכלו להתמקד במה שחשוב באמת.</p>
           <div class="venture-tags"><span>AI</span><span>Gmail</span><span>Productivity</span></div>
           <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
+        </div>
+        <div class="venture-card">
+          <div class="venture-logo mundial" aria-label="לוגו מנחשים מונדיאל">
+            <div class="mundial-mark">
+              <div>
+                <div class="mundial-ball"></div>
+                <div class="mundial-title">מנחשים<br>מונדיאל</div>
+                <div class="mundial-sub">Achim Lasemel</div>
+              </div>
+            </div>
+          </div>
+          <h3>מנחשים מונדיאל</h3>
+          <div class="venture-kicker">World Cup prediction app</div>
+          <p>אפליקציית ניחושים למשחקי המונדיאל, שנבנתה עבור <span class="latin">GNU</span> / אחים לסמל ומותאמת לצורכי הארגון.</p>
+          <div class="venture-tags"><span>World Cup</span><span>Community</span><span>Custom</span></div>
+          <a class="app-link" href="https://mundial-achim-lasemel.netlify.app/" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית מנחשים מונדיאל">מעבר לאפליקציה <span>↗</span></a>
         </div>
         <div class="venture-card">
           <div class="venture-logo"><img src="riskscore.png" alt="RiskScore"></div>
@@ -1317,7 +1402,7 @@
           <span class="en-small">Live products open directly; upcoming products are clearly marked.</span>
         </div>
         <p class="ventures-intro">
-          הצד היזמי של Frostig Knowledge Transfer מתמקד בבניית כלים דיגיטליים שמתרגמים מורכבות לפעולה. כל מיזם מתחיל בשאלה אנושית וממשיך למוצר חי שאפשר לפתוח, לבדוק ולהשתמש בו. הכפתור בכל כרטיס מוביל לאתר האפליקציה הרלוונטית.
+          הצד היזמי של Frostig Knowledge Transfer מתמקד בבניית כלים דיגיטליים שמתרגמים מורכבות לפעולה. כל מיזם מתחיל בשאלה אנושית וממשיך למוצר שאפשר לפתוח, לבדוק ולהשתמש בו כאשר הוא פעיל. מוצרים חיים מובילים ישירות לאתר האפליקציה הרלוונטית.
         </p>
       </div>
 
@@ -1345,6 +1430,22 @@
           <p>הופכים את תיבת <span class="latin">Gmail</span> שלכם למערכת ניהול חכמה. סיווג אוטומטי, תעדוף משימות וסנכרון ל-<span class="latin">Drive</span> וליומן – בשביל שתוכלו להתמקד במה שחשוב באמת.</p>
           <div class="venture-tags"><span>AI</span><span>Gmail</span><span>Productivity</span></div>
           <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
+        </div>
+        <div class="venture-card">
+          <div class="venture-logo mundial" aria-label="לוגו מנחשים מונדיאל">
+            <div class="mundial-mark">
+              <div>
+                <div class="mundial-ball"></div>
+                <div class="mundial-title">מנחשים<br>מונדיאל</div>
+                <div class="mundial-sub">Achim Lasemel</div>
+              </div>
+            </div>
+          </div>
+          <h3>מנחשים מונדיאל</h3>
+          <div class="venture-kicker">World Cup prediction app</div>
+          <p>אפליקציית ניחושים למשחקי המונדיאל, שנבנתה עבור <span class="latin">GNU</span> / אחים לסמל ומותאמת לצורכי הארגון.</p>
+          <div class="venture-tags"><span>World Cup</span><span>Community</span><span>Custom</span></div>
+          <a class="app-link" href="https://mundial-achim-lasemel.netlify.app/" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית מנחשים מונדיאל">מעבר לאפליקציה <span>↗</span></a>
         </div>
         <div class="venture-card">
           <div class="venture-logo"><img src="riskscore.png" alt="RiskScore logo"></div>
@@ -1974,7 +2075,7 @@
         </p>
         <p class="about-para">
           במקביל, אני מפתח מיזמים ואפליקציות דיגיטליות. החיבור בין בניית מוצרים לבין הוראה מאפשר להביא להרצאות לא רק ידע תאורטי, אלא גם ניסיון חי: איך רעיון הופך לממשק, איך מורכבות הופכת לשפה, ואיך טכנולוגיה נשארת אנושית.
-          <span class="en-small">Built so far: KeySwitch · ChatScope · MindInbox · RiskScore.</span>
+          <span class="en-small">Built so far: KeySwitch · ChatScope · MindInbox · Mundial Guessing · RiskScore.</span>
         </p>
         <p class="about-para">
           העבודה שלי מתמקדת בגשר שבין טכנולוגיה מתקדמת לבין אנשים וארגונים – כיצד להבין את הכלים החדשים שמעצבים את העולם, כיצד לבנות איתם פתרונות, וכיצד להשתמש בהם בצורה חכמה, אחראית ויעילה.
