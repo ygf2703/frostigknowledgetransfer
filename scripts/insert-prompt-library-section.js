@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// Inserts the free prompt library homepage section into index.html.
 const root = process.cwd();
 const indexPath = path.join(root, 'index.html');
 const snippetPath = path.join(root, 'prompt-library-section-snippet.html');
