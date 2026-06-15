@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Updates the homepage app suite carousel, prompt library nav link, and Mundial wording.
+// Updates the homepage app suite carousel, prompt library nav link, Mundial wording,
+// and adds VOLUNCORE360 to the full ventures page.
 const indexPath = path.join(process.cwd(), 'index.html');
 if (!fs.existsSync(indexPath)) throw new Error('index.html not found');
 
@@ -24,7 +25,7 @@ const appSuiteSection = `  <!-- DIGITAL VENTURES PREVIEW -->
         <div class="app-suite-viewport" id="appSuiteViewport">
           <div class="app-suite-track">
             <div class="venture-card app-suite-card">
-              <div class="venture-logo"><img src="keyswitch-logo.png" alt="KeySwitch"></div>
+              <div class="venture-logo"><img src="keyswitch.png" alt="KeySwitch"></div>
               <h3>KeySwitch</h3>
               <div class="venture-kicker">Keyboard layout assistant</div>
               <p>מפסיקה את המאבק במקלדת ומתקנת אוטומטית כתיבה בשפה הלא נכונה, בזמן אמת.</p>
@@ -93,21 +94,42 @@ const appSuiteSection = `  <!-- DIGITAL VENTURES PREVIEW -->
   </style>
 `;
 
+const voluncore360Card = `        <div class="venture-card app-suite-featured">
+          <div class="venture-logo vulancore"><img src="vulancore.png" alt="VOLUNCORE360 logo"></div>
+          <h3>VOLUNCORE360</h3>
+          <div class="venture-kicker">Volunteer segmentation & insights</div>
+          <p>מערכת ניהול, פילוח ותובנות למערכי מתנדבים — מבט 360 על פעילות, מעורבות, קבוצות יעד ופוטנציאל צמיחה.</p>
+          <div class="venture-tags"><span>Volunteers</span><span>Segmentation</span><span>Insights</span></div>
+          <a class="app-link" href="https://voluncore360.netlify.app/" target="_blank" rel="noopener" aria-label="מעבר לאפליקציית VOLUNCORE360">מעבר לאפליקציה <span>↗</span></a>
+        </div>
+`;
+
 if (!html.includes(homeStart)) throw new Error('Digital ventures preview marker not found');
 if (!html.includes(homeEnd)) throw new Error('Prompt library marker not found');
-
 const startIndex = html.indexOf(homeStart);
 const endIndex = html.indexOf(homeEnd, startIndex);
 html = html.slice(0, startIndex) + appSuiteSection + '\n' + html.slice(endIndex);
 
-html = html.replaceAll(
-  'שנבנתה עבור <span class="latin">GNU</span> / אחים לסמל ומותאמת לצורכי הארגון.',
-  'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.'
-);
-html = html.replaceAll(
-  'שנבנתה עבור GNU / אחים לסמל ומותאמת לצורכי הארגון.',
-  'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.'
-);
+html = html.replaceAll('שנבנתה עבור <span class="latin">GNU</span> / אחים לסמל ומותאמת לצורכי הארגון.', 'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.');
+html = html.replaceAll('שנבנתה עבור GNU / אחים לסמל ומותאמת לצורכי הארגון.', 'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.');
+
+const fullVulanCoreBlock = `        <div class="venture-card">
+          <div class="venture-logo vulancore"><img src="vulancore.png" alt="VulanCore logo"></div>
+          <h3>VulanCore</h3>
+          <div class="venture-kicker">Nonprofit volunteer dashboard</div>
+          <p>אפליקציה לניהול עמותות ומערך מתנדבים.</p>
+          <div class="venture-tags"><span>Nonprofit</span><span>Volunteers</span><span>Dashboard</span></div>
+          <a class="app-link" href="https://apps.microsoft.com/detail/9NNNQ38GS6CC" target="_blank" rel="noopener" aria-label="מעבר ל-VulanCore בחנות Microsoft">Microsoft Store <span>↗</span></a>
+        </div>
+`;
+if (!html.includes('PAGE: VENTURES')) throw new Error('Full ventures page marker not found');
+const fullVenturesIndex = html.indexOf('<!-- ══════════════════════════════════ PAGE: VENTURES');
+const firstVoluncore360AfterFullPage = html.indexOf('VOLUNCORE360', fullVenturesIndex);
+const beforeNextPages = html.indexOf('<!-- ══════════════════════════════════ PAGE: LECTURES', fullVenturesIndex);
+if (firstVoluncore360AfterFullPage === -1 || firstVoluncore360AfterFullPage > beforeNextPages) {
+  if (!html.includes(fullVulanCoreBlock)) throw new Error('Full VulanCore block not found');
+  html = html.replace(fullVulanCoreBlock, fullVulanCoreBlock + voluncore360Card);
+}
 
 const navCta = `<li><a onclick="showPage('contact')" class="nav-cta">נדבר</a></li>`;
 const promptNav = `<li><a href="prompt-library.html" class="prompt-free-nav">ספריית פרומפטים <strong>חינם</strong></a></li>`;
@@ -135,4 +157,4 @@ if (!html.includes('ספריית פרומפטים <strong>חינם</strong>')) t
 if (!html.includes('נבנתה עבור עמותת אחים לסמל')) throw new Error('Mundial wording was not updated');
 
 fs.writeFileSync(indexPath, html, 'utf8');
-console.log('Updated homepage app suite carousel, prompt library nav link, and Mundial wording.');
+console.log('Updated app suite carousel, full ventures page, prompt nav link, and Mundial wording.');
