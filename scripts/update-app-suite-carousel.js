@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// Updates the homepage app suite carousel, prompt library nav link, and Mundial wording.
 const indexPath = path.join(process.cwd(), 'index.html');
 if (!fs.existsSync(indexPath)) throw new Error('index.html not found');
 
@@ -99,7 +100,6 @@ const startIndex = html.indexOf(homeStart);
 const endIndex = html.indexOf(homeEnd, startIndex);
 html = html.slice(0, startIndex) + appSuiteSection + '\n' + html.slice(endIndex);
 
-// Update Mundial wording everywhere it appears.
 html = html.replaceAll(
   'שנבנתה עבור <span class="latin">GNU</span> / אחים לסמל ומותאמת לצורכי הארגון.',
   'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.'
@@ -109,7 +109,6 @@ html = html.replaceAll(
   'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.'
 );
 
-// Add free prompt library link to header navigation.
 const navCta = `<li><a onclick="showPage('contact')" class="nav-cta">נדבר</a></li>`;
 const promptNav = `<li><a href="prompt-library.html" class="prompt-free-nav">ספריית פרומפטים <strong>חינם</strong></a></li>`;
 if (!html.includes('prompt-free-nav')) {
