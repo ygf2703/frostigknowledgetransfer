@@ -2290,6 +2290,24 @@
     requestAnimationFrame(frame);
   }
 
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animateScrollTo(element, target, duration = 950) {
+    const start = element.scrollLeft;
+    const change = target - start;
+    const startTime = performance.now();
+
+    function frame(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      element.scrollLeft = start + change * easeInOutCubic(progress);
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
   function scrollAppSuite(direction) {
     const viewport = document.getElementById('appSuiteViewport');
     const card = viewport ? viewport.querySelector('.app-suite-card') : null;
