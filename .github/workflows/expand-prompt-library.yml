@@ -1,0 +1,29 @@
+name: Expand prompt library
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/append-attractive-prompt-categories.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/append-attractive-prompt-categories.js
+      - run: |
+          if git diff --quiet; then
+            echo "No changes"
+          else
+            git config user.name "github-actions"
+            git config user.email "actions@github.com"
+            git add data/prompt-library.json
+            git commit -m "Expand prompt library"
+            git push
+          fi
