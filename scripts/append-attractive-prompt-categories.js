@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// Expands the free prompt library with additional high-demand categories.
 const filePath = path.join(process.cwd(), 'data', 'prompt-library.json');
 if (!fs.existsSync(filePath)) throw new Error('data/prompt-library.json not found');
 
