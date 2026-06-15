@@ -99,6 +99,24 @@ const startIndex = html.indexOf(homeStart);
 const endIndex = html.indexOf(homeEnd, startIndex);
 html = html.slice(0, startIndex) + appSuiteSection + '\n' + html.slice(endIndex);
 
+// Update Mundial wording everywhere it appears.
+html = html.replaceAll(
+  'שנבנתה עבור <span class="latin">GNU</span> / אחים לסמל ומותאמת לצורכי הארגון.',
+  'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.'
+);
+html = html.replaceAll(
+  'שנבנתה עבור GNU / אחים לסמל ומותאמת לצורכי הארגון.',
+  'שנבנתה עבור עמותת אחים לסמל ומותאמת לצורכי הארגון.'
+);
+
+// Add free prompt library link to header navigation.
+const navCta = `<li><a onclick="showPage('contact')" class="nav-cta">נדבר</a></li>`;
+const promptNav = `<li><a href="prompt-library.html" class="prompt-free-nav">ספריית פרומפטים <strong>חינם</strong></a></li>`;
+if (!html.includes('prompt-free-nav')) {
+  if (!html.includes(navCta)) throw new Error('Navigation CTA marker not found');
+  html = html.replace(navCta, promptNav + '\n    ' + navCta);
+}
+
 if (!html.includes('function scrollAppSuite(')) {
   const scriptMarker = '  function showPage(page) {';
   const carouselScript = `  function scrollAppSuite(direction) {\n    const viewport = document.getElementById('appSuiteViewport');\n    if (!viewport) return;\n    const amount = Math.max(260, viewport.clientWidth * 0.85);\n    viewport.scrollBy({ left: direction * amount, behavior: 'smooth' });\n  }\n\n`;
@@ -106,9 +124,16 @@ if (!html.includes('function scrollAppSuite(')) {
   html = html.replace(scriptMarker, carouselScript + scriptMarker);
 }
 
-if (!html.includes('https://voluncore360.netlify.app/')) {
-  throw new Error('VOLUNCORE360 link was not inserted');
+if (!html.includes('.prompt-free-nav')) {
+  const styleMarker = '  .nav-cta {';
+  const navStyle = `  .prompt-free-nav strong {\n    color: var(--accent);\n    font-weight: 800;\n  }\n  .prompt-free-nav:hover strong { color: var(--accent2); }\n\n`;
+  if (!html.includes(styleMarker)) throw new Error('Navigation style marker not found');
+  html = html.replace(styleMarker, navStyle + styleMarker);
 }
 
+if (!html.includes('https://voluncore360.netlify.app/')) throw new Error('VOLUNCORE360 link was not inserted');
+if (!html.includes('ספריית פרומפטים <strong>חינם</strong>')) throw new Error('Prompt library nav link was not inserted');
+if (!html.includes('נבנתה עבור עמותת אחים לסמל')) throw new Error('Mundial wording was not updated');
+
 fs.writeFileSync(indexPath, html, 'utf8');
-console.log('Updated homepage app suite carousel with VOLUNCORE360.');
+console.log('Updated homepage app suite carousel, prompt library nav link, and Mundial wording.');
