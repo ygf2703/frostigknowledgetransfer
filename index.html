@@ -1318,7 +1318,7 @@
   <style>
     .app-suite-section { overflow: hidden; }
     .app-suite-carousel { position: relative; margin-top: 2.5rem; direction: ltr; }
-    .app-suite-viewport { overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; padding: 0.25rem 0.1rem 1rem; direction: ltr; }
+    .app-suite-viewport { overflow-x: auto; scroll-behavior: auto; scrollbar-width: none; padding: 0.25rem 0.1rem 1rem; direction: ltr; }
     .app-suite-viewport::-webkit-scrollbar { display: none; }
     .app-suite-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 4.5rem) / 4); gap: 1.5rem; align-items: stretch; direction: ltr; }
     .app-suite-card { min-width: 0; height: 100%; direction: rtl; }
@@ -2272,11 +2272,32 @@
 </footer>
 
 <script>
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animateScrollTo(element, target, duration = 950) {
+    const start = element.scrollLeft;
+    const change = target - start;
+    const startTime = performance.now();
+
+    function frame(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      element.scrollLeft = start + change * easeInOutCubic(progress);
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
   function scrollAppSuite(direction) {
     const viewport = document.getElementById('appSuiteViewport');
-    if (!viewport) return;
-    const amount = Math.max(260, viewport.clientWidth * 0.85);
-    viewport.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    const card = viewport ? viewport.querySelector('.app-suite-card') : null;
+    if (!viewport || !card) return;
+
+    const gap = parseFloat(getComputedStyle(card.parentElement).gap) || 24;
+    const amount = card.getBoundingClientRect().width + gap;
+    animateScrollTo(viewport, viewport.scrollLeft + direction * amount, 950);
   }
 
   function showPage(page) {
