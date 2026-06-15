@@ -7,6 +7,7 @@ on:
     paths:
       - 'index.html'
       - 'scripts/update-app-suite-carousel.js'
+      - 'scripts/fix-carousel-one-card-scroll.js'
       - '.github/workflows/update-app-suite-carousel.yml'
   workflow_dispatch:
 
@@ -25,6 +26,9 @@ jobs:
       - name: Update app suite carousel
         run: node scripts/update-app-suite-carousel.js
 
+      - name: Apply one-card slow scroll
+        run: node scripts/fix-carousel-one-card-scroll.js
+
       - name: Commit updated index.html
         run: |
           if git diff --quiet; then
@@ -33,6 +37,6 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add index.html
-            git commit -m "Add app suite carousel and prompt library nav"
+            git commit -m "Update app carousel behavior"
             git push
           fi
