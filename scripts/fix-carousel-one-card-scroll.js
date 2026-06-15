@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// Applies slow, one-card-per-click motion to the homepage app carousel.
 const indexPath = path.join(process.cwd(), 'index.html');
 if (!fs.existsSync(indexPath)) throw new Error('index.html not found');
 let html = fs.readFileSync(indexPath, 'utf8');
@@ -45,8 +46,7 @@ if (oldFnRegex.test(html)) {
   throw new Error('Could not safely replace scrollAppSuite function');
 }
 
-html = html.replace('scroll-behavior: smooth; scrollbar-width: none;', 'scroll-behavior: auto; scrollbar-width: none;');
-html = html.replace('scroll-behavior: smooth; scrollbar-width: none;', 'scroll-behavior: auto; scrollbar-width: none;');
+html = html.replaceAll('scroll-behavior: smooth; scrollbar-width: none;', 'scroll-behavior: auto; scrollbar-width: none;');
 
 fs.writeFileSync(indexPath, html, 'utf8');
 console.log('Updated app carousel to move one card per click with slow eased motion.');
