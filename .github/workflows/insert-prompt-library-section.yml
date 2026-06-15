@@ -1,0 +1,39 @@
+name: Insert prompt library section
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'prompt-library-section-snippet.html'
+      - 'scripts/insert-prompt-library-section.js'
+      - '.github/workflows/insert-prompt-library-section.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  insert-section:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Insert prompt library section
+        run: node scripts/insert-prompt-library-section.js
+
+      - name: Commit updated index.html
+        run: |
+          if git diff --quiet; then
+            echo "No index.html changes to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Embed prompt library section on homepage"
+            git push
+          fi
