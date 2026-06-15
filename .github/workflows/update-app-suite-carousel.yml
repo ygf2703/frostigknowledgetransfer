@@ -1,0 +1,38 @@
+name: Update app suite carousel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'scripts/update-app-suite-carousel.js'
+      - '.github/workflows/update-app-suite-carousel.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-carousel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update app suite carousel
+        run: node scripts/update-app-suite-carousel.js
+
+      - name: Commit updated index.html
+        run: |
+          if git diff --quiet; then
+            echo "No index.html changes to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Add app suite carousel and prompt library nav"
+            git push
+          fi
