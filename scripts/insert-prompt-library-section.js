@@ -17,16 +17,17 @@ if (!fs.existsSync(snippetPath)) {
 let index = fs.readFileSync(indexPath, 'utf8');
 const snippet = fs.readFileSync(snippetPath, 'utf8').trim();
 
-if (index.includes('id="prompt-library-preview"')) {
-  console.log('Prompt library section already exists in index.html. No changes needed.');
-  process.exit(0);
-}
-
 const marker = '  <!-- FOR WHOM -->';
 if (!index.includes(marker)) {
   throw new Error('Insertion marker not found: <!-- FOR WHOM -->');
 }
 
-index = index.replace(marker, `\n  ${snippet}\n\n${marker}`);
+const currentStart = index.indexOf('  <!-- Free Prompt Library Section -->');
+const currentEnd = index.indexOf(marker, currentStart);
+if (currentStart !== -1 && currentEnd !== -1) {
+  index = index.slice(0, currentStart) + '  ' + snippet + '\n\n' + index.slice(currentEnd);
+} else {
+  index = index.replace(marker, `\n  ${snippet}\n\n${marker}`);
+}
 fs.writeFileSync(indexPath, index, 'utf8');
-console.log('Inserted prompt library section into index.html.');
+console.log('Inserted or updated prompt library section in index.html.');

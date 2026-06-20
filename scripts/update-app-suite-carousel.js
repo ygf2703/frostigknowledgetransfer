@@ -35,7 +35,7 @@ const appSuiteSection = `  <!-- DIGITAL VENTURES PREVIEW -->
             </div>
 
             <div class="venture-card app-suite-card app-suite-featured">
-              <div class="venture-logo vulancore"><img src="voluncore360-logo.svg" alt="VOLUNCORE360 logo"></div>
+              <div class="venture-logo voluncore360"><img src="voluncore360.png" alt="VOLUNCORE360 logo"></div>
               <h3>VOLUNCORE360</h3>
               <div class="venture-kicker">סוויטת ניהול מתנדבים בעמותות</div>
               <p>סוויטת ניהול מתנדבים בעמותות: ניהול, פילוח ותובנות למערכי מתנדבים, עם מבט 360 על פעילות, מעורבות ופוטנציאל צמיחה.</p>
@@ -91,7 +91,15 @@ const appSuiteSection = `  <!-- DIGITAL VENTURES PREVIEW -->
     .app-suite-viewport { overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; padding: 0.25rem 0.1rem 1rem; direction: ltr; }
     .app-suite-viewport::-webkit-scrollbar { display: none; }
     .app-suite-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 4.5rem) / 4); gap: 1.5rem; align-items: stretch; direction: ltr; }
-    .app-suite-card { min-width: 0; height: 100%; direction: rtl; }
+    .app-suite-card { min-width: 0; min-height: 575px; height: 100%; direction: rtl; display: flex; flex-direction: column; }
+    .app-suite-card .venture-logo { flex: 0 0 150px; height: 150px; margin-bottom: 1.15rem; }
+    .app-suite-card h3 { min-height: 1.5rem; display: flex; align-items: center; }
+    .app-suite-card .venture-kicker { min-height: 2.25rem; margin-bottom: 0.7rem; }
+    .app-suite-card p { flex: 1 1 auto; }
+    .app-suite-card .app-link { margin-top: 1.35rem; }
+    .app-suite-card .venture-tags { min-height: 66px; align-content: flex-start; }
+    .venture-logo.voluncore360 { background: #fff; padding: 0.35rem; }
+    .venture-logo.voluncore360 img { transform: scale(1.03); }
     .app-suite-featured { border-color: rgba(245,213,71,0.55); box-shadow: 0 18px 55px rgba(245,213,71,0.12); }
     .app-suite-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 4; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border2); background: var(--accent); color: #0d1117; font-size: 2rem; line-height: 1; font-weight: 800; cursor: pointer; box-shadow: 0 12px 35px rgba(0,0,0,0.28); }
     .app-suite-arrow:hover { background: var(--accent2); }
@@ -123,7 +131,7 @@ const fullVenturesGrid = `      <div class="ventures-grid fade-up" style="transi
           <a class="app-link" href="https://apps.microsoft.com/detail/9NNNQ38GS6CC" target="_blank" rel="noopener" aria-label="מעבר ל-VulanCore בחנות Microsoft">Microsoft Store <span>↗</span></a>
         </div>
         <div class="venture-card app-suite-featured">
-          <div class="venture-logo vulancore"><img src="voluncore360-logo.svg" alt="VOLUNCORE360 logo"></div>
+          <div class="venture-logo voluncore360"><img src="voluncore360.png" alt="VOLUNCORE360 logo"></div>
           <h3>VOLUNCORE360</h3>
           <div class="venture-kicker">סוויטת ניהול מתנדבים בעמותות</div>
           <p>סוויטת ניהול מתנדבים בעמותות: ניהול, פילוח ותובנות למערכי מתנדבים, עם מבט 360 על פעילות, מעורבות ופוטנציאל צמיחה.</p>
@@ -206,7 +214,7 @@ if (!html.includes('.prompt-free-nav')) {
   html = html.replace(styleMarker, navStyle + styleMarker);
 }
 
-for (const item of ['VOLUNCORE360','voluncore360-logo.svg','סוויטת ניהול מתנדבים בעמותות','https://voluncore360.netlify.app/','MindInbox','מנחשים מונדיאל','RiskScore','ChatScope','KeySwitch','VulanCore']) {
+for (const item of ['VOLUNCORE360','voluncore360.png','סוויטת ניהול מתנדבים בעמותות','https://voluncore360.netlify.app/','MindInbox','מנחשים מונדיאל','RiskScore','ChatScope','KeySwitch','VulanCore']) {
   if (!html.includes(item)) throw new Error('Missing required item: ' + item);
 }
 

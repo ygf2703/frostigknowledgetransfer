@@ -1,48 +1,42 @@
-<!-- Free Prompt Library Section — paste inside index.html where the homepage section should appear -->
+<!-- Free Prompt Library Section -->
 <section id="prompt-library-preview" class="prompt-library-preview" dir="rtl">
   <div class="prompt-library-preview-inner">
     <span class="label">Free Prompt Library</span>
     <h2 class="section-title">ספריית פרומפטים חינמית</h2>
-    <p class="section-sub">מאגר שימושי של פרומפטים מוכנים לעבודה עם AI — לעמותות, שיווק, גיוס תרומות, ניהול ולמידה. כל מדור כולל 10 פרומפטים ראשוניים ואפשר להרחיב אותו בהמשך דרך קובץ התוכן.</p>
+    <p class="section-sub">מאגר של 200 פרומפטים מוכנים לעבודה עם AI — לעמותות, עסקים, שיווק, מכירות, שירות, ניהול, קוד, תוכן ולמידה.</p>
 
-    <div class="prompt-library-cards">
-      <a class="prompt-library-card" href="prompt-library.html#nonprofits-volunteers">
-        <div class="prompt-library-icon">🤝</div>
-        <h3>ניהול עמותות ומתנדבים</h3>
-        <p>תוכניות עבודה, קליטת מתנדבים, שימור, מדידה וניהול פעילות.</p>
-        <span>10 פרומפטים</span>
-      </a>
-      <a class="prompt-library-card" href="prompt-library.html#marketing-content">
-        <div class="prompt-library-icon">✍️</div>
-        <h3>שיווק, תוכן ורשתות חברתיות</h3>
-        <p>פוסטים, ניוזלטרים, עמודי נחיתה, סרטונים וקמפייני תוכן.</p>
-        <span>10 פרומפטים</span>
-      </a>
-      <a class="prompt-library-card" href="prompt-library.html#fundraising-campaigns">
-        <div class="prompt-library-icon">💛</div>
-        <h3>גיוס תרומות וקמפיינים</h3>
-        <p>פנייה לתורמים, קמפייני תרומה, שגרירים, הודעות וסיפורי קמפיין.</p>
-        <span>10 פרומפטים</span>
-      </a>
-      <a class="prompt-library-card" href="prompt-library.html#business-productivity">
-        <div class="prompt-library-icon">📊</div>
-        <h3>ניהול עסקי ופרודוקטיביות</h3>
-        <p>סיכומי פגישות, משימות, החלטות, תהליכים ודשבורדים.</p>
-        <span>10 פרומפטים</span>
-      </a>
-      <a class="prompt-library-card" href="prompt-library.html#learning-knowledge">
-        <div class="prompt-library-icon">🎓</div>
-        <h3>הדרכה, למידה ובניית ידע</h3>
-        <p>מערכי שיעור, סדנאות, מדריכים, תרגולים וסיכומי ידע.</p>
-        <span>10 פרומפטים</span>
-      </a>
+    <div class="prompt-search-stage">
+      <form class="prompt-preview-search" action="prompt-library.html" method="get">
+        <label for="promptPreviewSearch">מה תרצו ליצור היום?</label>
+        <div class="prompt-preview-search-row">
+          <input id="promptPreviewSearch" name="q" type="search" placeholder="חפשו משימה, תוצר או נושא — למשל: תוכנית עבודה, פוסט, גיוס תרומות..." autocomplete="off">
+          <button class="btn-primary" type="submit">חיפוש בספרייה</button>
+        </div>
+        <p class="prompt-preview-meta"><strong>200</strong> פרומפטים · <strong>10</strong> קטגוריות · שימוש חופשי</p>
+      </form>
+
+      <div class="prompt-category-links" role="navigation" aria-label="קטגוריות ספריית הפרומפטים">
+        <a href="prompt-library.html?category=nonprofits-volunteers">עמותות ומתנדבים</a>
+        <a href="prompt-library.html?category=marketing-content">שיווק ותוכן</a>
+        <a href="prompt-library.html?category=fundraising-campaigns">גיוס תרומות</a>
+        <a href="prompt-library.html?category=business-productivity">ניהול ופרודוקטיביות</a>
+        <a href="prompt-library.html?category=learning-knowledge">הדרכה ולמידה</a>
+        <a href="prompt-library.html?category=small-business-ai">AI לעסקים קטנים</a>
+        <a href="prompt-library.html?category=sales-customer-service">מכירות ושירות</a>
+        <a href="prompt-library.html?category=vibe-coding-web-apps">Vibe Coding</a>
+        <a href="prompt-library.html?category=visual-brand-video">תמונות, וידאו ומיתוג</a>
+        <a href="prompt-library.html?category=hr-recruitment-management">משאבי אנוש</a>
+      </div>
     </div>
 
-    <a class="btn-primary" href="prompt-library.html">כניסה לספריית הפרומפטים</a>
+    <a class="btn-outline" href="prompt-library.html">לכל הפרומפטים</a>
   </div>
 </section>
 
 <style>
 .prompt-library-preview{padding:6rem 3rem;border-top:1px solid var(--border);background:radial-gradient(circle at 80% 0%,rgba(245,213,71,.08),transparent 32%)}
-.prompt-library-preview-inner{max-width:1180px;margin:0 auto;text-align:center}.prompt-library-preview .section-sub{max-width:800px;margin-left:auto;margin-right:auto}.prompt-library-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:2.5rem 0}.prompt-library-card{display:block;text-align:right;text-decoration:none;color:var(--text);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.025));border:1px solid var(--border);border-radius:16px;padding:1.25rem;min-height:205px;transition:.2s}.prompt-library-card:hover{transform:translateY(-3px);border-color:rgba(245,213,71,.45);box-shadow:0 18px 55px rgba(0,0,0,.28)}.prompt-library-icon{font-size:2rem;margin-bottom:.75rem}.prompt-library-card h3{font-size:1.05rem;margin-bottom:.5rem}.prompt-library-card p{color:var(--muted);font-size:.9rem;line-height:1.55}.prompt-library-card span{display:inline-flex;margin-top:1rem;color:var(--accent);font-weight:800;font-size:.86rem}@media(max-width:1100px){.prompt-library-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.prompt-library-preview{padding:4rem 1.25rem}.prompt-library-preview-inner{text-align:right}.prompt-library-cards{grid-template-columns:1fr}}
+.prompt-library-preview-inner{max-width:1180px;margin:0 auto;text-align:center}.prompt-library-preview .section-sub{max-width:880px;margin-left:auto;margin-right:auto}
+.prompt-search-stage{max-width:1020px;margin:2.5rem auto 2rem}.prompt-preview-search{padding:1.5rem;background:rgba(22,27,39,.78);border:1px solid var(--border2);border-radius:8px;text-align:right}.prompt-preview-search label{display:block;font-size:1.3rem;font-weight:800;margin-bottom:.8rem}.prompt-preview-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem}.prompt-preview-search input{width:100%;min-height:72px;padding:1.1rem 1.25rem;border:1px solid var(--border2);border-radius:6px;background:#0b0f16;color:var(--text);font:600 1.08rem Assistant,sans-serif;outline:none}.prompt-preview-search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,213,71,.12)}.prompt-preview-search .btn-primary{min-height:72px;margin:0;white-space:nowrap}.prompt-preview-meta{margin-top:.85rem;color:var(--muted);font-size:.9rem}.prompt-preview-meta strong{color:var(--accent)}
+.prompt-category-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:1rem}.prompt-category-links a{padding:.58rem .8rem;border:1px solid var(--border);border-radius:4px;background:rgba(255,255,255,.025);color:var(--muted);text-decoration:none;font-size:.86rem;font-weight:700;transition:.2s}.prompt-category-links a:hover{border-color:rgba(245,213,71,.45);color:var(--text);background:rgba(245,213,71,.06)}
+@media(max-width:720px){.prompt-library-preview{padding:4rem 1.25rem}.prompt-library-preview-inner{text-align:right}.prompt-preview-search-row{grid-template-columns:1fr}.prompt-preview-search .btn-primary{width:100%}.prompt-category-links{justify-content:flex-start}}
 </style>

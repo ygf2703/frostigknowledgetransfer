@@ -9,8 +9,8 @@ const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 data.libraryTitle = 'ספריית פרומפטים חינמית';
 data.libraryDescription = 'מאגר פרומפטים שימושי וחינמי לעבודה עם AI — לעמותות, עסקים, שיווק, מכירות, שירות, ניהול, קוד, תוכן ולמידה.';
-data.version = '1.1.0';
-data.updated = '2026-06-15';
+data.version = '1.2.0';
+data.updated = '2026-06-20';
 
 const newCategories = [
   {
