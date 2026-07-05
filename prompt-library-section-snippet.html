@@ -3,19 +3,38 @@
   <div class="prompt-library-preview-inner">
     <span class="label">Free Prompt Library</span>
     <h2 class="section-title">ספריית פרומפטים חינמית</h2>
-    <p class="section-sub">מאגר של 200 פרומפטים מוכנים לעבודה עם AI — לעמותות, עסקים, שיווק, מכירות, שירות, ניהול, קוד, תוכן ולמידה.</p>
+    <p class="section-sub">מאגר של 210 פרומפטים מוכנים לעבודה עם AI — כולל קטגוריית מגה חדשה לעיצוב תמונות, מיתוג אישי, הרצאות, קמפיינים ותוצרים ויזואליים ברמת וואו.</p>
+
+    <div class="mega-visual-feature">
+      <div class="mega-visual-copy">
+        <span class="mega-visual-kicker">חדש · Visual Mega Prompts</span>
+        <h3>מגה פרומפטים ויזואליים</h3>
+        <p>פרומפטים ארוכים, מדויקים ועיצוביים שמבקשים מהמשתמש להעלות תמונה והופכים אותה לתוצר מרהיב: פוסטר קולנועי, דיוקן מנהיגות, Hero לאתר, קמפיין שלם או תמונת פתיחה להרצאה.</p>
+        <p class="mega-visual-en">Long-form image prompts for cinematic, premium and human-centered AI visuals.</p>
+        <div class="mega-visual-actions">
+          <a class="btn-primary" href="prompt-library.html?category=mega-visual-prompts">למגה פרומפטים</a>
+          <a class="btn-outline" href="prompt-library.html?q=תמונה">חיפוש פרומפטים לתמונה</a>
+        </div>
+      </div>
+      <div class="mega-visual-media" aria-hidden="true">
+        <img class="mega-visual-main" src="noam-speaker-network-bw.jpg" alt="">
+        <img class="mega-visual-float mega-visual-float-top" src="noam-portrait-bw.jpg" alt="">
+        <img class="mega-visual-float mega-visual-float-bottom" src="noam-stage-bw.jpg" alt="">
+      </div>
+    </div>
 
     <div class="prompt-search-stage">
       <form class="prompt-preview-search" action="prompt-library.html" method="get">
         <label for="promptPreviewSearch">מה תרצו ליצור היום?</label>
         <div class="prompt-preview-search-row">
-          <input id="promptPreviewSearch" name="q" type="search" placeholder="חפשו משימה, תוצר או נושא — למשל: תוכנית עבודה, פוסט, גיוס תרומות..." autocomplete="off">
+          <input id="promptPreviewSearch" name="q" type="search" placeholder="חפשו משימה, תוצר או נושא — למשל: פוסטר קולנועי, תוכנית עבודה, פוסט, גיוס תרומות..." autocomplete="off">
           <button class="btn-primary" type="submit">חיפוש בספרייה</button>
         </div>
-        <p class="prompt-preview-meta"><strong>200</strong> פרומפטים · <strong>10</strong> קטגוריות · שימוש חופשי</p>
+        <p class="prompt-preview-meta"><strong>210</strong> פרומפטים · <strong>11</strong> קטגוריות · שימוש חופשי</p>
       </form>
 
       <div class="prompt-category-links" role="navigation" aria-label="קטגוריות ספריית הפרומפטים">
+        <a class="featured" href="prompt-library.html?category=mega-visual-prompts">מגה פרומפטים ויזואליים</a>
         <a href="prompt-library.html?category=nonprofits-volunteers">עמותות ומתנדבים</a>
         <a href="prompt-library.html?category=marketing-content">שיווק ותוכן</a>
         <a href="prompt-library.html?category=fundraising-campaigns">גיוס תרומות</a>
@@ -35,8 +54,11 @@
 
 <style>
 .prompt-library-preview{padding:6rem 3rem;border-top:1px solid var(--border);background:radial-gradient(circle at 80% 0%,rgba(245,213,71,.08),transparent 32%)}
-.prompt-library-preview-inner{max-width:1180px;margin:0 auto;text-align:center}.prompt-library-preview .section-sub{max-width:880px;margin-left:auto;margin-right:auto}
+.prompt-library-preview-inner{max-width:1180px;margin:0 auto;text-align:center}.prompt-library-preview .section-sub{max-width:900px;margin-left:auto;margin-right:auto}
+.mega-visual-feature{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(340px,.96fr);gap:2rem;align-items:center;text-align:right;margin:3rem auto 2.6rem;padding:2rem;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid rgba(245,213,71,.22);border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,.28);overflow:hidden;position:relative}.mega-visual-feature::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 22%,rgba(245,213,71,.14),transparent 30%),radial-gradient(circle at 84% 65%,rgba(72,143,255,.12),transparent 32%);pointer-events:none}.mega-visual-copy{position:relative;z-index:1}.mega-visual-kicker{display:inline-flex;margin-bottom:1rem;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.mega-visual-copy h3{font-size:clamp(2rem,4vw,3.5rem);line-height:1.02;margin-bottom:1rem}.mega-visual-copy p{max-width:620px;color:var(--muted);font-size:1.05rem;line-height:1.85}.mega-visual-copy .mega-visual-en{margin-top:.6rem;color:#9ba3bb;font-size:.9rem;line-height:1.55;direction:ltr;text-align:right}.mega-visual-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.35rem}.mega-visual-actions .btn-primary,.mega-visual-actions .btn-outline{margin:0}
+.mega-visual-media{position:relative;z-index:1;min-height:430px}.mega-visual-media img{position:absolute;display:block;object-fit:cover;border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 60px rgba(0,0,0,.42);background:#0b0f16}.mega-visual-main{top:0;right:9%;width:72%;height:100%;border-radius:8px}.mega-visual-float{width:34%;aspect-ratio:1/1;border-radius:6px}.mega-visual-float-top{left:0;top:2rem}.mega-visual-float-bottom{left:8%;bottom:1.2rem}
 .prompt-search-stage{max-width:1020px;margin:2.5rem auto 2rem}.prompt-preview-search{padding:1.5rem;background:rgba(22,27,39,.78);border:1px solid var(--border2);border-radius:8px;text-align:right}.prompt-preview-search label{display:block;font-size:1.3rem;font-weight:800;margin-bottom:.8rem}.prompt-preview-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem}.prompt-preview-search input{width:100%;min-height:72px;padding:1.1rem 1.25rem;border:1px solid var(--border2);border-radius:6px;background:#0b0f16;color:var(--text);font:600 1.08rem Assistant,sans-serif;outline:none}.prompt-preview-search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,213,71,.12)}.prompt-preview-search .btn-primary{min-height:72px;margin:0;white-space:nowrap}.prompt-preview-meta{margin-top:.85rem;color:var(--muted);font-size:.9rem}.prompt-preview-meta strong{color:var(--accent)}
-.prompt-category-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:1rem}.prompt-category-links a{padding:.58rem .8rem;border:1px solid var(--border);border-radius:4px;background:rgba(255,255,255,.025);color:var(--muted);text-decoration:none;font-size:.86rem;font-weight:700;transition:.2s}.prompt-category-links a:hover{border-color:rgba(245,213,71,.45);color:var(--text);background:rgba(245,213,71,.06)}
-@media(max-width:720px){.prompt-library-preview{padding:4rem 1.25rem}.prompt-library-preview-inner{text-align:right}.prompt-preview-search-row{grid-template-columns:1fr}.prompt-preview-search .btn-primary{width:100%}.prompt-category-links{justify-content:flex-start}}
+.prompt-category-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:1rem}.prompt-category-links a{padding:.58rem .8rem;border:1px solid var(--border);border-radius:4px;background:rgba(255,255,255,.025);color:var(--muted);text-decoration:none;font-size:.86rem;font-weight:700;transition:.2s}.prompt-category-links a:hover{border-color:rgba(245,213,71,.45);color:var(--text);background:rgba(245,213,71,.06)}.prompt-category-links a.featured{color:#0d1117;background:var(--accent);border-color:var(--accent);font-weight:800}
+@media(max-width:900px){.mega-visual-feature{grid-template-columns:1fr;padding:1.25rem}.mega-visual-media{min-height:360px;order:-1}.mega-visual-main{width:72%;right:auto;left:0}.mega-visual-float-top{right:0;left:auto}.mega-visual-float-bottom{right:8%;left:auto}.mega-visual-copy p{max-width:none}}
+@media(max-width:720px){.prompt-library-preview{padding:4rem 1.25rem}.prompt-library-preview-inner{text-align:right}.mega-visual-feature{margin:2rem auto;padding:1rem}.mega-visual-media{min-height:310px}.mega-visual-copy h3{font-size:2.2rem}.mega-visual-actions .btn-primary,.mega-visual-actions .btn-outline{width:100%;text-align:center}.prompt-preview-search-row{grid-template-columns:1fr}.prompt-preview-search .btn-primary{width:100%}.prompt-category-links{justify-content:flex-start}}
 </style>

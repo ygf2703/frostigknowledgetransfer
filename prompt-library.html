@@ -17,12 +17,29 @@ h1{letter-spacing:0}
 .filter{border-radius:4px;padding:.72rem .9rem}
 .cat-carousel{display:none}
 @media(max-width:720px){.controls{padding:1rem}.filters{justify-content:flex-start}.search{min-height:68px;font-size:1.05rem}}
+.mega-library-spotlight{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);gap:1.4rem;align-items:center;margin:0 auto 2.2rem;padding:1.45rem;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid rgba(245,213,71,.22);border-radius:10px;box-shadow:0 22px 70px rgba(0,0,0,.25);overflow:hidden;position:relative}.mega-library-spotlight::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 16% 15%,rgba(245,213,71,.14),transparent 30%),radial-gradient(circle at 92% 75%,rgba(72,143,255,.12),transparent 28%);pointer-events:none}.mega-library-copy,.mega-library-gallery{position:relative;z-index:1}.mega-library-kicker{display:inline-flex;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem}.mega-library-copy h2{font-size:clamp(1.75rem,4vw,3.2rem);line-height:1.05;margin-bottom:.7rem}.mega-library-copy p{color:var(--muted);font-size:1.02rem;line-height:1.8;max-width:680px}.mega-library-en{direction:ltr;text-align:right;color:#9ba3bb!important;font-size:.9rem!important;margin-top:.45rem}.mega-library-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem}.mega-library-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1rem;border-radius:6px;font-weight:800;text-decoration:none}.mega-library-primary{background:var(--accent);color:#0d1117}.mega-library-secondary{border:1px solid var(--border2);color:var(--text);background:rgba(255,255,255,.025)}.mega-library-gallery{min-height:285px}.mega-library-gallery img{position:absolute;object-fit:cover;border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 50px rgba(0,0,0,.38);background:#0b0f16}.mega-library-gallery .main{top:0;right:0;width:72%;height:100%;border-radius:8px}.mega-library-gallery .small{left:0;bottom:1rem;width:34%;aspect-ratio:1/1;border-radius:6px}@media(max-width:820px){.mega-library-spotlight{grid-template-columns:1fr}.mega-library-gallery{order:-1;min-height:320px}.mega-library-gallery .main{right:0;left:auto}.mega-library-gallery .small{right:0;left:auto}.mega-library-actions a{flex:1 1 220px}}@media(max-width:560px){.mega-library-spotlight{padding:1rem}.mega-library-gallery{min-height:260px}.mega-library-actions a{width:100%}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Frostig Knowledge Transfer</a><a class="home" href="index.html">חזרה לדף הבית</a></div></header>
 <main class="wrap">
-<section class="hero"><span class="label">Free Prompt Library</span><h1>ספריית פרומפטים חינמית</h1><p>מאגר פרומפטים שימושי לעבודה חכמה עם כלי AI. כל פרומפט בנוי לשימוש מיידי, עם שדות להחלפה והתאמה לצרכים שלך.</p><div class="stats"><span class="stat"><strong id="catCount">10</strong> מדורים</span><span class="stat"><strong id="promptCount">200</strong> פרומפטים</span><span class="stat">שימוש חופשי</span></div></section>
+<section class="hero"><span class="label">Free Prompt Library</span><h1>ספריית פרומפטים חינמית</h1><p>מאגר פרומפטים שימושי לעבודה חכמה עם כלי AI. כל פרומפט בנוי לשימוש מיידי, עם שדות להחלפה והתאמה לצרכים שלך.</p><div class="stats"><span class="stat"><strong id="catCount">11</strong> מדורים</span><span class="stat"><strong id="promptCount">210</strong> פרומפטים</span><span class="stat">שימוש חופשי</span></div></section>
+<section class="mega-library-spotlight" aria-labelledby="megaVisualTitle">
+  <div class="mega-library-copy">
+    <span class="mega-library-kicker">חדש · Visual Mega Prompts</span>
+    <h2 id="megaVisualTitle">מגה פרומפטים ויזואליים</h2>
+    <p>קטגוריה חדשה של פרומפטים ארוכים ומורכבים שמבקשים מהמשתמש להעלות תמונה והופכים אותה לפוסטר, פורטרט, תמונת Hero, קמפיין, פתיח מצגת או סצנת הרצאה מרהיבה.</p>
+    <p class="mega-library-en">Designed for cinematic image transformations, premium personal branding and human-centered AI visuals.</p>
+    <div class="mega-library-actions">
+      <a class="mega-library-primary" href="prompt-library.html?category=mega-visual-prompts">פתח את הקטגוריה</a>
+      <a class="mega-library-secondary" href="prompt-library.html?q=פוסטר">חפש פוסטרים ותמונות</a>
+    </div>
+  </div>
+  <div class="mega-library-gallery" aria-hidden="true">
+    <img class="main" src="noam-speaker-network-bw.jpg" alt="">
+    <img class="small" src="noam-portrait-bw.jpg" alt="">
+  </div>
+</section>
 <section class="controls"><input id="search" class="search" placeholder="חיפוש לפי כותרת, תגית או תוכן הפרומפט..."><div id="filters" class="filters"></div></section>
 <section id="prompts" class="prompts-grid" aria-label="רשימת פרומפטים"></section>
 <div id="empty" class="empty">לא נמצאו פרומפטים מתאימים לחיפוש.</div>
