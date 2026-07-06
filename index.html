@@ -110,63 +110,15 @@
     pointer-events: none;
     z-index: -1;
   }
-  .hero-collage {
-    height: clamp(455px, 55vh, 610px);
-    display: grid;
-    grid-template-rows: 1.04fr 0.96fr;
-    gap: 12px;
-    padding: 12px;
-    direction: ltr;
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 1640 / 1092;
+    display: block;
+    object-fit: cover;
     border: 1px solid var(--border2);
     border-radius: 10px;
     background: #05070d;
     box-shadow: 0 34px 90px rgba(0,0,0,0.52);
-    overflow: hidden;
-  }
-  .hero-collage-row {
-    min-height: 0;
-    display: grid;
-    gap: 12px;
-  }
-  .hero-collage-row.top {
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-  }
-  .hero-collage-row.bottom {
-    grid-template-columns: minmax(0, 1.48fr) minmax(0, 0.52fr);
-  }
-  .hero-collage-tile {
-    position: relative;
-    min-width: 0;
-    min-height: 0;
-    overflow: hidden;
-    border-radius: 6px;
-    background: #0b0f16;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .hero-collage-tile::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.16));
-    pointer-events: none;
-  }
-  .hero-collage-tile img {
-    width: 100%; height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-  .hero-collage-tile.is-bw img {
-    filter: grayscale(1) contrast(1.08) brightness(0.9);
-  }
-  .hero-collage-tile.is-color img {
-    filter: saturate(1.02) contrast(1.03) brightness(0.94);
-  }
-  .hero-collage-office img { object-position: center 40%; }
-  .hero-collage-office-color img { object-position: center 42%; }
-  .hero-collage-speaker img { object-position: center 18%; }
-  .hero-collage-stage img { object-position: center 36%; }
-  .hero-collage-feature {
-    border-color: rgba(245,213,71,0.16);
   }
   .hero-photo-stats {
     margin-top: 0.9rem;
@@ -747,6 +699,7 @@
   .venture-logo.dark { background: #050607; }
   .venture-logo.mindinbox { background: #f8fafc; padding: 0.45rem; }
   .venture-logo.vulancore { background: #fff; padding: 0.5rem; }
+  .venture-logo.capital-gains { background: #fff; padding: 0.35rem; }
   .venture-logo.mundial {
     background:
       linear-gradient(135deg, rgba(14,107,77,0.22), rgba(245,213,71,0.12)),
@@ -762,6 +715,7 @@
   }
   .venture-logo.mindinbox img { transform: scale(1.04); }
   .venture-logo.vulancore img { transform: scale(1.04); }
+  .venture-logo.capital-gains img { transform: scale(1.02); }
   .mundial-mark {
     width: 100%;
     height: 100%;
@@ -1202,11 +1156,6 @@
     .hero-tag { font-size: 0.68rem; padding: 0.36rem 0.8rem; }
     .hero h1 { font-size: 2.55rem; }
     .hero h1 .brand-sub { font-size: 0.46em; }
-    .hero-collage { height: 430px; gap: 8px; padding: 8px; }
-    .hero-collage-row { gap: 8px; }
-    .hero-collage-row.top { grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); }
-    .hero-collage-row.bottom { grid-template-columns: minmax(0, 1.34fr) minmax(0, 0.66fr); }
-    .hero-collage-tile { border-radius: 5px; }
     .hero-photo-wrap::before { inset: -18px -12px -18px -12px; }
     .hero-photo-stats { padding: 0.95rem 0.8rem; }
     .hero-photo-stats .stat-num { font-size: 2rem; }
@@ -1253,24 +1202,7 @@
     </div>
     <div class="hero-visual fade-up" style="transition-delay:0.2s">
       <div class="hero-photo-wrap">
-        <div class="hero-collage" aria-label="קולאז׳ תמונות של נעם פרוסטיג">
-          <div class="hero-collage-row top">
-            <div class="hero-collage-tile hero-collage-office-color is-color">
-              <img src="noam-portrait-color.jpg" alt="נעם פרוסטיג במשרד בצבע">
-            </div>
-            <div class="hero-collage-tile hero-collage-speaker is-bw">
-              <img src="noam-speaker-network-bw.jpg" alt="נעם פרוסטיג בהרצאה על חדשנות וטכנולוגיה">
-            </div>
-          </div>
-          <div class="hero-collage-row bottom">
-            <div class="hero-collage-tile hero-collage-office hero-collage-feature is-bw">
-              <img src="noam-portrait-bw.jpg" alt="נעם פרוסטיג במשרד">
-            </div>
-            <div class="hero-collage-tile hero-collage-stage is-bw">
-              <img src="noam-stage-bw.jpg" alt="נעם פרוסטיג על במה">
-            </div>
-          </div>
-        </div>
+        <img src="hero-noam-collage.png" alt="קולאז׳ תמונות של נעם פרוסטיג" class="hero-photo">
         <div class="hero-photo-stats">
           <div class="stat">
             <div class="stat-num">12+</div>
@@ -1379,6 +1311,15 @@
             </div>
 
             <div class="venture-card app-suite-card">
+              <div class="venture-logo capital-gains"><img src="capital-gains.png" alt="Capital_gains logo"></div>
+              <h3>Capital_gains</h3>
+              <div class="venture-kicker">AI securities analysis</div>
+              <p>כלי בינה לניתוח ניירות ערך, חילוץ <span class="latin">FIFO</span> והצגת מגמות ותובנות כדי להפוך נתונים פיננסיים לתמונה ברורה ומעשית.</p>
+              <div class="venture-tags"><span>AI</span><span>Finance</span><span>FIFO</span></div>
+              <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
+            </div>
+
+            <div class="venture-card app-suite-card">
               <div class="venture-logo mundial" aria-label="לוגו מנחשים מונדיאל"><div class="mundial-mark"><div><div class="mundial-ball"></div><div class="mundial-title">מנחשים<br>מונדיאל</div><div class="mundial-sub">Achim Lasemel</div></div></div></div>
               <h3>מנחשים מונדיאל</h3>
               <div class="venture-kicker">World Cup prediction app</div>
@@ -1398,7 +1339,7 @@
         </div></div>
         <button class="app-suite-arrow app-suite-arrow-left" type="button" onclick="scrollAppSuite(-1)" aria-label="הצג אפליקציות שמאלה">‹</button>
       </div>
-      <div class="app-suite-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="app-suite-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div style="text-align:center;margin-top:2.5rem" class="fade-up"><a href="#" onclick="showPage('ventures');return false" class="btn-outline">לכל המיזמים</a></div>
     </div>
   </section>
@@ -1637,6 +1578,14 @@
           <div class="venture-kicker">AI Gmail organizer</div>
           <p>הופכים את תיבת <span class="latin">Gmail</span> שלכם למערכת ניהול חכמה. סיווג אוטומטי, תעדוף משימות וסנכרון ל-<span class="latin">Drive</span> וליומן – בשביל שתוכלו להתמקד במה שחשוב באמת.</p>
           <div class="venture-tags"><span>AI</span><span>Gmail</span><span>Productivity</span></div>
+          <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
+        </div>
+        <div class="venture-card">
+          <div class="venture-logo capital-gains"><img src="capital-gains.png" alt="Capital_gains logo"></div>
+          <h3>Capital_gains</h3>
+          <div class="venture-kicker">AI securities analysis</div>
+          <p>כלי בינה לניתוח ניירות ערך, חילוץ <span class="latin">FIFO</span> והצגת מגמות ותובנות כדי להפוך נתונים פיננסיים לתמונה ברורה ומעשית.</p>
+          <div class="venture-tags"><span>AI</span><span>Finance</span><span>FIFO</span></div>
           <span class="app-link app-link-disabled" aria-disabled="true">בקרוב</span>
         </div>
         <div class="venture-card">
