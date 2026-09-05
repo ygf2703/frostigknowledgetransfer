@@ -52,5 +52,6 @@ function renderPrompts(){const items=getPrompts();document.getElementById('empty
 document.getElementById('search').addEventListener('input',e=>{state.query=e.target.value;renderPrompts()});
 load().catch(()=>{document.getElementById('empty').style.display='block';document.getElementById('empty').textContent='לא ניתן לטעון את ספריית הפרומפטים כרגע.'});
 </script>
+<script src="data/i18n.js"></script>
 </body>
 </html>
