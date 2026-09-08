@@ -1,56 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0b2a4a">
-  <title>7 מדריכי n8n בעברית בחינם | Frostig Knowledge Transfer</title>
-  <meta name="description" content="סדרת 7 מדריכים מעשיים ל-n8n בעברית: Workflows, API, Webhooks, אוטומציות עסקיות, AI, Production ותבניות מוכנות.">
-  <style>
-    :root{--navy:#0b2a4a;--blue:#126fd6;--blue2:#0d8cf0;--ink:#10243b;--muted:#627184;--line:#dce6f0;--bg:#f5f9fc;--white:#fff;--teal:#079aa5;--green:#1a9b72}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,"Assistant","Segoe UI",sans-serif;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);color:var(--ink)}
-    .wrap{width:min(1160px,calc(100% - 32px));margin:auto}.hero{padding:72px 0 40px;text-align:center}.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);letter-spacing:.02em;margin-bottom:28px}.brand-mark{width:44px;height:44px;border:3px solid var(--navy);border-radius:12px;display:grid;place-items:center;font-size:20px}.eyebrow{color:var(--blue);font-weight:800;font-size:15px;margin-bottom:12px}.hero h1{margin:0 auto 14px;font-size:clamp(38px,6vw,72px);line-height:1.02;color:var(--navy);max-width:940px}.hero h1 span{color:var(--blue)}.hero p{margin:0 auto;max-width:760px;font-size:clamp(18px,2.2vw,24px);line-height:1.55;color:var(--muted)}
-    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:800;transition:.18s ease;border:1px solid transparent}.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 10px 28px rgba(18,111,214,.2)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(18,111,214,.26)}.btn-secondary{background:#fff;color:var(--navy);border-color:var(--line)}.btn-secondary:hover{border-color:#b8cee4}
-    .intro{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px auto 42px}.pill{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center;font-weight:700;color:var(--navy)}
-    .section-head{text-align:center;margin:18px 0 24px}.section-head h2{font-size:clamp(28px,4vw,44px);color:var(--navy);margin:0 0 8px}.section-head p{margin:0;color:var(--muted);font-size:18px}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding-bottom:48px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(17,46,76,.055);display:flex;gap:18px;align-items:flex-start}.num{width:54px;height:54px;flex:0 0 54px;border-radius:15px;display:grid;place-items:center;font-size:22px;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--navy),var(--blue))}.card h3{margin:0 0 7px;color:var(--navy);font-size:22px}.card p{margin:0 0 16px;color:var(--muted);line-height:1.55}.card .btn{padding:10px 16px;border-radius:10px;font-size:15px}.card:nth-child(5) .num{background:linear-gradient(135deg,var(--teal),var(--blue))}.card:nth-child(7) .num{background:linear-gradient(135deg,var(--green),var(--teal))}
-    .all{background:var(--navy);border-radius:22px;padding:28px;text-align:center;color:#fff;margin:0 auto 70px;box-shadow:0 16px 40px rgba(11,42,74,.18)}.all h2{margin:0 0 8px;font-size:32px}.all p{margin:0 auto 20px;max-width:720px;color:#d6e5f3;line-height:1.5}.all .btn-primary{background:#fff;color:var(--navy);box-shadow:none}.fine{padding:0 0 34px;text-align:center;color:#8190a0;font-size:13px}.fine strong{color:var(--navy)}
-    @media(max-width:800px){.hero{padding-top:42px}.intro{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.card{padding:18px}.all{padding:24px 18px}.hero-actions .btn{width:100%}}
-    @media(max-width:480px){.wrap{width:min(100% - 22px,1160px)}.intro{grid-template-columns:1fr 1fr;gap:8px}.pill{font-size:13px;padding:12px 8px}.card{gap:13px}.num{width:46px;height:46px;flex-basis:46px}.card h3{font-size:19px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d1117">
+<title>7 מדריכי n8n בעברית בחינם | FROSTIG Knowledge Transfer</title>
+<meta name="description" content="7 מדריכים מעשיים ל-n8n בעברית: Workflows, API, Webhooks, לוגיקה, אוטומציות עסקיות, AI, Production ותבניות מוכנות.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#161b27;--surface2:#1e2535;--border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.12);--text:#e8eaf0;--muted:#8b92a8;--faint:#4a5068;--accent:#f5d547;--accent2:#f0c020;--glow:rgba(245,213,71,.15);--human:#56d6c9}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body,a,button{font-family:'Assistant',sans-serif}body{background:var(--bg);color:var(--text);font-size:16px;overflow-x:hidden}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.topbar{height:78px;display:flex;align-items:center;border-bottom:1px solid var(--border);background:rgba(13,17,23,.92);backdrop-filter:blur(16px)}.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:13px}.brand-logo{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid var(--border2);box-shadow:0 8px 28px rgba(0,0,0,.35)}.brand-copy strong{display:block;font-size:.94rem;letter-spacing:.03em}.brand-copy span{display:block;color:var(--muted);font-size:.74rem;margin-top:2px}.private-note{font-size:.76rem;color:var(--muted);border:1px solid var(--border2);padding:.38rem .7rem;border-radius:4px}
+.hero{position:relative;padding:7rem 0 5.3rem;border-bottom:1px solid var(--border);overflow:hidden}.hero::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--glow) 0%,rgba(245,213,71,0) 70%);top:-230px;right:-130px;pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:5rem;align-items:center;position:relative;z-index:1}.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem}.hero h1{font-size:clamp(3rem,6vw,5.6rem);line-height:.96;letter-spacing:-.035em;max-width:760px}.hero h1 .accent{color:var(--accent)}.lead{max-width:680px;color:var(--muted);font-size:clamp(1.08rem,2vw,1.34rem);line-height:1.72;margin-top:1.6rem}.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;text-decoration:none;font-weight:800;border-radius:4px;padding:.88rem 1.55rem;transition:.2s}.btn-primary{background:var(--accent);color:var(--bg)}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,213,71,.24)}.btn-outline{color:var(--text);border:1.5px solid var(--border2);background:transparent}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-mark{display:flex;justify-content:center}.logo-stage{position:relative;width:min(300px,100%);aspect-ratio:1;border:1px solid var(--border2);border-radius:12px;background:linear-gradient(145deg,var(--surface2),var(--surface));display:grid;place-items:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}.logo-stage::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(245,213,71,.16);border-radius:12px;z-index:-1}.logo-stage img{width:68%;height:auto;border-radius:50%;filter:contrast(1.03);box-shadow:0 22px 45px rgba(0,0,0,.45)}
+.stats{border-bottom:1px solid var(--border);background:var(--surface)}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}.stat{padding:1.3rem 1.4rem;border-left:1px solid var(--border);text-align:center}.stat:last-child{border-left:0}.stat strong{display:block;color:var(--accent);font-size:1.1rem}.stat span{display:block;color:var(--muted);font-size:.82rem;margin-top:.2rem}
+.guides{padding:5.5rem 0 6.5rem}.section-kicker{font-size:.75rem;font-weight:800;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:.7rem}.section-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}.section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1}.section-head p{color:var(--muted);max-width:440px;line-height:1.65}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.55rem;transition:border-color .2s,transform .2s,box-shadow .2s;overflow:hidden}.card::before{content:"";position:absolute;top:0;right:0;width:3px;height:100%;background:var(--accent);opacity:.8}.card:hover{border-color:rgba(245,213,71,.45);transform:translateY(-3px);box-shadow:0 16px 38px rgba(0,0,0,.28)}.card-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}.num{font-size:.75rem;font-weight:800;letter-spacing:.12em;color:var(--accent)}.level{font-size:.72rem;color:var(--muted);border:1px solid var(--border2);border-radius:999px;padding:.25rem .6rem}.card h3{font-size:1.38rem;line-height:1.25;margin-bottom:.65rem}.card p{color:var(--muted);line-height:1.62;min-height:52px}.card-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--border)}.topics{font-size:.72rem;color:var(--faint);direction:ltr;text-align:left}.download{color:var(--accent);font-weight:800;text-decoration:none;white-space:nowrap}.download:hover{color:var(--accent2)}
+.closing{padding:0 0 6rem}.closing-box{border:1px solid var(--border2);border-radius:10px;background:linear-gradient(135deg,var(--surface2),var(--surface));padding:2.2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}.closing h2{font-size:1.65rem;margin-bottom:.45rem}.closing p{color:var(--muted);line-height:1.5}.footer{border-top:1px solid var(--border);padding:1.6rem 0 2rem;color:var(--muted);font-size:.78rem}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}.footer-brand{display:flex;align-items:center;gap:.65rem}.footer-brand img{width:32px;height:32px;border-radius:50%;object-fit:cover}.dot{color:var(--accent)}
+@media(max-width:850px){.hero{padding:4.5rem 0}.hero-grid{grid-template-columns:1fr;gap:3rem}.hero-mark{justify-content:flex-start}.logo-stage{width:220px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-left:0}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:1rem}.closing-box{display:block}.closing-box .btn{margin-top:1.4rem}.topbar{height:72px}.private-note{display:none}}
+@media(max-width:520px){.wrap{width:min(100% - 26px,1120px)}.hero{padding:3.7rem 0}.hero h1{font-size:3rem}.hero-actions .btn{width:100%}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:1rem .6rem}.card{padding:1.25rem}.card-footer{align-items:flex-end}.topics{max-width:58%}.brand-copy span{display:none}.closing-box{padding:1.6rem}.footer-inner{display:block}.footer-brand{margin-bottom:.6rem}}
+</style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="brand"><span class="brand-mark">FR</span><span>FROSTIG KNOWLEDGE TRANSFER</span></div>
-        <div class="eyebrow">סדרת מדריכים מעשית • ספטמבר 2026</div>
-        <h1>7 מדריכי <span>n8n</span> בעברית — בחינם</h1>
-        <p>מסלול מעשי מבניית Workflow ראשון ועד חיבורי API, לוגיקה, אוטומציות עסקיות, AI עם בקרה אנושית, Production ותבניות מוכנות לבנייה.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#guides">לבחירת מדריך ולהורדה</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="wrap intro" aria-label="נושאי הסדרה">
-      <div class="pill">Workflows</div><div class="pill">API & Webhooks</div><div class="pill">AI & Automation</div><div class="pill">Production</div>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <img class="brand-logo" src="/frostig-logo-bg.png" alt="FROSTIG Knowledge Transfer">
+      <div class="brand-copy"><strong>FROSTIG KNOWLEDGE TRANSFER</strong><span>AI · PRODUCT · KNOWLEDGE</span></div>
     </div>
-
-    <section id="guides" class="wrap">
-      <div class="section-head"><h2>המסלול המלא</h2><p>מומלץ להתחיל במדריך 1 ולהתקדם לפי הסדר.</p></div>
-      <div class="grid">
-        <article class="card"><div class="num">1</div><div><h3>בניית Workflow ב־n8n</h3><p>מתהליך עסקי לאוטומציה פעילה: Trigger, Nodes, עיבוד נתונים, בדיקות והפעלה.</p><a class="btn btn-secondary" href="/downloads/n8n/01-n8n-workflow-guide-he.pdf" download>הורדת PDF</a></div></article>
-        <article class="card"><div class="num">2</div><div><h3>Credentials, API ו־Webhooks</h3><p>חיבור מערכות אמיתיות בצורה מאובטחת, כולל HTTP Request ואימות.</p><a class="btn btn-secondary" href="/downloads/n8n/02-n8n-credentials-api-he.pdf" download>הורדת PDF</a></div></article>
-        <article class="card"><div class="num">3</div><div><h3>לוגיקה מתקדמת וזרימות אמינות</h3><p>If, Switch, Merge, Loop, Wait ו־Error Handling לבניית תהליכים יציבים.</p><a class="btn btn-secondary" href="/downloads/n8n/03-n8n-advanced-logic-he.pdf" download>הורדת PDF</a></div></article>
-        <article class="card"><div class="num">4</div><div><h3>אוטומציות עסקיות מוכנות</h3><p>מערכת ניהול לידים מקצה לקצה, SLA, מניעת כפילויות, Follow-up ודוח ניהולי.</p><a class="btn btn-secondary" href="/downloads/n8n/04-n8n-business-automations-he.pdf" download>הורדת PDF</a></div></article>
-        <article class="card"><div class="num">5</div><div><h3>AI ב־n8n עם בקרה אנושית</h3><p>Structured Output, Agents, RAG ושילוב Human-in-the-loop בפעולות רגישות.</p><a class="btn btn-secondary" href="/downloads/n8n/05-n8n-ai-human-control-he.pdf" download>הורדת PDF</a></div></article>
-        <article class="card"><div class="num">6</div><div><h3>Production ותפעול של n8n</h3><p>הפרדת Test ו־Production, שחרור, ניטור, אבטחה ותחזוקת אוטומציות עסקיות.</p><a class="btn btn-secondary" href="/downloads/n8n/06-n8n-production-operations-he.pdf" download>הורדת PDF</a></div></article>
-        <article class="card"><div class="num">7</div><div><h3>ספר תבניות עסקיות ל־n8n</h3><p>12 Workflows מוכנים לבנייה, התאמה והפעלה לעולמות מכירות, שירות ותפעול.</p><a class="btn btn-secondary" href="/downloads/n8n/07-n8n-business-templates-he.pdf" download>הורדת PDF</a></div></article>
-      </div>
-    </section>
-  </main>
-  <footer class="fine"><strong>FROSTIG Knowledge Transfer</strong> · frostig.co.il · החומרים ניתנים להורדה ללא תשלום.</footer>
+    <div class="private-note">עמוד הורדה ישיר</div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">N8N · PRACTICAL GUIDE SERIES</div>
+      <h1>7 מדריכי <span class="accent">n8n</span><br>בעברית. בחינם.</h1>
+      <p class="lead">מסלול מעשי שמתחיל ב־Workflow הראשון ומתקדם לחיבורי API, לוגיקה, אוטומציות עסקיות, AI עם בקרה אנושית, Production ותבניות מוכנות לבנייה.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#guides">למדריכים ולהורדה ↓</a></div>
+    </div>
+    <div class="hero-mark">
+      <div class="logo-stage"><img src="/frostig-logo-bg.png" alt="לוגו FROSTIG"></div>
+    </div>
+  </div>
+</section>
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><strong>7</strong><span>מדריכי PDF</span></div>
+    <div class="stat"><strong>12</strong><span>תבניות Workflow</span></div>
+    <div class="stat"><strong>API + AI</strong><span>חיבורים ואוטומציה</span></div>
+    <div class="stat"><strong>0 ₪</strong><span>הורדה חופשית</span></div>
+  </div>
+</section>
+<section class="guides" id="guides">
+  <div class="wrap">
+    <div class="section-kicker">FROM FOUNDATION TO PRODUCTION</div>
+    <div class="section-head"><h2>מסלול הלמידה</h2><p>הסדרה בנויה בסדר עולה. אם אתם בתחילת הדרך, התחילו ב־1. אם אתם כבר עובדים עם n8n, קפצו לנושא שאתם צריכים עכשיו.</p></div>
+    <div class="grid">
+      <article class="card"><div class="card-top"><span class="num">GUIDE 01</span><span class="level">יסודות</span></div><h3>בניית Workflow ב־n8n</h3><p>מתהליך עסקי לאוטומציה פעילה: Trigger, Nodes, עיבוד נתונים, בדיקות והפעלה.</p><div class="card-footer"><span class="topics">TRIGGER · NODES · EXECUTIONS</span><a class="download" href="/downloads/n8n/01-n8n-workflow-guide-he.pdf" download>הורדת PDF ↓</a></div></article>
+      <article class="card"><div class="card-top"><span class="num">GUIDE 02</span><span class="level">חיבורים</span></div><h3>Credentials, API ו־Webhooks</h3><p>חיבור מערכות אמיתיות בצורה מאובטחת, כולל HTTP Request, אימות וניהול Credentials.</p><div class="card-footer"><span class="topics">API · WEBHOOK · AUTH</span><a class="download" href="/downloads/n8n/02-n8n-credentials-api-he.pdf" download>הורדת PDF ↓</a></div></article>
+      <article class="card"><div class="card-top"><span class="num">GUIDE 03</span><span class="level">לוגיקה</span></div><h3>לוגיקה מתקדמת וזרימות אמינות</h3><p>If, Switch, Merge, Loop, Wait ו־Error Handling לבניית תהליכים יציבים וניתנים לתחזוקה.</p><div class="card-footer"><span class="topics">IF · SWITCH · MERGE · ERROR</span><a class="download" href="/downloads/n8n/03-n8n-advanced-logic-he.pdf" download>הורדת PDF ↓</a></div></article>
+      <article class="card"><div class="card-top"><span class="num">GUIDE 04</span><span class="level">עסקי</span></div><h3>אוטומציות עסקיות מוכנות</h3><p>מערכת ניהול לידים מקצה לקצה, SLA, מניעת כפילויות, Follow-up ודוח ניהולי.</p><div class="card-footer"><span class="topics">LEADS · CRM · SLA · REPORTS</span><a class="download" href="/downloads/n8n/04-n8n-business-automations-he.pdf" download>הורדת PDF ↓</a></div></article>
+      <article class="card"><div class="card-top"><span class="num">GUIDE 05</span><span class="level">AI</span></div><h3>AI ב־n8n עם בקרה אנושית</h3><p>Structured Output, Agents, RAG ושילוב Human-in-the-loop בפעולות שדורשות בקרה.</p><div class="card-footer"><span class="topics">AI · AGENTS · RAG · HITL</span><a class="download" href="/downloads/n8n/05-n8n-ai-human-control-he.pdf" download>הורדת PDF ↓</a></div></article>
+      <article class="card"><div class="card-top"><span class="num">GUIDE 06</span><span class="level">מתקדם</span></div><h3>Production ותפעול של n8n</h3><p>הפרדת Test ו־Production, תהליך שחרור, ניטור, אבטחה ותחזוקת אוטומציות עסקיות.</p><div class="card-footer"><span class="topics">PRODUCTION · MONITORING · SECURITY</span><a class="download" href="/downloads/n8n/06-n8n-production-operations-he.pdf" download>הורדת PDF ↓</a></div></article>
+      <article class="card"><div class="card-top"><span class="num">GUIDE 07</span><span class="level">יישום</span></div><h3>ספר תבניות עסקיות ל־n8n</h3><p>12 Workflows מוכנים לבנייה, התאמה והפעלה לעולמות מכירות, שירות ותפעול.</p><div class="card-footer"><span class="topics">12 WORKFLOWS · SALES · OPS</span><a class="download" href="/downloads/n8n/07-n8n-business-templates-he.pdf" download>הורדת PDF ↓</a></div></article>
+    </div>
+  </div>
+</section>
+<section class="closing"><div class="wrap"><div class="closing-box"><div><h2>לא צריך ללמוד הכול לפני שמתחילים לבנות.</h2><p>בחרו תהליך אחד עם ערך עסקי ברור, בנו אותו נכון — ורק אחר כך הרחיבו.</p></div><a class="btn btn-primary" href="#guides">בחירת מדריך ↑</a></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="/frostig-logo-bg.png" alt="FROSTIG"><strong>FROSTIG Knowledge Transfer</strong></div><div>7 מדריכי n8n בעברית <span class="dot">•</span> הורדה ללא תשלום</div></div></footer>
 </body>
 </html>
