@@ -2380,10 +2380,20 @@
     <div class="lib-section-icon">📰</div>
     <div>
       <div class="lib-section-title">מאמרים</div>
-      <div class="lib-section-count">9 מאמרים · AI, חברה, תרבות ומציאות</div>
+      <div class="lib-section-count">10 מאמרים · AI, חברה, תרבות ומציאות</div>
     </div>
   </div>
   <div class="lib-cards">
+
+    <!-- ARTICLE 1 -->
+    <div class="lib-card fade-up" style="transition-delay:0s">
+      <span class="lib-card-tag">📰 מחקר ומאמר</span>
+      <div class="lib-card-title">כשהמוח עובר למודל SaaS</div>
+      <div class="lib-card-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>1.10.2026 · קריאה באתר</div>
+      <div class="lib-card-actions">
+        <a href="?article=brain-as-saas" class="lib-btn-reader" data-article-id="brain-as-saas"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>קריאה באתר</a>
+      </div>
+    </div>
 
     <!-- ARTICLE 1 -->
     <div class="lib-card fade-up" style="transition-delay:0s">
@@ -2775,14 +2785,42 @@
     }[char]));
   }
 
+  function formatArticleText(value) {
+    return escapeHtml(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  }
+
   function articleBlocksToHtml(blocks) {
     return (blocks || []).map((block) => {
       const tag = block.type === 'h3' ? 'h3' : 'p';
-      return `<${tag}>${escapeHtml(block.text)}</${tag}>`;
+      return `<${tag}>${formatArticleText(block.text)}</${tag}>`;
     }).join('');
   }
 
-  function openArticleReader(articleId, trigger) {
+  function markdownToArticleBlocks(markdown) {
+    let skippedTitle = false;
+    return markdown.split(/\r?\n/).map((line) => line.trim()).filter((line) => line && line !== '---').map((line) => {
+      const heading = line.match(/^#{1,3}\s+(.+)$/);
+      if (heading) {
+        if (!skippedTitle && line.startsWith('# ')) {
+          skippedTitle = true;
+          return null;
+        }
+        return { type: 'h3', text: heading[1] };
+      }
+      return { type: 'p', text: line.replace(/\s{2,}$/, '') };
+    }).filter(Boolean);
+  }
+
+  async function loadArticleBlocks(article) {
+    if (article.blocks) return article.blocks;
+    if (!article.markdownUrl) return [];
+    const response = await fetch(article.markdownUrl);
+    if (!response.ok) throw new Error('Unable to load article');
+    article.blocks = markdownToArticleBlocks(await response.text());
+    return article.blocks;
+  }
+
+  async function openArticleReader(articleId, trigger, updateUrl = true) {
     const article = window.FROSTIG_ARTICLES && window.FROSTIG_ARTICLES[articleId];
     if (!article) return;
 
@@ -2797,11 +2835,21 @@
 
     title.textContent = (cardTitle && cardTitle.textContent.trim()) || article.title;
     meta.textContent = (cardMeta && cardMeta.textContent.trim()) || article.meta || '';
-    body.innerHTML = articleBlocksToHtml(article.blocks);
+    body.innerHTML = '<p>טוען את המאמר…</p>';
     reader.classList.add('open');
     reader.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     panel.focus();
+    if (updateUrl && new URLSearchParams(window.location.search).get('article') !== articleId) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('article', articleId);
+      window.history.pushState({}, '', url);
+    }
+    try {
+      body.innerHTML = articleBlocksToHtml(await loadArticleBlocks(article));
+    } catch (error) {
+      body.innerHTML = '<p>לא ניתן לטעון את המאמר כרגע. נסו לרענן את הדף.</p>';
+    }
   }
 
   function closeArticleReader() {
@@ -2810,11 +2858,17 @@
     reader.classList.remove('open');
     reader.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('article')) {
+      url.searchParams.delete('article');
+      window.history.replaceState({}, '', url);
+    }
   }
 
   document.addEventListener('click', (event) => {
     const readerButton = event.target.closest('[data-article-id]');
     if (readerButton) {
+      event.preventDefault();
       openArticleReader(readerButton.getAttribute('data-article-id'), readerButton);
       return;
     }
@@ -2825,6 +2879,13 @@
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeArticleReader();
+  });
+
+  window.addEventListener('load', () => {
+    const articleId = new URLSearchParams(window.location.search).get('article');
+    if (!articleId || !(window.FROSTIG_ARTICLES && window.FROSTIG_ARTICLES[articleId])) return;
+    showPage('blog');
+    openArticleReader(articleId, null, false);
   });
 
   function easeInOutCubic(t) {

@@ -766,5 +766,10 @@ window.FROSTIG_ARTICLES = {
         "text": "9"
       }
     ]
+  },
+  "brain-as-saas": {
+    "title": "כשהמוח עובר למודל SaaS",
+    "meta": "מחקר ומאמר · 1.10.2026",
+    "markdownUrl": "data/articles/brain-as-saas.md"
   }
 };
