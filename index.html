@@ -55,7 +55,24 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo img { height: 38px; width: auto; }
+  .nav-logo {
+    position: absolute;
+    top: 50%;
+    left: 3rem;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  .nav-logo img { display: none; }
+  .nav-logo::after {
+    content: '';
+    display: block;
+    width: 84px;
+    height: 84px;
+    background: url('frostig-logo-yellow.png') center / 84px 84px no-repeat;
+    transform: translate(-20px, -22px);
+  }
   .nav-links { display:flex; gap:clamp(0.8rem, 1.6vw, 2rem); list-style:none; align-items: center; }
   .nav-links a {
     font-size: 0.9rem; font-weight: 600;
@@ -1551,6 +1568,7 @@
       opacity: 0.2;
     }
     nav { padding: 1rem 1.5rem; }
+    .nav-logo { left: 1.5rem; }
     .nav-links {
       display: none;
       position: fixed;
