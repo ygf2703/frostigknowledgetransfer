@@ -653,7 +653,7 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
 const CLIENTS=[["israel-tax-authority.png","רשות המסים בישראל"],["techbuddy.jpg","טקבודי"],["https://github.com/user-attachments/assets/e75f3bc6-4f5f-49ab-948c-ca3da99f4137","מכבי תל אביב"],["ort.jpg","אורט"],["seven.png","SEVEN"],["https://github.com/user-attachments/assets/6d3dd962-c2b6-4e4a-aafa-2dac147bea3f","helfy"],["https://github.com/user-attachments/assets/8a8e1c9b-43b7-4d04-8c26-04e8043b8072","U"],["https://github.com/user-attachments/assets/2b953f95-08c9-47c0-8074-45d38ffbb07d","בית חינוך יצחק רבין"],["https://github.com/user-attachments/assets/85c4bf87-93b4-4c30-bc8e-72abd2b96ded","מלמד יועצים"],["https://github.com/user-attachments/assets/b803e1ae-7fe9-4eae-a158-66151141c04f","כללית"],["https://github.com/user-attachments/assets/36220481-a451-4531-9915-f4618e3ab9ea","מגן דוד אדום"],["https://github.com/user-attachments/assets/98325a9b-3888-41a0-ac86-88156e99ff1e","חוואת איילת"],["https://github.com/user-attachments/assets/ff39cec5-507c-4918-a8ed-7b7d280c4fa6","רובא מרכז קהילתי"],["https://github.com/user-attachments/assets/21a39030-06e8-4d8e-a68a-20181ba1f65e","Elbit Systems"]];
 document.querySelectorAll('.mtrack').forEach((t,i)=>{
   const row=CLIENTS.filter((_,j)=>j%2===i);
-  t.innerHTML=(row.concat(row)).map(c=>`<div class="chip"><img src="assets/${c[0]}" alt="${c[1]}"></div>`).join('');
+  t.innerHTML=(row.concat(row)).map(c=>`<div class="chip"><img src="${c[0]}" alt="${c[1]}"></div>`).join('');
 });
 
 const glow=document.getElementById('glow');
