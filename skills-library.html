@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ספריית סקילים: 25 דוגמאות מוכנות להעתקה | נעם פרוסטיג</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#04101F;color:#F5F8FC;font-family:'Heebo',sans-serif;line-height:1.9;overflow-x:hidden}
+.pat{position:fixed;inset:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10' y='80' font-family='Arial Black' font-size='70' font-weight='900' fill='%2350BEFA'%3EfR%3C/text%3E%3C/svg%3E");background-size:120px 120px;transform:rotate(-8deg) scale(1.2)}
+.wrap{max-width:820px;margin:0 auto;padding:48px 24px 96px;position:relative}
+.back{display:inline-block;color:#50BEFA;text-decoration:none;font-weight:500;margin-bottom:40px;border:1px solid #1B4173;padding:8px 18px;border-radius:999px;transition:.2s}
+.back:hover{background:#50BEFA;color:#04101F}
+.kicker{color:#FFD400;font-weight:700;letter-spacing:.12em;font-size:14px;margin-bottom:14px}
+h1{font-family:'Karantina',cursive;font-weight:700;font-size:clamp(52px,8vw,88px);line-height:1.02;color:#F5F8FC;margin-bottom:8px}
+.sub{font-size:clamp(20px,3vw,28px);color:#50BEFA;font-weight:700;margin-bottom:22px}
+.byline{color:#9DB2CF;font-size:15px;padding-bottom:28px;border-bottom:1px solid #123058;margin-bottom:36px}
+h2{font-family:'Karantina',cursive;font-weight:700;font-size:clamp(34px,5vw,46px);line-height:1.1;color:#FFD400;margin:52px 0 16px}
+p{font-size:18px;font-weight:300;color:#E8EEF7;margin-bottom:20px}
+p.src{font-size:14px;color:#9DB2CF;direction:ltr;text-align:left;line-height:1.7;margin-bottom:8px}
+h2+.src,p.src:first-of-type{margin-top:8px}
+.cta{margin-top:64px;padding:36px;border:1px solid #1B4173;border-radius:20px;background:linear-gradient(135deg,#0B2242,#04101F);text-align:center}
+.cta h3{font-family:'Karantina',cursive;font-size:40px;color:#F5F8FC;margin-bottom:10px}
+.cta p{color:#9DB2CF;font-size:16px;margin-bottom:22px}
+.btn{display:inline-block;background:#FFD400;color:#04101F;font-weight:900;font-size:18px;padding:14px 38px;border-radius:999px;text-decoration:none;transition:.2s}
+.btn:hover{background:#50BEFA}
+@media(max-width:640px){.wrap{padding:32px 18px 64px}p{font-size:16.5px}}
+
+ul{margin:0 0 20px;padding-right:24px}
+li{font-size:18px;font-weight:300;color:#E8EEF7;margin-bottom:10px}
+.box{background:#0B2242;border:1px solid #1B4173;border-radius:16px;padding:22px 26px;margin:28px 0;font-size:17px}
+.box strong{color:#FFD400}
+code,.ltr{direction:ltr;unicode-bidi:embed;font-family:'Consolas',monospace;color:#7dd3fc}
+a{color:#50BEFA}
+pre{background:#020B16;border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:0.8rem;line-height:1.6;color:#9DB2CF;margin:10px 0 4px;text-align:left}
+pre code{color:#9DB2CF}
+.libnav{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:8px;background:#04101F;padding:14px 0;margin-bottom:8px;border-bottom:1px solid #123058}
+.libnav a{color:#50BEFA;text-decoration:none;font-size:15px;font-weight:500;border:1px solid #1B4173;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.libnav a:hover{background:#50BEFA;color:#04101F}
+details.skill{background:#0B2242;border:1px solid #1B4173;border-radius:16px;padding:0;margin:18px 0;overflow:hidden}
+details.skill summary{cursor:pointer;list-style:none;padding:18px 22px;font-size:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+details.skill summary::-webkit-details-marker{display:none}
+details.skill summary .chev{margin-right:auto;color:#50BEFA;transition:.2s}
+details.skill[open] summary .chev{transform:rotate(180deg)}
+details.skill summary code{color:#FFD400;font-size:1.05rem;font-weight:700}
+details.skill .skill-desc{color:#E8EEF7;font-weight:300}
+details.skill pre{margin:0 22px 18px}
+.copybtn{background:#FFD400;color:#04101F;font-weight:700;font-family:inherit;font-size:14px;border:0;border-radius:999px;padding:8px 18px;margin:0 22px 12px;cursor:pointer}
+.copybtn:hover{background:#50BEFA}
+.copied{color:#7dd3fc;font-size:14px;opacity:0;transition:.3s}
+.copied.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="pat"></div>
+<div class="wrap">
+<a class="back" href="index.html">&#8594; חזרה לאתר</a>
+<div class="kicker">ספריית ידע &bull; סקילים</div>
+<h1>ספריית סקילים: 25 דוגמאות מוכנות להעתקה</h1>
+<div class="sub">חמש קטגוריות, חמש דוגמאות בכל אחת, מעולמות שונים - בפורמט SKILL.md הסטנדרטי</div>
+<div class="byline">מאת: נעם פרוסטיג  |  25 באוקטובר 2026</div>
+<div class="box"><strong>איך משתמשים?</strong> לוחצים על סקיל כדי לפתוח אותו ומעתיקים את התוכן לקובץ <code>SKILL.md</code> בתיקייה על שם הסקיל. ההתקנה תלוית כלי: ב-claude.ai מעלים את התיקייה כקובץ ZIP (התיקייה עצמה ברמה העליונה של ה-ZIP); ב-Claude Code מעתיקים אותה ל-<code>~/.claude/skills</code> או ל-<code>.claude/skills</code> של הפרויקט, ואפשר להפעיל ידנית עם <code>/</code> ושם הסקיל. ב-Codex שומרים ב-<code>~/.codex/skills</code> לשימוש מכל ריפו או בתוך הריפו לשיתוף הצוות, ומפעילים עם <code>$</code> ושם הסקיל. ב-Gemini יוצרים סקיל חדש בתוך האפליקציה ומדביקים את ההוראות. מומלץ לעבור על ההוראות ולהתאים אותן לעולם שלכם לפני השימוש הראשון. למדריך המלא: <a href="article-skills.html">מהם Skills ואיך עובדים איתם</a>.</div>
+<nav class="libnav"><a href="#tasks">ניהול משימות</a><a href="#images">עיצוב תמונות</a><a href="#video">עיצוב סרטונים</a><a href="#data">ניתוח נתונים</a><a href="#content">כתיבת תוכן</a></nav>
+<h2 id="tasks">ניהול משימות</h2>
+<details class="skill">
+<summary><code class="ltr">weekly-report</code><span class="skill-desc">דוח שבועי אחיד למנהל או ללקוח</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: weekly-report
+description: Write a weekly status report in a fixed structure.
+---
+
+Use this skill when the user asks for a weekly report.
+
+Inputs to collect (ask once, together, if missing): the week's achievements, open items, next week's plan, and the audience (manager or client).
+
+Process:
+1. Open with a two-sentence summary: state of the week and the single most important thing to know.
+2. Achievements as bullets, each with a fact (number, deliverable, date).
+3. Open items with an owner per item; next steps with a real date per step.
+4. For a client audience, drop internal jargon and add one line on what you need from them.
+
+Output: a one-page report in the fixed structure above.
+
+Boundaries: no superlatives, no invented progress. If an item was not provided, write "טרם עודכן" instead of guessing.
+
+Before presenting, check: every open item has an owner, every next step has a date, and the summary matches the bullets.
+
+Example - a marketing project manager sends a client: "השבוע: עלתה קמפיין החורף (3 ערוצים), אושרו 5 מודעות. פתוח: חומרי וידאו - לקוח, עד 29.10. בשבוע הבא: דוח ביצועים ראשון ב-3.11."
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">meeting-notes</code><span class="skill-desc">סיכום ישיבה: החלטות, משימות ואחראים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: meeting-notes
+description: Summarize meeting notes or a transcript into decisions, action items, owners and due dates.
+---
+
+Use this skill when the user shares meeting notes or a transcript and asks for a summary.
+
+Inputs to collect: the notes or transcript, and the meeting's goal if it is not obvious from the material.
+
+Process:
+1. Extract decisions, action items, and open questions separately - do not mix them.
+2. Every action item gets task / owner / due date. If the transcript does not name an owner or a date, mark TBD - never assign one by guessing who spoke last.
+3. Add a three-line context summary at the top for someone who was not in the room.
+
+Output: decisions (bullets), an action-items table (task / owner / due), open questions. Under one page.
+
+Boundaries: summarize only what was said. If a discussion had no conclusion, write "לא הוחלט" rather than picking the option you prefer.
+
+Before presenting, check: each action item appears in the source, and each decision has the condition or reason if one was stated.
+
+Example - product sprint planning: "הוחלט: השקה ב-15.11 בלי תכונת הייבוא. משימות: דנה - מסך הגדרות עד 28.10; יוסי - בדיקות רגרסיה עד 3.11. פתוח: מחיר חבילת צוות."
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">inbox-triage</code><span class="skill-desc">מיון תיבת מייל לפי חשיבות ופעולה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: inbox-triage
+description: Classify a list of emails by urgency and suggest next actions.
+---
+
+Use this skill when the user asks to sort or prioritize a list of emails.
+
+Inputs to collect: the email list (sender, subject, snippet or body per email) and what the user cares about right now (e.g. a launch this week, waiting on a signature).
+
+Process:
+1. Classify each email into exactly one bucket: reply today / delegate / schedule / archive.
+2. Give one line of reasoning per email, tied to the user's stated priorities.
+3. Draft a two-to-three sentence reply for every "reply today" item, in the user's tone.
+4. Close with a count per bucket so the user can sanity-check the sweep at a glance.
+
+Output: the four buckets with reasoning, plus the reply drafts.
+
+Boundaries: if you can only see subjects and not bodies, say so and classify provisionally. Never suggest archiving a thread from a person the user flagged as important.
+
+Before presenting, check: every email appears exactly once, and the bucket counts match the list length.
+
+Example - a lawyer on Monday morning: 41 emails -&gt; 6 reply today (2 client deadlines), 9 to delegate to the associate, 12 scheduled for Wednesday, 14 archived newsletters.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">sprint-planner</code><span class="skill-desc">פירוק פרויקט למשימות שבועיות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: sprint-planner
+description: Break a project into milestones and weekly tasks with dependencies.
+---
+
+Use this skill when the user describes a project and asks for a work plan.
+
+Inputs to collect: the project goal, the deadline, who is working on it, and hard constraints (budget, dependencies on others, holidays).
+
+Process:
+1. Work backward from the deadline to 3-6 milestones with dates.
+2. Break each milestone into weekly tasks; mark which task blocks which.
+3. Add a rough effort per task (S/M/L) and name the owner if known.
+4. End with the first three actions to start this week.
+
+Output: a milestone table (milestone / date / tasks / owner / effort) plus the dependency list.
+
+Boundaries: say explicitly that effort estimates are rough. If the deadline looks unrealistic for the scope, say so and propose what fits - do not silently compress.
+
+Before presenting, check: no task depends on a later task, and the plan actually reaches the goal.
+
+Example - launching a Shopify store in 6 weeks: milestones = catalog ready (week 2), design done (week 3), payments+shipping live (week 4), soft launch (week 5), public launch (week 6).
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">decision-log</code><span class="skill-desc">יומן החלטות לפרויקט</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: decision-log
+description: Record project decisions with context, options and rationale.
+---
+
+Use this skill when the user wants to record or revisit a project decision.
+
+Inputs to collect: what was decided, by whom, and when. The options that were on the table, if the user remembers them.
+
+Process:
+1. Write one entry per decision: date, one-sentence context, options considered, the choice, the reason, the decider.
+2. Add a revisit trigger: what new information would reopen this decision.
+3. Keep each entry under six lines; a decision that needs a page gets its own document, linked from the log.
+
+Output: the formatted log entry, ready to append.
+
+Boundaries: record the reason as given, not a better reason invented after the fact. If the user cannot recall an option, mark it as "לא תועד".
+
+Before presenting, check: the entry answers "why did we choose X?" without needing the people in the room.
+
+Example: "12.10 - ספק תשלומים: נבחר Stripe על פני PayPal ו-Tranzila. סיבה: עמלות נמוכות ב-0.4% וחיבור קיים לחשבונית ירוקה. מחליט: נעם. נבחן מחדש אם נכנסים לשוק האמריקאי."
+</code></pre>
+</details>
+<h2 id="images">עיצוב תמונות</h2>
+<details class="skill">
+<summary><code class="ltr">linkedin-carousel</code><span class="skill-desc">מפרט לקרוסלה ללינקדאין עם מבנה קבוע</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: linkedin-carousel
+description: Draft a slide-by-slide specification for a LinkedIn carousel.
+---
+
+Use this skill when the user wants a LinkedIn carousel.
+
+Inputs to collect: the topic, the one message the carousel should leave, brand colors and logo if any, and the slide count (default 8-10).
+
+Process:
+1. Cover slide: one bold claim of up to 8 words.
+2. One idea per slide: headline up to 8 words, body up to 25 words, plus a visual direction line (icon, photo style, diagram).
+3. Closing slide: a single CTA.
+4. Check the flow: each slide should make the reader want the next one.
+
+Output: a slide-by-slide spec (headline, body, visual direction per slide). This skill produces the specification. If the tool you run it in can also generate images, it can render the slides from the spec; otherwise hand the spec to a designer or an image tool.
+
+Boundaries: keep one visual style across all slides - same palette, same font pairing. Do not mix stock-photo slides with illustration slides.
+
+Before presenting, check: the headline-only read tells the whole story.
+
+Example - an HR consultant: "5 סימנים שהמועמד עומד לסרב להצעה" - cover claim, one sign per slide with a quote-style visual, closing CTA לשיחת ייעוץ.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">brand-social-post</code><span class="skill-desc">מפרט לפוסט ויזואלי בזהות מותגית</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: brand-social-post
+description: Compose a specification for a branded social media image.
+---
+
+Use this skill when the user asks for a branded social media image.
+
+Inputs to collect (first time only, then saved): brand colors, fonts, logo file or placement rules, and tone. Plus the message of this post and the platform.
+
+Process:
+1. Compose: headline up to 7 words, one supporting line, logo in a fixed corner.
+2. Apply the contrast rule: light logo on dark backgrounds, dark on light; never place a logo on a busy photo without a darkening scrim.
+3. Set the canvas to the platform's native size (1080x1080 feed, 1080x1920 story, 1200x628 link post).
+
+Output: a layout spec (text, placement, colors, sizes). If the tool can generate images, it renders the post from the spec; otherwise the spec goes to a designer or image tool as-is.
+
+Boundaries: never stretch or recolor the logo. If brand colors are unknown, ask - do not pick a palette for someone else's brand.
+
+Before presenting, check: the headline is readable at thumbnail size.
+
+Example - a restaurant: daily-special post, dark background from the brand palette, dish name in 7 words, price line, logo top-left, 1080x1080.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">presentation-deck</code><span class="skill-desc">מתווה מצגת: שקף לכל רעיון</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: presentation-deck
+description: Draft a presentation outline with one idea per slide.
+---
+
+Use this skill when the user asks for a presentation.
+
+Inputs to collect: the audience, the goal (convince / teach / update), the key points, and the length in minutes or slides.
+
+Process:
+1. One idea per slide. Each headline states the slide's conclusion, not its topic ("העלויות ירדו ב-18%" and not "עלויות").
+2. Opening slide: the audience's problem. Closing slide: the one action you want from them.
+3. For every slide suggest the visual: a diagram, one big number, a quote, or a photo - never a bullet wall.
+4. Add a one-line speaker note per slide.
+
+Output: the slide outline (headline / visual / speaker note per slide). This skill drafts the outline. If the tool can create slide files, it can build the deck from the outline; otherwise the outline goes to the slide tool or designer.
+
+Boundaries: match depth to the time given - a 10-minute talk cannot hold 30 slides. Do not invent data for the slides; mark missing figures as [מספר חסר].
+
+Before presenting, check: read headlines only - the story must hold.
+
+Example - a seed pitch, 12 slides: problem, why now, product, demo screenshot, traction (one big number), business model, market, competition map, team, financials, the ask, contact.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">infographic-builder</code><span class="skill-desc">תכנית לאינפוגרפיקה מנתונים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: infographic-builder
+description: Turn a dataset into a one-message infographic plan.
+---
+
+Use this skill when the user wants an infographic from data.
+
+Inputs to collect: the dataset or its summary, the one message the infographic should deliver, and the audience.
+
+Process:
+1. Pick the single message the data supports; drop everything else or save it for a second graphic.
+2. Choose chart types that fit the comparison: bars for comparing items, a line for a trend over time, a stacked bar for shares of a whole. Never a pie with more than four slices.
+3. Layout: the headline number on top, supporting charts below, source and date at the bottom.
+4. Write the headline as a finding, not a label.
+
+Output: the infographic plan (message, layout order, chart per element, source line). If the tool can generate images, it can render from the plan; otherwise the plan goes to a designer.
+
+Boundaries: every number in the plan must exist in the data. Mark estimates as estimates.
+
+Before presenting, check: someone seeing only the headline number gets the message.
+
+Example - a gym chain: "73% מהמתאמנים החדשים נשארים אחרי 90 יום - כשיש אימון אישי ראשון" - headline number, bar chart של שימור עם/בלי אימון, מקור: מערכת הניהול, Q3 2026.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">screenshot-annotator</code><span class="skill-desc">תכנית הדגשות לצילומי מסך</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: screenshot-annotator
+description: Plan professional annotations for a screenshot, with privacy masking first.
+---
+
+Use this skill when the user shares a screenshot to explain, report, or document something.
+
+Inputs to collect: what the screenshot should show, and whether it contains private data (names, emails, amounts, internal URLs).
+
+Process:
+1. Privacy first: list the regions to blur or mask before any annotation.
+2. Choose one annotation style: numbered steps for a flow, arrows with short labels for single callouts. Never both.
+3. Crop to the relevant region; the full desktop is never the answer.
+4. Highlight in the brand or accent color, with generous padding around the callout.
+
+Output: an annotation plan (mask regions, crop bounds, step list or arrow labels). If the tool can edit images, it applies the plan; otherwise it guides manual work in any editor.
+
+Boundaries: when in doubt about whether something is private, mask it. Do not annotate a screenshot you cannot actually see - ask for the image first.
+
+Before presenting, check: a reader who never used the product can follow the steps in order.
+
+Example - a bug report to a dev team: screenshot of the settings page, email field masked, crop to the save button area, two numbered steps showing the click that fails.
+</code></pre>
+</details>
+<h2 id="video">עיצוב סרטונים</h2>
+<details class="skill">
+<summary><code class="ltr">short-video-script</code><span class="skill-desc">תסריט לסרטון קצר (Reels / TikTok)</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: short-video-script
+description: Write a script for a short vertical video with hook, points and one CTA.
+---
+
+Use this skill when the user asks for a short video script.
+
+Inputs to collect: the topic, the audience, the target length (15/30/60 seconds), and the platform.
+
+Process:
+1. Hook in the first 2 seconds: a question, a bold claim, or a surprising number. Write it first.
+2. Body: at most three points, one sentence each, written as they will appear on screen.
+3. One CTA at the end - comment, save, or share. Pick one.
+4. Format as a two-column script: voiceover / on-screen text, with second markers.
+
+Output: the timed script (voiceover + on-screen text per segment).
+
+Boundaries: read it aloud - if it does not fit the target length, cut; do not speed-talk. Do not promise virality or use clickbait the video cannot back.
+
+Before presenting, check: the hook works without sound (most viewers scroll muted).
+
+Example - an accountant's 30-second Reel: hook "ההוצאה ש-90% מהעצמאים שוכחים לנכות", three deduction tips as on-screen cards, CTA "שמרו לחודש הבא".
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">storyboard-planner</code><span class="skill-desc">תכנון שוטים לפני הפקה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: storyboard-planner
+description: Plan an ordered shot list before a video production.
+---
+
+Use this skill when the user plans a video shoot.
+
+Inputs to collect: the script or the video's goal, the locations available, and the equipment (phone / camera / drone).
+
+Process:
+1. List the shots in filming order: frame type (wide / medium / close-up), content, estimated duration, on-screen text.
+2. Note the audio per shot: voiceover, talking head, or music only.
+3. Mark each shot must-have or nice-to-have, so a short day cuts the right shots.
+4. Flag transitions and any shot that needs graphics added in post.
+
+Output: the shot list table (shot / frame / content / duration / audio / priority).
+
+Boundaries: plan within the stated locations and equipment - do not storyboard a drone shot for a phone-only shoot. If the script is missing, draft the shot list from the goal and say so.
+
+Before presenting, check: the must-have shots alone tell the whole story.
+
+Example - a cafe promo: 8 shots (wide entrance, close-up pour, barista portrait, pastry macro, customers laughing, logo cup detail, exterior at dusk, closing logo card), 4 marked must-have.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">subtitle-style</code><span class="skill-desc">כללי כתוביות: חלוקה, תזמון והדגשות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: subtitle-style
+description: Split, time and highlight video subtitles from an existing transcript.
+---
+
+Use this skill when the user adds subtitles to a video and shares the transcript or caption file.
+
+Inputs to collect: the transcript (with rough timings if available), the video language, and the brand highlight color.
+
+Process:
+1. Split lines at natural pauses: max two lines on screen, up to 42 characters per line.
+2. Highlight one keyword per sentence in the brand color.
+3. Keep timing synced to speech; never carry a subtitle across a hard cut.
+4. Specify one readable font with an outline or background band for contrast.
+
+Output: the styled subtitle file content or a styled sample of the first minute plus the full rule set, so the rest can be applied consistently.
+
+Boundaries: this skill works from the transcript - it does not transcribe the video itself. If timings are missing, mark the output as approximate until synced in an editing tool.
+
+Before presenting, check: no subtitle is longer than two lines and every sentence has exactly one highlight.
+
+Example - an online course lesson: 12-minute talking-head video, subtitles in Heebo with a dark band, key terms in the brand yellow.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">video-edit-brief</code><span class="skill-desc">בריף עריכה מסודר לעורך או לכלי עריכה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: video-edit-brief
+description: Write a structured editing brief for a video editor or an editing tool.
+---
+
+Use this skill when the user briefs a video editor or an AI editing tool.
+
+Inputs to collect: the raw clips list, the goal, the platform, target length, and aspect ratio.
+
+Process:
+1. Open with goal, platform, length, and ratio - an editor should not hunt for these.
+2. List the raw clips in order with in/out points of the segments to keep.
+3. Specify music mood, text overlays with exact wording, and logo placement.
+4. Define the deliverable: formats, versions (with/without subtitles), and the review deadline.
+
+Output: the complete edit brief, ready to send.
+
+Boundaries: this skill writes the brief - it does not cut video. If in/out points are unknown, mark them as "לבחור בעריכה" instead of inventing timestamps.
+
+Before presenting, check: someone who never saw the footage could start editing from this brief alone.
+
+Example - a wedding videographer handoff: 3 hours of raw footage -&gt; 90-second highlight reel, 16:9 + 9:16 versions, acoustic music, names card at 0:05, review by Friday.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">webinar-recap-clip</code><span class="skill-desc">בחירת קטעי שיא מוובינר לקליפים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: webinar-recap-clip
+description: Select highlight moments from a webinar transcript as clip candidates.
+---
+
+Use this skill when the user wants short clips from a long recording and shares its transcript.
+
+Inputs to collect: the webinar transcript (timestamps if available), the target clip length, and the platform.
+
+Process:
+1. Scan the transcript for moments that hold a complete idea: a claim, a story, a number.
+2. Each candidate must stand alone: starts at a sentence start, ends on a punchline, 30-60 seconds.
+3. Rank the candidates and give each a one-line hook for its title card.
+
+Output: a ranked candidate list (start / end / hook / why it stands alone). Actual cutting requires a video editor or editing tool - this skill delivers the decision list with timestamps that guide the cut.
+
+Boundaries: if the transcript has no timestamps, mark all timings as approximate. Do not quote the speaker out of context: a clip must not change the meaning of what was said.
+
+Before presenting, check: every candidate reads as a complete thought without the surrounding talk.
+
+Example - a 60-minute marketing webinar: 5 candidates, top pick at 23:41-24:28 "למה דף הנחיתה שלכם מאבד 70% מהלידים", with a title-card hook per clip.
+</code></pre>
+</details>
+<h2 id="data">ניתוח נתונים</h2>
+<details class="skill">
+<summary><code class="ltr">csv-insights</code><span class="skill-desc">תובנות מקובץ נתונים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: csv-insights
+description: Profile a spreadsheet and surface trends, outliers and segments with numbers.
+---
+
+Use this skill when the user uploads a spreadsheet or CSV and asks for insights.
+
+Inputs to collect: the file, and the question the user wants answered (or "surprise me").
+
+Process:
+1. Profile first: row count, columns, missing values, date range. State these before any finding.
+2. Find trends, outliers, and the three most interesting segments.
+3. Present each insight as a claim with the numbers behind it - not charts alone.
+4. Close with what the data cannot answer.
+
+Output: the data profile, 3-5 numbered insights with supporting figures, and the limits section.
+
+Boundaries: never smooth over missing values silently - report them. If a column's meaning is unclear, ask instead of guessing.
+
+Before presenting, check: every claim cites a number that exists in the file.
+
+Example - an e-commerce orders file: 4,812 orders, Jan-Sep 2026 -&gt; returning customers are 31% of orders but 52% of revenue; Sunday basket is 23% larger; 3 SKUs drive 41% of returns.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">survey-analyzer</code><span class="skill-desc">ניתוח תוצאות סקר עם הבחנה בין עובדה לפרשנות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: survey-analyzer
+description: Analyze survey results with sample caveats, findings and cross-tabs.
+---
+
+Use this skill when the user shares survey results.
+
+Inputs to collect: the results file or summary, who answered and how many, and the decision the survey should inform.
+
+Process:
+1. Start with the sample: size, who answered, and what bias that creates. A survey of 12 happy customers is not "the market".
+2. Report top findings with percentages and counts (not percentages alone).
+3. Run cross-tabs that could change the picture (e.g. by role, tenure, region).
+4. Separate facts ("62% chose...") from interpretation ("which might mean...").
+
+Output: sample caveats, top findings with numbers, meaningful cross-tabs, and open questions the survey raised.
+
+Boundaries: do not average open-text answers into fake scores. If a subgroup is too small to read, say so.
+
+Before presenting, check: every percentage has its count next to it.
+
+Example - an employee satisfaction survey, n=86: overall 4.1/5, but support staff (n=19) score 3.4 on workload; fact vs interpretation split in the summary.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">sales-dashboard</code><span class="skill-desc">דשבורד מכירות שבועי בהשוואה לנתונים שקיימים בפועל</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: sales-dashboard
+description: Produce a recurring sales summary comparing only periods present in the data.
+---
+
+Use this skill when the user asks for a recurring sales summary.
+
+Inputs to collect: the sales data, the KPIs that matter to the business, and which comparison periods actually exist in the data.
+
+Process:
+1. Fixed KPIs: revenue, deals closed, pipeline value, conversion rate (adjust to what the data holds).
+2. Compare each KPI only to periods present in the data - previous week, previous month. If there is no same-period-last-year data, do not invent that comparison; say it will appear once the data exists.
+3. Call out the biggest mover up and down, with a one-line hypothesis labeled as a hypothesis.
+4. Keep the layout identical week to week so changes are visible at a glance.
+
+Output: the dashboard in the fixed layout.
+
+Boundaries: a hypothesis is not a finding. Missing data gets a "no data" cell, never an estimate presented as fact.
+
+Before presenting, check: the totals reconcile with the raw data.
+
+Example - a boutique's weekly dashboard: revenue 42,300 ILS (+8% vs last week), 63 deals (-4), biggest mover: online channel +31% (hypothesis: the new campaign), no year-ago data yet.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">ab-test-read</code><span class="skill-desc">קריאת תוצאות מבחן A/B בלי מסקנות שווא</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: ab-test-read
+description: Read A/B test results with unit-of-analysis, denominator and maturity checks.
+---
+
+Use this skill when the user shares A/B test results.
+
+Inputs to collect: the metric per variant, sample size per variant, the primary metric decided before the test, and how users were assigned.
+
+Process:
+1. Check the unit of independence: if the same user appears in both variants or many times in one, per-pageview numbers overstate the evidence. Flag it.
+2. Check denominators: conversion of what - visitors, sessions, clicks?
+3. Check maturity: was the test stopped at a planned point or peeked at until it looked good? Early wins regress.
+4. Compute the significance calculation from the counts, or request the success counts if they are missing. Without a calculation, no winner can be declared - state that as a limitation, not as a verdict.
+
+Output: the evidence summary, what can and cannot be concluded, and the options (ship / iterate / drop / keep running) - "keep running" only after the design checks above pass, and only up to the planned sample, not beyond it.
+
+Boundaries: never declare a winner from raw percentages alone. There is no universal minimum test length - maturity depends on traffic, effect size, and cycles of the business.
+
+Before presenting, check: the conclusion follows from the computed evidence, not from the direction the user hoped for.
+
+Example - a signup-button test: A = 96 signups / 1,200 visitors (8.0%), B = 105 / 1,180 (8.9%). Independence and denominators check out, but the difference is about z=0.78 - not significant at common levels. Conclusion: with this data no winner can be declared. If the design is sound and the planned sample has not been reached, the option is to continue to the plan; if it has, the honest verdict is no detectable difference.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">cohort-retention</code><span class="skill-desc">ניתוח שימור לפי קוהורטים עם הגדרות מפורשות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: cohort-retention
+description: Analyze retention by signup cohort with explicit active and maturity definitions.
+---
+
+Use this skill when the user asks about retention or churn over time.
+
+Inputs to collect: the user activity data, and - critically - the definition of "active" for this business (logged in? paid? completed an action?). If the user has not defined it, propose one and confirm before computing.
+
+Process:
+1. Group users by signup week or month. The denominator of every cell is that cohort's size - state it.
+2. Compute the active share per cohort per period.
+3. Interpret only mature cohorts: a cohort that has not yet reached week 4 has no week-4 retention. Mark young cohorts as "מוקדם מדי".
+4. Compare slopes, not just first cells: improving retention flattens the curve.
+
+Output: the cohort table with the definitions used, and the reading.
+
+Boundaries: never fill future cells by extrapolation. If the activity definition changes mid-analysis, restart with the new definition.
+
+Before presenting, check: every percentage's denominator is the cohort size, and no immature cohort is quoted as a trend.
+
+Example - an app: the Jan cohort (n=412) shows 38% active at week 4, the Mar cohort (n=505) shows 46%. Observed week-4 retention is higher in the later cohort. Before crediting the February onboarding change, check confounders: acquisition-channel mix, seasonality, and other product changes in the window. Two cohorts at one week do not establish a trend or its cause.
+</code></pre>
+</details>
+<h2 id="content">כתיבת תוכן</h2>
+<details class="skill">
+<summary><code class="ltr">linkedin-post-writer</code><span class="skill-desc">פוסט ללינקדאין בסגנון מותג הניתן להתאמה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: linkedin-post-writer
+description: Write a LinkedIn post in a configurable house style.
+---
+
+Use this skill when the user asks for a LinkedIn post.
+
+Inputs to collect (first time, then saved as style defaults): hook style, paragraph length, closing style, hashtag count, and punctuation rules. The defaults below are a starting point the user can change - they are choices, not laws.
+
+Process:
+1. Open with a hook or a contrast, one sentence.
+2. Short one-sentence paragraphs; no walls of text.
+3. Close with a question or a clear takeaway.
+4. Hashtags per the saved default (five is a common choice); no em dashes unless the user prefers them.
+
+Output: the post, plus one alternative hook so the user can choose.
+
+Boundaries: write only what the user gave or approved - never invent client names, numbers, or quotes. If the post promotes something, the claim must come from the user.
+
+Before presenting, check: the post reads well aloud in under 40 seconds, and every style default the user changed is applied.
+
+Example - a CEO launching a feature: hook "במשך שנתיים אמרנו ללקוחות שזה בלתי אפשרי. אתמול השקנו אותו.", three short paragraphs, closing question, five hashtags.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">blog-article</code><span class="skill-desc">מאמר עם מבנה ומקור לכל עובדה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: blog-article
+description: Write a structured blog article where every factual claim has a source.
+---
+
+Use this skill when the user asks for a blog article.
+
+Inputs to collect: the topic, the audience, the angle, and any sources the user already has.
+
+Process:
+1. Title that promises a concrete benefit, then a two-sentence summary.
+2. Subheadings that let a skimmer follow the argument.
+3. Every factual claim gets a source: a study, documentation, or data the user supplied. An example illustrates a claim - it never proves one. If a claim has no source, mark it [דרוש מקור] or cut it.
+4. Close with what the reader should do next.
+
+Output: the article with sources listed at the end.
+
+Boundaries: no recycled statistics without checking them; when the source is a company blog, say whose interest it serves.
+
+Before presenting, check: every number, date, and named study traces to a listed source.
+
+Example - an HR-tech blog post on hybrid work: each claim cites a study or the company's own survey, two claims marked [דרוש מקור] and flagged for the author.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">newsletter-writer</code><span class="skill-desc">ניוזלטר: נושא, פתיח, שלושה אייטמים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: newsletter-writer
+description: Write a newsletter issue: subject line, personal opening, three items, one CTA.
+---
+
+Use this skill when the user writes a newsletter.
+
+Inputs to collect: this issue's items (links, news, updates), the audience, and the one action the issue should drive.
+
+Process:
+1. Subject line: specific, under 50 characters, no clickbait. Offer two options.
+2. Opening: one personal sentence, then what this issue gives the reader.
+3. Three items max: each with a title, two sentences, and a link.
+4. One CTA at the end. Not three.
+
+Output: subject options, opening, items, CTA - ready to paste into the mailing tool.
+
+Boundaries: do not oversell a linked item beyond what it contains; the reader's trust is the asset. If an item has no link, say where it leads instead.
+
+Before presenting, check: one CTA only, and the subject line matches the strongest item inside.
+
+Example - a real-estate agency's monthly: subject "3 דירות חדשות + מחירי השכרה באוקטובר", items: two listings and a market-numbers summary, CTA לשיחת ייעוץ.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">landing-copy</code><span class="skill-desc">מלל לעמוד נחיתה עם טיפול בהתנגדות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: landing-copy
+description: Write landing page copy: outcome headline, benefits with proof, repeated CTA, objection handling.
+---
+
+Use this skill when the user asks for landing page copy.
+
+Inputs to collect: the offer, the audience, the top objection people raise, and any proof (numbers, testimonials, logos).
+
+Process:
+1. Headline: the outcome the visitor wants, in their words - not the product name.
+2. Three benefits (not features), each with a proof point from the supplied material.
+3. One primary CTA, repeated after each section with the same wording.
+4. Handle the top objection explicitly before the final CTA.
+
+Output: the full page copy in section order.
+
+Boundaries: proof must be real - no invented testimonials or rounded-up numbers. If proof is missing, mark [נדרש ראיה] and suggest what to collect.
+
+Before presenting, check: a first-time visitor understands within five seconds what is offered and for whom.
+
+Example - a Pilates studio: headline "חוזרים לזוז בלי כאב גב - שיעור ניסיון חינם", benefits with member counts and a review quote, objection "אין לי נסיון" answered before the final signup button.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">case-study</code><span class="skill-desc">כתיבת Case Study עם מספרים וציטוטים אמיתיים בלבד</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: case-study
+description: Write a customer case study using only real numbers and quotes.
+---
+
+Use this skill when the user asks for a customer case study.
+
+Inputs to collect: the customer's name (or permission status), their world before, the pain, what changed, the measurable result, and any quotes from the customer.
+
+Process:
+1. Structure: the customer's world before, the specific pain, what changed, the measurable result.
+2. Use only the customer's real numbers and their own quotes. If either is missing, insert a clear placeholder ([מספר מהלקוח], [ציטוט מהלקוח]) and list what to collect - never fill from imagination.
+3. One concrete detail beats three adjectives: name the feature used and how.
+4. Close with who else this fits, not a generic CTA.
+
+Output: the case study draft with placeholders for anything not yet supplied.
+
+Boundaries: if the customer has not approved being named, write it with a placeholder name and flag the approval step before publishing.
+
+Before presenting, check: every number and quote traces to material the user provided.
+
+Example - a SaaS churn story: "קירורית הובלות" (placeholder pending approval), churn down from 11% to 6% in one quarter, quote from the ops manager, closing fit-line for logistics companies.
+</code></pre>
+</details>
+<div class="cta">
+<h3>בינה מלאכותית, בשפה אנושית.</h3>
+<p>הרצאות, סדנאות והטמעת AI בארגונים ומכללות.</p>
+<a class="btn" href="https://frostig.co.il">frostig.co.il</a>
+</div>
+<script>
+document.querySelectorAll('.skill').forEach(function(d){
+  var btn=d.querySelector('.copybtn'), ok=d.querySelector('.copied'), pre=d.querySelector('pre');
+  btn.addEventListener('click',function(){
+    var t=pre.innerText;
+    function done(){ok.classList.add('show');setTimeout(function(){ok.classList.remove('show')},1800);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+    else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+  });
+});
+</script>
+</div>
+</body>
+</html>
