@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ספריית סקילים: 25 דוגמאות מוכנות להעתקה | נעם פרוסטיג</title>
+<title>ספריית סקילים: 50 דוגמאות מוכנות להעתקה | נעם פרוסטיג</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -57,11 +57,11 @@ details.skill pre{margin:0 22px 18px}
 <div class="wrap">
 <a class="back" href="index.html">&#8594; חזרה לאתר</a>
 <div class="kicker">ספריית ידע &bull; סקילים</div>
-<h1>ספריית סקילים: 25 דוגמאות מוכנות להעתקה</h1>
-<div class="sub">חמש קטגוריות, חמש דוגמאות בכל אחת, מעולמות שונים - בפורמט SKILL.md הסטנדרטי</div>
-<div class="byline">מאת: נעם פרוסטיג  |  25 באוקטובר 2026</div>
+<h1>ספריית סקילים: 50 דוגמאות מוכנות להעתקה</h1>
+<div class="sub">עשר קטגוריות, חמש דוגמאות בכל אחת, מעולמות שונים - בפורמט SKILL.md הסטנדרטי</div>
+<div class="byline">מאת: נעם פרוסטיג  |  25 באוקטובר 2026 (עודכן ב-3 בנובמבר 2026)</div>
 <div class="box"><strong>איך משתמשים?</strong> לוחצים על סקיל כדי לפתוח אותו ומעתיקים את התוכן לקובץ <code>SKILL.md</code> בתיקייה על שם הסקיל. ההתקנה תלוית כלי: ב-claude.ai מעלים את התיקייה כקובץ ZIP (התיקייה עצמה ברמה העליונה של ה-ZIP); ב-Claude Code מעתיקים אותה ל-<code>~/.claude/skills</code> או ל-<code>.claude/skills</code> של הפרויקט, ואפשר להפעיל ידנית עם <code>/</code> ושם הסקיל. ב-Codex שומרים ב-<code>~/.codex/skills</code> לשימוש מכל ריפו או בתוך הריפו לשיתוף הצוות, ומפעילים עם <code>$</code> ושם הסקיל. ב-Gemini יוצרים סקיל חדש בתוך האפליקציה ומדביקים את ההוראות. מומלץ לעבור על ההוראות ולהתאים אותן לעולם שלכם לפני השימוש הראשון. למדריך המלא: <a href="article-skills.html">מהם Skills ואיך עובדים איתם</a>.</div>
-<nav class="libnav"><a href="#tasks">ניהול משימות</a><a href="#images">עיצוב תמונות</a><a href="#video">עיצוב סרטונים</a><a href="#data">ניתוח נתונים</a><a href="#content">כתיבת תוכן</a></nav>
+<nav class="libnav"><a href="#tasks">ניהול משימות</a><a href="#images">עיצוב תמונות</a><a href="#video">עיצוב סרטונים</a><a href="#data">ניתוח נתונים</a><a href="#content">כתיבת תוכן</a><a href="#news">news</a><a href="#guides">guides</a><a href="#videoedit">videoedit</a><a href="#accounting">accounting</a><a href="#mail">mail</a></nav>
 <h2 id="tasks">ניהול משימות</h2>
 <details class="skill">
 <summary><code class="ltr">weekly-report</code><span class="skill-desc">דוח שבועי אחיד למנהל או ללקוח</span><span class="chev">&#9662;</span></summary>
@@ -736,6 +736,687 @@ Boundaries: if the customer has not approved being named, write it with a placeh
 Before presenting, check: every number and quote traces to material the user provided.
 
 Example - a SaaS churn story: "קירורית הובלות" (placeholder pending approval), churn down from 11% to 6% in one quarter, quote from the ops manager, closing fit-line for logistics companies.
+</code></pre>
+</details>
+<h2 id="news">news</h2>
+<details class="skill">
+<summary><code class="ltr">daily-news-brief</code><span class="skill-desc">תדריך חדשות יומי קצר לפי תחומי העניין שלך</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: daily-news-brief
+description: Build a short daily news brief from sources the user provides.
+---
+
+Use this skill when the user asks for a daily news brief or a morning update on current events.
+
+Inputs to collect: the topics and regions the user follows, the time window (default: last 24 hours), the sources or links to use, and the preferred length.
+
+Process:
+1. Use only the sources provided or retrieved in this session. Note each item's source and publication time.
+2. Group items by topic. Per item: one sentence on what happened, one sentence on why it matters to this reader.
+3. Rank by relevance to the stated topics, not by how loud the headline is.
+4. End with one line: what is still developing and worth rechecking tonight.
+
+Output: a brief of 5-8 items, each with a source name and time, plus the developing-stories line.
+
+Boundaries: no facts from memory about today's events. If no source covers a topic, write "אין כיסוי מהמקורות שסופקו". Mark unconfirmed reports as unconfirmed.
+
+Before presenting, check: every item has a source and a time, and no item mixes fact with opinion.
+
+Example - a startup founder at 07:30: 6 items across fintech, regulation and Israeli tech funding, each with source and time, and a note that a Knesset committee vote is expected at 14:00.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">source-cross-check</code><span class="skill-desc">בדיקת דיווח מול כמה מקורות לפני שמסתמכים עליו</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: source-cross-check
+description: Check a news claim against several independent sources.
+---
+
+Use this skill when the user shares a news claim, headline or forwarded message and asks whether it is true.
+
+Inputs to collect: the exact claim, where it came from, and the date it was seen.
+
+Process:
+1. Split the claim into separate checkable statements.
+2. Find at least two independent sources per statement, preferring the original source (official statement, document, primary data) over reports that quote each other.
+3. Label each statement: confirmed, partly confirmed, unconfirmed, contradicted.
+4. Note when several outlets trace back to a single original report - that counts as one source.
+
+Output: a table: statement / status / sources with dates, then a two-line bottom line.
+
+Boundaries: say "לא ניתן לאמת" when sources are missing rather than leaning toward the likelier answer. Do not judge motives.
+
+Before presenting, check: each status is backed by a named source, and the bottom line does not go beyond the table.
+
+Example - a forwarded message claiming a new fuel tax from next month: the ministry announcement exists but the amount in the message does not appear in it, so statement 1 confirmed, statement 2 contradicted.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">headline-rewrite</code><span class="skill-desc">ניסוח כותרות מדויקות שלא מנפחות את הידיעה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: headline-rewrite
+description: Rewrite headlines to be accurate and not inflated.
+---
+
+Use this skill when the user wants headlines for a news item, an update or a post, or wants to tone down a clickbait headline.
+
+Inputs to collect: the facts of the item, the audience, the channel, and the maximum length.
+
+Process:
+1. List the three hard facts: who, what, number or date.
+2. Write 5 options: neutral, number-led, question-free, quote-led and a short push-notification version.
+3. Remove words the facts do not support ("דרמטי", "מטלטל", "חסר תקדים") unless a source says it.
+4. Pick one and say why in one line.
+
+Output: five headlines with character counts, and the recommended one.
+
+Boundaries: a headline must never claim more than the body supports. If the item is a claim by one side, the headline says whose claim.
+
+Before presenting, check: every number and name in the headline appears in the facts provided.
+
+Example - a city council vote: "המועצה אישרה תוספת של 40 מיטות במרכז הרפואי" instead of "מהפכה בבריאות העיר".
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">event-timeline</code><span class="skill-desc">ציר זמן של אירוע מתפתח, עם סימון מה מאומת</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: event-timeline
+description: Build a dated timeline of a developing story.
+---
+
+Use this skill when the user wants a timeline or a recap of an ongoing event, such as a legal case, an outage or a policy process.
+
+Inputs to collect: the topic, the start date, and the sources to use.
+
+Process:
+1. Collect dated events from the sources, oldest first.
+2. Per entry: date and time, what happened, source.
+3. Mark each entry as confirmed, reported or disputed.
+4. Add a closing block: what is known, what is not known, next expected date if one is officially announced.
+
+Output: a timeline table plus the known / unknown block.
+
+Boundaries: do not fill gaps in the sequence by inference. If two sources disagree on a date, show both.
+
+Before presenting, check: the order is chronological and every entry has a source.
+
+Example - a payment-provider outage: 09:12 first user reports (reported), 09:40 company status page confirms (confirmed), 11:05 restored (confirmed), cause not published (unknown).
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">weekly-news-digest</code><span class="skill-desc">סיכום שבועי של חדשות לנושא מקצועי</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: weekly-news-digest
+description: Write a weekly news digest for a professional topic.
+---
+
+Use this skill when the user wants a weekly digest on a professional field for colleagues, clients or a newsletter.
+
+Inputs to collect: the field, the audience, the week's dates, and the sources or links.
+
+Process:
+1. Pick the 5 items that change a decision for this audience; drop the rest.
+2. Per item: what happened (two lines), what to do about it (one line), the source link.
+3. Open with a two-line summary of the week's main direction.
+4. Close with one dated item to watch next week.
+
+Output: a digest of up to one page in a fixed structure: summary, 5 items, watch-next line.
+
+Boundaries: no recycled items from earlier weeks without saying so. Label commentary as commentary.
+
+Before presenting, check: each item has a link and an action line, and every date falls inside the stated week.
+
+Example - an insurance-agents digest: a new regulator circular, a claims-system change at a large insurer, and a deadline on 15.11 to watch.
+</code></pre>
+</details>
+<h2 id="guides">guides</h2>
+<details class="skill">
+<summary><code class="ltr">guide-outline</code><span class="skill-desc">שלד למדריך מקצועי לפי הקורא והמשימה שלו</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: guide-outline
+description: Plan the outline of a professional how-to guide.
+---
+
+Use this skill when the user wants to write a professional guide, manual or tutorial and has a topic but no structure yet.
+
+Inputs to collect: the topic, the reader's role and prior knowledge, the task the reader needs to complete, and the planned length.
+
+Process:
+1. State the reader's task in one sentence: "אחרי המדריך הקורא יוכל ל...".
+2. List prerequisites and what is out of scope.
+3. Break the task into 5-9 ordered steps; each step gets a working title with a verb.
+4. Mark where a screenshot, example or warning is needed.
+5. Add the final section: how the reader checks that it worked.
+
+Output: an outline with step titles, a one-line content note per step, and the list of visuals needed.
+
+Boundaries: do not add steps you have not been given material for; mark them "נדרש מידע".
+
+Before presenting, check: the steps are in the order a person would actually do them, and the opening promise matches the last section.
+
+Example - a guide for bookkeepers on connecting a bank feed: prerequisites, 7 steps, a reconciliation check at the end.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">step-by-step-howto</code><span class="skill-desc">כתיבת הוראות צעד-אחר-צעד שאפשר לבצע בלי לנחש</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: step-by-step-howto
+description: Write clear step-by-step instructions.
+---
+
+Use this skill when the user needs numbered instructions for a procedure, a tool or a workflow.
+
+Inputs to collect: the procedure notes or recording, the tool and version, the reader's level, and known pitfalls.
+
+Process:
+1. One action per step, starting with a verb. Name the exact button, menu or field as it appears on screen.
+2. After each step that changes something, say what the reader should see.
+3. Put warnings before the step they apply to, not after.
+4. Add a "אם זה לא עובד" box with the 3 most likely failures and their fixes.
+
+Output: numbered steps with expected results, warnings and the troubleshooting box.
+
+Boundaries: do not describe screens you have not seen in the material. If the tool version is unknown, say which version the text assumes.
+
+Before presenting, check: a new person could follow every step without asking a question, and no step has two actions.
+
+Example - setting a monthly export in an accounting tool: "לחצו על דוחות &gt; ייצוא. אמור להופיע חלון עם בחירת טווח תאריכים."
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">concept-explainer</code><span class="skill-desc">הסבר מושג מקצועי מורכב בשפה פשוטה, בלי לאבד דיוק</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: concept-explainer
+description: Explain a complex professional concept simply.
+---
+
+Use this skill when the user wants an accessible explanation of a technical or professional concept for non-experts.
+
+Inputs to collect: the concept, the reader and their field, and the one decision the reader needs it for.
+
+Process:
+1. Open with a one-sentence definition with no jargon.
+2. Give one analogy from the reader's own world and say where it stops being accurate.
+3. Show one concrete example with real numbers.
+4. List the 2 most common misunderstandings and correct them.
+
+Output: an explanation of 250-400 words with definition, analogy, example and misunderstandings.
+
+Boundaries: an analogy never replaces the definition. If the concept has disputed definitions, say so.
+
+Before presenting, check: the example is consistent with the definition, and the limits of the analogy are stated.
+
+Example - explaining MCP to a business manager: definition, an analogy to a universal power adapter and where it breaks, an example with a calendar and email tool.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">checklist-template</code><span class="skill-desc">הפיכת מדריך לצ'קליסט או תבנית שמשתמשים בה בפועל</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: checklist-template
+description: Turn a guide into a checklist or template.
+---
+
+Use this skill when the user has a guide or procedure and wants a checklist, form or reusable template from it.
+
+Inputs to collect: the source guide, who fills the checklist, and when (before, during or after the work).
+
+Process:
+1. Extract only the actions and decision points; drop explanations.
+2. Order by the time the person does them and group into 3-5 phases.
+3. Each line is a checkable action with an owner and a done-condition.
+4. Mark the items that must never be skipped.
+
+Output: a checklist by phase with owner and done-condition per line.
+
+Boundaries: do not add controls that are not in the source. Flag a missing step as a question instead of inventing it.
+
+Before presenting, check: every checkbox is an action, and critical items are marked.
+
+Example - a pre-publication checklist for an article: sources verified, numbers re-added, names spelled, links opened, legal line approved.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">guide-review</code><span class="skill-desc">בדיקת מדריך קיים: בהירות, שלמות ועדכניות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: guide-review
+description: Review an existing guide for clarity, completeness and freshness.
+---
+
+Use this skill when the user asks to review, edit or update a professional guide before publishing.
+
+Inputs to collect: the guide text, its target reader, and the date it was last verified.
+
+Process:
+1. Read as the target reader and mark every place you would stop and ask a question.
+2. Check that each step can be followed in order and that nothing is used before it is explained.
+3. List claims that depend on a version, price, law or date and mark them "לאימות".
+4. Rate: ready / needs edits / needs rewrite, with the three most important fixes.
+
+Output: a review with the rating, the numbered issues with locations, and the list of claims to verify.
+
+Boundaries: do not rewrite the guide unless asked. Do not confirm outdated claims from memory; say which source should be checked.
+
+Before presenting, check: each issue points to a place in the text and each fix is something the author can do.
+
+Example - a security guide from last year: the rating is "needs edits", with 4 version-dependent claims marked for verification.
+</code></pre>
+</details>
+<h2 id="videoedit">videoedit</h2>
+<details class="skill">
+<summary><code class="ltr">rough-cut-plan</code><span class="skill-desc">תוכנית חיתוך ראשוני מתוך חומר גלם או תמלול</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: rough-cut-plan
+description: Plan a rough cut from raw footage or a transcript.
+---
+
+Use this skill when the user has raw footage, a recording or a transcript and wants a first-cut edit plan.
+
+Inputs to collect: the transcript or shot list with timecodes, the goal and audience of the video, and the target length.
+
+Process:
+1. Mark the strongest 3-5 moments by timecode and why.
+2. Build the order: hook (first 5-10 seconds), main points, close. Keep each segment as a start-end timecode pair.
+3. List what to cut: repetitions, long pauses, off-topic stretches, with timecodes.
+4. Estimate the resulting length and compare to the target.
+
+Output: an ordered edit decision list: segment / in / out / note, plus the cut list and the estimated length.
+
+Boundaries: use only timecodes that exist in the material. If timecodes are missing, ask for them instead of estimating.
+
+Before presenting, check: the segments do not overlap and the total adds up to the stated length.
+
+Example - a 40-minute lecture recording to a 6-minute clip: hook at 12:41-12:58, three points of about 90 seconds each, a close from the last minute.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">pacing-and-hook-review</code><span class="skill-desc">בדיקת קצב ופתיח בסרטון, עם תיקונים מדידים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: pacing-and-hook-review
+description: Review a video's pacing and opening.
+---
+
+Use this skill when the user shares a draft or script and asks why viewers may drop off or how to tighten it.
+
+Inputs to collect: the draft timeline or script, the platform (LinkedIn, Reels, YouTube), the length, and any retention data.
+
+Process:
+1. Check the first 3 seconds: does the viewer know what they get and why now?
+2. Find any stretch longer than 8 seconds with no visual or audio change and list it by timecode.
+3. Compare the pace to the platform: short vertical needs a cut or visual change every 2-4 seconds, a lecture can breathe more.
+4. Propose a tighter version of the first 10 seconds.
+
+Output: a list of problems with timecodes, a proposed opening, and 3 measurable fixes.
+
+Boundaries: do not assume why viewers left. If retention data exists, base the review on it; if not, label advice as a hypothesis.
+
+Before presenting, check: every problem has a timecode and a concrete fix, and the proposed opening keeps the original meaning.
+
+Example - a 45-second portrait video: dead air at 0:00-0:04, a title card for 6 seconds at 0:20, proposed opening starts on the result.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">subtitle-timing-pass</code><span class="skill-desc">בדיקת כתוביות בעברית: זמנים, שבירת שורות ופיסוק</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: subtitle-timing-pass
+description: Check Hebrew subtitles for timing, line breaks and punctuation.
+---
+
+Use this skill when the user has a subtitle file or text and wants it checked or prepared for publishing.
+
+Inputs to collect: the SRT or text with timecodes, the platform, and the style rules if any.
+
+Process:
+1. Check reading speed: flag lines above about 17 characters per second.
+2. Keep up to two lines of up to about 42 characters. Break at phrase boundaries, not between a preposition and its noun.
+3. Check each cue appears at least 1 second and no more than 7 seconds, with no overlap.
+4. Fix punctuation and mixed Hebrew-English direction problems; list every change.
+
+Output: the corrected subtitles plus a change log with cue numbers.
+
+Boundaries: do not change the meaning or the wording of what was said. Flag unclear audio as "לשמוע שוב" instead of guessing.
+
+Before presenting, check: no cue overlaps another, and the change log covers every edit.
+
+Example - an SRT with 3 cues over 20 characters per second, 2 line breaks after the word "של", and one cue lasting 9 seconds.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">audio-cleanup-checklist</code><span class="skill-desc">צ'קליסט ניקוי סאונד ודיבור לפני ייצוא</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: audio-cleanup-checklist
+description: Audio cleanup checklist before export.
+---
+
+Use this skill when the user is finishing a video with spoken audio and wants a sound check before export.
+
+Inputs to collect: the editing software, the delivery platform, and the problems they hear.
+
+Process:
+1. Check dialogue level: speech around -16 LUFS for online video, and peaks below -1 dB.
+2. Listen for noise, hum, echo and clicks; note the timecode and the fix for each.
+3. Set music under speech at least 15 dB lower, and add a quick fade at cuts.
+4. Listen to the final on phone speakers and on headphones.
+
+Output: a checklist with measured values filled in and the list of open audio problems.
+
+Boundaries: give targets as common practice and say to follow the platform's own spec when it states one. Do not claim a measurement you have not been given.
+
+Before presenting, check: each problem has a timecode and each target has a measured value or "לא נמדד".
+
+Example - a conference talk recording: -21 LUFS speech (raise by 5), air-conditioner hum at 08:10-09:30, music too loud in the intro.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">export-delivery-spec</code><span class="skill-desc">מפרט ייצוא ומסירה לפי פלטפורמה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: export-delivery-spec
+description: Export and delivery spec per platform.
+---
+
+Use this skill when the user needs export settings or a delivery package for a finished video.
+
+Inputs to collect: the platforms (LinkedIn, Facebook, Instagram, YouTube, client delivery), the source resolution and frame rate, and the file size limits.
+
+Process:
+1. Per platform: aspect ratio, resolution, frame rate, codec and maximum duration and size. State the date these specs were checked and the official page they came from.
+2. Keep the project's frame rate; do not convert unless the platform requires it.
+3. List the files to deliver: master, per-platform versions, subtitles file, thumbnail.
+4. Add a file naming rule: project_platform_version_date.
+
+Output: a spec table per platform, the delivery file list and the naming rule.
+
+Boundaries: platform limits change. Never state them from memory as current - verify on the platform's official help page and cite it, or mark "לאימות".
+
+Before presenting, check: every limit has a source and a check date, and the file list covers every platform asked for.
+
+Example - one 16:9 master and one 9:16 version for two platforms, with an SRT file and a JPG thumbnail, named brand_linkedin_v2_2026-11-03.
+</code></pre>
+</details>
+<h2 id="accounting">accounting</h2>
+<details class="skill">
+<summary><code class="ltr">expense-categorizer</code><span class="skill-desc">מיון הוצאות לקטגוריות לפי כללים שהגדרת</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: expense-categorizer
+description: Categorize expenses by rules the user defines.
+---
+
+Use this skill when the user shares a list of expenses or a bank export and wants it categorized.
+
+Inputs to collect: the transactions (date, vendor, amount, currency), the category list the accountant uses, and any vendor-to-category rules.
+
+Process:
+1. Apply the user's rules first. Then categorize the rest by vendor name and description.
+2. Give every line a category and a confidence: sure / likely / unclear.
+3. Collect all "unclear" lines in a separate list with the question to ask.
+4. Show totals per category and check that the grand total equals the source total.
+
+Output: the categorized table, the unclear list with questions, and the totals check.
+
+Boundaries: do not decide tax treatment (recognized or not, VAT deductible or not). Mark those questions for the accountant.
+
+Before presenting, check: the grand total matches the source and no line is missing a category.
+
+Example - a freelancer's October card statement: 41 lines, 33 sure, 5 likely, 3 unclear (a transfer with no description, a foreign charge, a round cash withdrawal).
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">invoice-data-check</code><span class="skill-desc">בדיקת חשבונית לפני רישום: פרטים, סכומים ומע"מ</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: invoice-data-check
+description: Check an invoice before recording it.
+---
+
+Use this skill when the user shares an invoice, a receipt or an email printout and wants it checked before it goes to the books.
+
+Inputs to collect: the document, the expected vendor and amount if known, and the accounting period.
+
+Process:
+1. Extract: vendor name and ID, document number, date, description, amount before VAT, VAT, total, currency.
+2. Check arithmetic: net plus VAT equals total, and the VAT rate fits the document.
+3. Check that the document type is what it claims (tax invoice, receipt, payment confirmation, statement) and say if it is not an official tax document.
+4. Check the date is in the period and the number was not already recorded.
+
+Output: an extracted-fields table, a pass/fail line per check, and the list of missing items to request from the vendor.
+
+Boundaries: an email printout or a payment confirmation is not the same as an official tax invoice. Say so. Do not fix numbers - report the difference.
+
+Before presenting, check: each extracted field comes from the document, and each fail has a clear next step.
+
+Example - a hosting invoice where net plus VAT differs from the total by 0.01, and a second document that is only a "payment received" email.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">bank-reconciliation</code><span class="skill-desc">התאמת בנק: מה תואם, מה חסר, מה כפול</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: bank-reconciliation
+description: Reconcile a bank statement against the books.
+---
+
+Use this skill when the user wants to match a bank statement against recorded transactions for a period.
+
+Inputs to collect: the bank export and the books export for the same period, with dates, amounts and descriptions.
+
+Process:
+1. Match by amount and a date window of 3 days, then by description. Mark each match one-to-one.
+2. List: in the bank only, in the books only, and suspected duplicates.
+3. For each unmatched line suggest the likely cause (timing, fee, split payment, missing record) as a hypothesis.
+4. Compute the difference between the two closing balances and show that the unmatched items explain it, or by how much they do not.
+
+Output: three lists of unmatched lines and a closing-balance bridge.
+
+Boundaries: do not create or delete entries. Suggestions are for the bookkeeper to approve.
+
+Before presenting, check: the bridge arithmetic is shown and every unmatched line appears exactly once.
+
+Example - a month with 112 bank lines: 104 matched, 5 in bank only (fees, a payment not yet recorded), 2 in books only, 1 duplicate; bridge leaves 0.00 unexplained.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">monthly-close-checklist</code><span class="skill-desc">צ'קליסט סגירת חודש עם אחראי ותאריך לכל סעיף</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: monthly-close-checklist
+description: Monthly close checklist with an owner and date per item.
+---
+
+Use this skill when the user wants to run or prepare a monthly close for a small business.
+
+Inputs to collect: the month, the systems used, who does what, and the dates the accountant needs material by.
+
+Process:
+1. List the standard steps: all income documents issued, all expense documents collected, bank and card reconciled, open invoices reviewed, payroll or contractor payments recorded, reports sent to the accountant.
+2. Per step: owner, due date and status.
+3. Highlight missing documents by vendor and amount.
+4. Close with the list of items sent to the accountant and the date.
+
+Output: a checklist table with owner, due and status, plus a missing-documents list.
+
+Boundaries: reporting dates and filing duties depend on the business type and the accountant's instructions - use the dates the user provides and mark others "לאימות מול רואה החשבון".
+
+Before presenting, check: every step has an owner and a date, and the missing-documents list ties to specific lines.
+
+Example - a closing for October: 3 missing invoices (two vendors, one card charge), bank reconciled, package for the accountant due 8.11.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">accountant-handoff-pack</code><span class="skill-desc">חבילת מסירה לרואה החשבון: מסודרת ובלי שאלות חוזרות</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: accountant-handoff-pack
+description: Prepare a handoff package for the accountant.
+---
+
+Use this skill when the user wants to send documents and a summary to the accountant for a period.
+
+Inputs to collect: the period, the document folders, the categorized expense list, and open questions.
+
+Process:
+1. Write a cover note: period, what is included, what is missing, and the open questions numbered.
+2. Build an index of files: name, date, vendor, amount, type of document.
+3. Mark which documents are official tax documents and which are only confirmations or printouts.
+4. List the questions where the user needs the accountant's decision.
+
+Output: a cover note, a file index table and a numbered question list.
+
+Boundaries: do not send anything. Produce the package for the user's review. Do not include documents outside the stated period or other people's data.
+
+Before presenting, check: the index matches the files one-to-one and each question stands on its own.
+
+Example - a Sep-Oct package: 31 documents, 2 are email printouts rather than official PDFs, and 3 questions about a foreign service charge and a shared expense.
+</code></pre>
+</details>
+<h2 id="mail">mail</h2>
+<details class="skill">
+<summary><code class="ltr">mail-filter-rules</code><span class="skill-desc">כללי סינון לתיבת דואר: מי נכנס, מי מתויג ומי מדלג</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: mail-filter-rules
+description: Design mailbox filter rules.
+---
+
+Use this skill when the user wants rules to sort incoming mail into folders or labels and cut noise.
+
+Inputs to collect: a sample of recent senders and subjects, the folders or labels in use, the people and topics that are always important, and the mail system.
+
+Process:
+1. Group the sample by sender type: people, services, receipts and invoices, newsletters, alerts, unknown.
+2. Propose rules as: condition (sender, domain, subject word) / action (label, skip inbox, mark read, star) / reason.
+3. Protect important senders: a rule that hides mail must never apply to the always-important list.
+4. List the rules that carry risk (a missed invoice, a security alert) and recommend a weekly check of the skipped mail.
+
+Output: a rule table in priority order, the protected list and the risk note.
+
+Boundaries: do not create or enable rules in the account. Suggest only. Never auto-delete; archive or label instead.
+
+Before presenting, check: no rule overlaps another without a stated priority, and security alerts and invoices are not hidden.
+
+Example - a consultant's inbox: newsletters labeled and skipped, invoices labeled "הנהלת חשבונות" and kept in the inbox, security alerts starred.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">suspicious-mail-check</code><span class="skill-desc">בדיקת מייל חשוד לפני שלוחצים: מי שלח, לאן הקישור ומה מבקשים</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: suspicious-mail-check
+description: Check a suspicious email before acting on it.
+---
+
+Use this skill when the user received a message that asks for a login, payment, document or urgent action and is unsure if it is real.
+
+Inputs to collect: the full sender address, the visible link text and the real destination, the headers if available, and what the message asks for.
+
+Process:
+1. Compare the sender address and the domain to the real company's domain, and look for look-alike domains.
+2. Check where each link really goes, not what the text says. Do not open it.
+3. Check what the message asks: credentials, payment, a code, an attachment, a change of bank details. Any of these needs verification through a separate known channel.
+4. Give a verdict: likely legitimate / suspicious / likely fraud, and the safe next step.
+
+Output: a short findings list, the verdict, and the safe next step (for example: go to the site directly, or call the known number).
+
+Boundaries: never advise clicking a link, opening an unknown attachment or sending a code. A sender display name is not proof of identity. If evidence is missing say "לא ניתן לקבוע".
+
+Before presenting, check: the verdict follows from the findings and the safe step does not involve the message's own links.
+
+Example - an email "your account will be closed" from a look-alike domain, with a button pointing to a different domain: verdict likely fraud; open the service directly.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">mail-reply-draft</code><span class="skill-desc">טיוטת תשובה למייל בטון שלך, לבדיקה לפני שליחה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: mail-reply-draft
+description: Draft a reply for the user to review.
+---
+
+Use this skill when the user asks for help answering an email or thread.
+
+Inputs to collect: the full thread, what the user wants to say or decide, the relationship to the sender, and 1-2 earlier emails of the user for tone.
+
+Process:
+1. Answer every question asked in the incoming email, in the order it was asked.
+2. Match the user's tone and length from the samples.
+3. State clearly any commitment, date or number in the reply and mark the ones the user did not supply as [להשלים].
+4. Offer one short alternative version if the relationship is sensitive.
+
+Output: one draft with subject line, plus the list of items marked [להשלים].
+
+Boundaries: never send. A draft is for the user to read and approve. Do not invent availability, prices or promises.
+
+Before presenting, check: each question in the incoming mail is answered and each commitment was approved by the user.
+
+Example - a client asks for a quote date: the draft answers with the date the user gave, and marks the price as [להשלים].
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">mail-followup-tracker</code><span class="skill-desc">מעקב אחרי מיילים שמחכים לתשובה או לטיפול</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: mail-followup-tracker
+description: Track emails waiting for a reply or action.
+---
+
+Use this skill when the user wants to know which threads are waiting on someone and what to follow up.
+
+Inputs to collect: the list of sent threads or the mailbox export with dates, and the user's rule for how long to wait.
+
+Process:
+1. Find threads where the user asked something and got no reply, and threads where someone asked the user.
+2. Per thread: who, what was asked, date of the last message, days waiting.
+3. Sort by days waiting and importance, and propose one next action per thread: nudge, call, close or drop.
+4. Draft a one-line nudge for each "nudge" item.
+
+Output: a tracker table with the proposed action and short nudge drafts.
+
+Boundaries: base waiting time on message dates, not on guesses. Do not send nudges. Do not contact people marked as sensitive without asking.
+
+Before presenting, check: every row has a last-message date and one clear action.
+
+Example - 9 open threads: 4 waiting on vendors for more than 5 days, 2 waiting on the user, 3 can be closed.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">mail-weekly-cleanup</code><span class="skill-desc">ניקוי שבועי של תיבת הדואר: ארכיון, תיוג ומה דורש החלטה</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: mail-weekly-cleanup
+description: Weekly mailbox cleanup plan.
+---
+
+Use this skill when the user wants a short weekly routine to bring the inbox back under control.
+
+Inputs to collect: the inbox count, the oldest unread date, the labels in use, and the user's weekly time budget.
+
+Process:
+1. Sweep in this order: security and billing alerts, people waiting on the user, tasks hidden in threads, then everything else.
+2. Per item choose one: act now (under 2 minutes), schedule with a date, delegate, archive.
+3. Unsubscribe suggestions: list newsletters not opened in 60 days. Do not unsubscribe automatically.
+4. Finish with the count before and after and the oldest item left.
+
+Output: a sweep log with the decision per item and the unsubscribe suggestions.
+
+Boundaries: do not delete or archive without the user's confirmation of the list. Nothing from a flagged important person is archived.
+
+Before presenting, check: the before and after counts add up and no billing or security item was skipped.
+
+Example - an inbox of 312 messages: 14 act-now, 9 scheduled, 6 delegated, 241 archived after approval, 42 newsletters suggested for unsubscribe.
 </code></pre>
 </details>
 <div class="cta">
