@@ -110,7 +110,7 @@ h1 .mark::before{content:"";position:absolute;inset:.06em -.04em .02em;backgroun
 .apps-head h2 span{color:var(--yellow)}
 .apps-head p{max-width:360px;color:var(--muted);font-size:16px;line-height:1.65;font-weight:300}
 .apps-grid{position:relative;z-index:2;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-.app{position:relative;background:linear-gradient(165deg,var(--navy-800),var(--navy-900));border:1px solid var(--line);
+.app{display:block;color:inherit;text-decoration:none;cursor:pointer;position:relative;background:linear-gradient(165deg,var(--navy-800),var(--navy-900));border:1px solid var(--line);
   border-radius:14px;padding:26px;transition:transform .22s, border-color .22s;overflow:hidden}
 .app:hover{transform:translateY(-6px);border-color:rgba(80,190,250,.5)}
 .app img.icon{width:64px;height:64px;object-fit:contain;border-radius:14px;margin-bottom:18px;background:rgba(245,248,252,.06);padding:6px}
@@ -489,52 +489,51 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
     <p>כל מוצר כאן נולד מתהליך אמיתי שהיה צריך פתרון — ועובד בפרודקשן אצל משתמשים אמיתיים.</p>
   </div>
   <div class="apps-grid reveal">
-    <div class="app big">
+    <a class="app big" href="https://keyswitch.app" target="_blank" rel="noopener" aria-label="פתחו את KeySwitch">
       <img class="icon" src="keyswitch.png" alt="KeySwitch">
       <div><h4>KeySwitch</h4><div class="en-d">Keyboard layout assistant</div><p>מערכת ההקלדה החכמה שמסדרת לכם את שפת המקלדת לפני ששלחתם. בחנות של מיקרוסופט.</p></div>
       <span class="go">פתחו ←</span>
-    </div>
-    <div class="app big">
+    </a>
+    <a class="app big" href="https://goodraise.org" target="_blank" rel="noopener" aria-label="פתחו את GoodRaise">
       <img class="icon" src="https://github.com/user-attachments/assets/f9830e4d-5be7-48b8-8d4a-e2bc66e3e9d6" alt="GoodRaise" style="background:#fff">
       <div><h4>GoodRaise</h4><div class="en-d">Fundraising for nonprofits</div><p>מערכת גיוס תרומות אינטליגנטית וגמישה, המותאמת אישית לכל קמפיין או ארגון</p></div>
       <span class="go">פתחו ←</span>
-    </div>
-    <div class="app small">
+    </a>
+    <a class="app small" href="https://aicritics.app" target="_blank" rel="noopener" aria-label="פתחו את AICritics">
       <img class="icon" src="aicritics.png" alt="AICritics">
       <h4>AICritics</h4><div class="en-d">AI workplan reviewer</div>
       <p>ביקורת AI על תוכניות עבודה לפני שמגישים אותן.</p>
       <span class="go">פתחו ←</span>
-    </div>
-    <div class="app small">
+    </a>
+    <a class="app small" href="https://squadrix.netlify.app" target="_blank" rel="noopener" aria-label="פתחו את SQUADRIX">
       <img class="icon" src="squadrix.png" alt="SQUADRIX">
       <h4>SQUADRIX</h4><div class="en-d">Football team operations</div>
       <p>ניהול מקצועי לקבוצות כדורגל, מהמגרש ועד ההנהלה.</p>
       <span class="go">פתחו ←</span>
-    </div>
-    <div class="app small">
+    </a>
+    <a class="app small" href="https://chatscope.netlify.app" target="_blank" rel="noopener" aria-label="פתחו את ChatScope">
       <img class="icon" src="chatscope.png" alt="ChatScope">
       <h4>ChatScope</h4><div class="en-d">WhatsApp analysis</div>
       <p>תובנות מתוך שיחות קבוצתיות — בלי לקרוא אלף הודעות.</p>
       <span class="go">פתחו ←</span>
-    </div>
+    </a>
     <div class="app small">
       <img class="icon" src="mindinbox.png" alt="MindInbox">
       <h4>MindInbox</h4><div class="en-d">AI Gmail organizer · בקרוב</div>
       <p>סדר בתיבת הדואר עם AI שמבין מה דחוף באמת.</p>
-      <span class="go">פתחו ←</span>
     </div>
-    <div class="app small">
+    <a class="app small" href="https://voluncore360.netlify.app" target="_blank" rel="noopener" aria-label="פתחו את VOLUNCORE360">
       <img class="icon" src="voluncore360.png" alt="VOLUNCORE360">
       <h4>VOLUNCORE360</h4><div class="en-d">Volunteer suite</div>
       <p>סוויטת ניהול מתנדבים לעמותות, עם מבט 360 על פעילות ומעורבות.</p>
       <span class="go">פתחו ←</span>
-    </div>
-    <div class="app small">
+    </a>
+    <a class="app small" href="https://riskscoretickets.netlify.app/" target="_blank" rel="noopener" aria-label="פתחו את RiskScore">
       <img class="icon" src="riskscore.png" alt="RiskScore">
       <h4>RiskScore</h4><div class="en-d">Ticket risk check</div>
       <p>בדיקת סיכון לכרטיסים לפני רכישה ביד שנייה.</p>
       <span class="go">פתחו ←</span>
-    </div>
+    </a>
   </div>
 </section>
 
