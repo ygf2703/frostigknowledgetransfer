@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ספריית סקילים: 60 דוגמאות מוכנות להעתקה | נעם פרוסטיג</title>
+<title>ספריית סקילים: 61 דוגמאות מוכנות להעתקה | נעם פרוסטיג</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -59,8 +59,8 @@ h2[id]{scroll-margin-top:130px}
 <div class="wrap">
 <a class="back" href="index.html">&#8594; חזרה לאתר</a>
 <div class="kicker">ספריית ידע &bull; סקילים</div>
-<h1>ספריית סקילים: 60 דוגמאות מוכנות להעתקה</h1>
-<div class="sub">אחת-עשרה קטגוריות, שישים דוגמאות מעולמות שונים - בפורמט SKILL.md הסטנדרטי</div>
+<h1>ספריית סקילים: 61 דוגמאות מוכנות להעתקה</h1>
+<div class="sub">אחת-עשרה קטגוריות, שישים ואחת דוגמאות מעולמות שונות - בפורמט SKILL.md הסטנדרטי</div>
 <div class="byline">מאת: נעם פרוסטיג  |  25 באוקטובר 2026 (עודכן ב-5 בנובמבר 2026)</div>
 <div class="box"><strong>איך משתמשים?</strong> לוחצים על סקיל כדי לפתוח אותו ומעתיקים את התוכן לקובץ <code>SKILL.md</code> בתיקייה על שם הסקיל. ההתקנה תלוית כלי: ב-claude.ai מעלים את התיקייה כקובץ ZIP (התיקייה עצמה ברמה העליונה של ה-ZIP); ב-Claude Code מעתיקים אותה ל-<code>~/.claude/skills</code> או ל-<code>.claude/skills</code> של הפרויקט, ואפשר להפעיל ידנית עם <code>/</code> ושם הסקיל. ב-Codex שומרים ב-<code>~/.codex/skills</code> לשימוש מכל ריפו או בתוך הריפו לשיתוף הצוות, ומפעילים עם <code>$</code> ושם הסקיל. ב-Gemini יוצרים סקיל חדש בתוך האפליקציה ומדביקים את ההוראות. מומלץ לעבור על ההוראות ולהתאים אותן לעולם שלכם לפני השימוש הראשון. למדריך המלא: <a href="article-skills.html">מהם Skills ואיך עובדים איתם</a>.</div>
 <nav class="libnav"><a href="#tasks">ניהול משימות</a><a href="#images">עיצוב תמונות</a><a href="#video">עיצוב סרטונים</a><a href="#data">ניתוח נתונים</a><a href="#content">כתיבת תוכן</a><a href="#news">חדשות ואקטואליה יומי</a><a href="#guides">כתיבת תוכן למדריכים מקצועיים</a><a href="#videoedit">עריכת וידאו מקצועית</a><a href="#accounting">הנהלת חשבונות</a><a href="#mail">דוור: סינון, בדיקה וטיפול בדואר</a><a href="#landing">עיצוב עמודי נחיתה</a></nav>
@@ -738,6 +738,39 @@ Boundaries: if the customer has not approved being named, write it with a placeh
 Before presenting, check: every number and quote traces to material the user provided.
 
 Example - a SaaS churn story: "קירורית הובלות" (placeholder pending approval), churn down from 11% to 6% in one quarter, quote from the ops manager, closing fit-line for logistics companies.
+</code></pre>
+</details>
+<details class="skill">
+<summary><code class="ltr">hebrew-language-editing</code><span class="skill-desc">עריכה לשונית, הגהה ופיסוק בעברית - בשמירה על קול הכותב</span><span class="chev">&#9662;</span></summary>
+<button class="copybtn" type="button">העתקת הסקיל</button><span class="copied">הועתק &#10003;</span>
+<pre class="ltr"><code>---
+name: hebrew-language-editing
+description: Edit, proofread and punctuate Hebrew text (עריכה לשונית, הגהה ופיסוק) while preserving the author's meaning and voice.
+---
+
+Use this skill when the user shares Hebrew text and asks for proofreading (הגהה), language editing (עריכה לשונית), punctuation, or a general language check.
+
+Inputs to collect (ask once, together, if missing): the text, where it will be published (post, article, email, academic work), and the depth: proofreading only (errors), or full editing (errors plus flow).
+
+Process:
+1. Work in three separate passes:
+   a. הגהה - spelling, typos, punctuation, final-letter forms (אותיות סופיות), geresh and gershayim in abbreviations.
+   b. עריכה לשונית - grammar, gender and number agreement (התאמה במין ובמספר), sentence structure, word choice.
+   c. Optional style suggestions - rhythm, concision, register. Keep this list clearly separate from corrections.
+2. Base rulings on the rules of the Academy of the Hebrew Language (hebrew-academy.org.il - כללי הפיסוק, adopted 1992, updated 2017). Where the Academy explicitly leaves room for the writer's judgment - comma placement in flexible cases, choosing between a dash, parentheses and a semicolon, the maqaf in word pairs - treat the author's choice as legitimate. Do not "correct" it; at most, note the alternative as an optional suggestion.
+3. Preserve the author's voice. Change the minimum needed to fix a real error. Never rewrite a correct sentence only because you would phrase it differently - that belongs, if anywhere, in the optional list.
+4. Deliberate deviations are not errors: dialogue, slang, a word repeated for effect. If a deviation looks intentional, keep it and note why.
+
+Output:
+1. The corrected text, clean, with no markings.
+2. A change log in two separate lists: תיקונים (real errors fixed, one-line reason each) and הצעות סגנון (optional - the author decides). Any fix you are not sure of goes to the suggestions list with a question - never silently change what you cannot justify.
+
+Boundaries: never change the meaning, the facts, or the level of formality. Do not flatten rich or elevated Hebrew into everyday language, and do not upgrade slang into formal register - the register is the author's. If a sentence is genuinely unclear, ask what was meant instead of guessing.
+
+Before presenting, check: every תיקון traces to a real rule or standard usage, not to personal taste; the corrected text still sounds like the author, not like you; gershayim sit before the final letter of an acronym and do not move in inflection (צה"ל, ח"כים); an abbreviated word takes a geresh, not a period (ס', מס' - not ס., מס.); and no comma, dash or colon was placed before an opening parenthesis.
+
+Example - a draft post: "אחרי חודשיים של עבודה מאומצת, אני שמח להציג את המוצר החדש שלנו. פיתחנו אותו במעבדה החדשה של החברה בתל־אביב יחד עם צוות מארה״ב, ועבדנו עליו בלי הפסקה. תודה לכל מי שלקחו חלק!"
+Correction: "שלקחו" to "שלקח" (singular after "מי"). Style suggestion: the comma after "עבודה מאומצת" is legitimate - the Academy allows judgment here - so it stays; the development sentence is long and could be split. Preserved: the maqaf in "תל־אביב" (optional but correct) and the gershayim in "ארה״ב".
 </code></pre>
 </details>
 <h2 id="news">חדשות ואקטואליה יומי</h2>
