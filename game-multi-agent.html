@@ -176,8 +176,9 @@ function $(id){return document.getElementById(id);}
 function showStage(name){
   var stages=document.querySelectorAll('.stage');
   for(var i=0;i<stages.length;i++)stages[i].classList.remove('active');
-  $('stage-'+name).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  var el=$('stage-'+name);
+  el.classList.add('active');
+  el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function formatTime(ms){
   var total=Math.max(1,Math.round(ms/1000));
@@ -362,4 +363,4 @@ $('btn-restart').onclick=restart;
 renderChain();renderParallel();renderReview();
 </script>
 </body>
-</html>
+  </html>
