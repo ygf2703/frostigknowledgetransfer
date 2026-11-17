@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
+<!-- v3 2026-11-17: selection state visible on touch; counters; no content/scoring changes -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -39,7 +40,7 @@ h2{font-family:'Karantina',cursive;font-size:clamp(38px,6vw,54px);color:#F5F8FC;
 .grid{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
 .card{position:relative;display:flex;flex-direction:column;gap:4px;min-height:64px;padding:14px 16px;text-align:start;border:1.5px solid #1B4173;border-radius:12px;background:#0B2242;font:inherit;cursor:pointer;transition:border-color .15s,background .15s;color:#F5F8FC}
-.card:not(:disabled):hover{border-color:#50BEFA}
+@media(hover:hover){.card:not(:disabled):not(.card-on):not(.card-done):hover{border-color:#50BEFA}}
 .card-name{font-weight:700;font-size:15px;color:#F5F8FC}
 .card-role{font-size:13px;color:#9DB2CF;line-height:1.4}
 .card-order{position:absolute;top:10px;inset-inline-end:12px;padding:2px 10px;border-radius:999px;background:#FFD400;color:#04101F;font-size:12px;font-weight:700}
@@ -47,11 +48,14 @@ h2{font-family:'Karantina',cursive;font-size:clamp(38px,6vw,54px);color:#F5F8FC;
 .card-wrong{border-color:#FF6B7A;animation:shake .4s}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(5px)}75%{transform:translateX(-5px)}}
 .card-on{border-color:#FFD400;background:#123058}
+.card-pick{position:absolute;top:10px;inset-inline-end:12px;width:24px;height:24px;border-radius:999px;background:#FFD400;color:#04101F;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;line-height:1}
+.pick-count{color:#9DB2CF;font-size:14px;margin:10px 0 0;text-align:center}
+.card,.sentence,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
 .card-correct{border-color:#3ED6A4;background:#0B2B28}
 .card-nope{opacity:.55}
 .post{display:flex;flex-direction:column;gap:8px;padding:16px;border:1.5px solid #1B4173;border-radius:12px;background:#081A30}
 .sentence{padding:10px 12px;border:1.5px solid transparent;border-radius:8px;background:transparent;font:inherit;font-size:15px;line-height:1.7;text-align:start;cursor:pointer;color:#E8EEF7}
-.sentence:hover{border-color:#50BEFA}
+@media(hover:hover){.sentence:not(.sentence-on):hover{border-color:#50BEFA}}
 .sentence-on{border-color:#FFD400;background:#123058}
 .sentence-error{border-color:#FF6B7A;background:#2B1420}
 .sentence-ok{opacity:.7}
@@ -108,6 +112,7 @@ h2{font-family:'Karantina',cursive;font-size:clamp(38px,6vw,54px);color:#F5F8FC;
   <p class="intro">המחקר הסתיים והמידע מאומת. עכשיו אפשר לחסוך זמן: סמנו בדיוק שלוש משימות שיכולות לרוץ <strong>באותו הזמן</strong>, ואז לחצו בדיקה.</p>
   <div class="grid" id="parallel-grid"></div>
   <button class="btn btn-primary" id="btn-parallel-check" disabled>בדיקה</button>
+  <p class="pick-count" id="parallel-count"></p>
   <p class="hint" id="parallel-hint" style="display:none">לא בדיוק. שימו לב מה תלוי במה: מה מחכה לאחרים, ומה כבר הסתיים?</p>
   <div id="parallel-done" style="display:none">
     <div class="callout"><div class="ct">בדיוק</div>טקסט, תמונה והאשטגים רצים במקביל אחרי שהמחקר מוכן. זה ההבדל בין מערך שממהר למערך שמחכה בתור.</div>
@@ -121,6 +126,7 @@ h2{font-family:'Karantina',cursive;font-size:clamp(38px,6vw,54px);color:#F5F8FC;
   <p class="intro">אתם בקר האיכות. הפוסט הבא עומד לצאת לאוויר, ובתוכו מסתתרות <strong>שתי בעיות</strong>. הקישו על המשפטים הבעייתיים ואז לחצו בדיקה.</p>
   <div class="post" id="review-post"></div>
   <button class="btn btn-primary" id="btn-review-check" disabled>בדיקה</button>
+  <p class="pick-count" id="review-count"></p>
   <p class="hint" id="review-hint" style="display:none">לא בדיוק. חפשו משפט שאי אפשר להוכיח, ומשפט שמשהו בו לא כתוב נכון.</p>
   <div id="review-done" style="display:none">
     <div class="callout"><div class="ct">נתפסו שתיהן</div>טענה שלא אומתה ושגיאת כתיב. בלי בקר איכות, המערך הכי מהיר מפרסם טעויות בביטחון מלא.</div>
@@ -226,7 +232,7 @@ function renderParallel(){
     var cls='card'+(on?' card-on':'')+(reveal&&task.parallel?' card-correct':'')+(reveal&&!task.parallel?' card-nope':'');
     var btn=document.createElement('button');
     btn.className=cls;
-    var html='<span class="card-name">'+task.name+'</span>';
+    var html=(on?'<span class="card-pick">&#10003;</span>':'')+'<span class="card-name">'+task.name+'</span>';
     if(reveal)html+='<span class="card-role">'+task.why+'</span>';
     btn.innerHTML=html;
     btn.onclick=function(){toggleSelect(task.id);};
@@ -236,6 +242,7 @@ function renderParallel(){
   $('btn-parallel-check').disabled=selected.length!==3;
   $('parallel-hint').style.display=(!parallelChecked&&parallelMistake)?'block':'none';
   $('parallel-done').style.display=parallelChecked?'block':'none';
+  $('parallel-count').textContent=parallelChecked?'':'נבחרו '+selected.length+' מתוך 3';
 }
 function toggleSelect(id){
   if(parallelChecked)return;
@@ -270,6 +277,7 @@ function renderReview(){
   $('btn-review-check').disabled=flagged.length!==2;
   $('review-hint').style.display=(!reviewChecked&&reviewMistake)?'block':'none';
   $('review-done').style.display=reviewChecked?'block':'none';
+  $('review-count').textContent=reviewChecked?'':'סומנו '+flagged.length+' מתוך 2';
 }
 function toggleFlag(id){
   if(reviewChecked)return;
@@ -363,4 +371,4 @@ $('btn-restart').onclick=restart;
 renderChain();renderParallel();renderReview();
 </script>
 </body>
-  </html>
+</html>
