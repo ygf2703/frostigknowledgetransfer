@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
-<!-- v3 2026-11-17: selection state visible on touch; counters; no content/scoring changes -->
+<!-- v4 2026-11-17: stage 1 now advances only via the continue button; selection state visible on touch; counters; no content/scoring changes -->
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -104,6 +104,9 @@ h2{font-family:'Karantina',cursive;font-size:clamp(38px,6vw,54px);color:#F5F8FC;
   <div class="progress" id="chain-progress" aria-live="polite">הושלמו 0 מתוך 5</div>
   <div class="grid" id="chain-grid"></div>
   <p class="hint" id="chain-hint" style="display:none">רמז: חשבו מה כל סוכן צריך לקבל כדי להתחיל. ומה עם המעצב? נכון, הוא לא כאן - בשלב הבא נראה למה.</p>
+  <div id="chain-done" style="display:none">
+    <button class="btn btn-primary" id="btn-chain-next">להמשך</button>
+  </div>
 </div>
 
 <div class="stage" id="stage-parallel">
@@ -209,13 +212,14 @@ function renderChain(){
     grid.appendChild(btn);
   });
   $('chain-hint').style.display=chainMistakes>0?'block':'none';
+  $('chain-done').style.display=chainProgress===chainAgents.length?'block':'none';
 }
 function tapChain(id){
   if(chainWrong)return;
   var expected=chainAgents[chainProgress];
   if(id===expected.id){
     chainProgress++;
-    if(chainProgress===chainAgents.length){renderChain();showStage('parallel');return;}
+    if(chainProgress===chainAgents.length){renderChain();return;}
   }else{
     chainMistakes++;
     chainWrong=id;
@@ -362,6 +366,7 @@ $('btn-begin').onclick=function(){
   renderChain();renderParallel();renderReview();
   showStage('chain');
 };
+$('btn-chain-next').onclick=function(){showStage('parallel');};
 $('btn-parallel-check').onclick=checkParallel;
 $('btn-parallel-next').onclick=function(){showStage('review');};
 $('btn-review-check').onclick=checkReview;
