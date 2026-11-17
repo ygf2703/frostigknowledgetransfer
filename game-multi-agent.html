@@ -240,7 +240,7 @@ function renderParallel(){
 function toggleSelect(id){
   if(parallelChecked)return;
   var i=selected.indexOf(id);
-  if(i!==-1)selected.splice(i,1);else selected.push(id);
+  if(i!==-1)selected.splice(i,1);else if(selected.length<3)selected.push(id);
   renderParallel();
 }
 function checkParallel(){
@@ -274,7 +274,7 @@ function renderReview(){
 function toggleFlag(id){
   if(reviewChecked)return;
   var i=flagged.indexOf(id);
-  if(i!==-1)flagged.splice(i,1);else flagged.push(id);
+  if(i!==-1)flagged.splice(i,1);else if(flagged.length<2)flagged.push(id);
   renderReview();
 }
 function checkReview(){
