@@ -350,6 +350,8 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
 a.lec-feat{text-decoration:none;color:inherit}
 @media(max-width:820px){.photo-frame{width:min(340px,78vw)}.badge{right:-8px}nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}.topbar{position:sticky;flex-wrap:wrap;gap:12px;padding:14px 18px}.hero{padding-top:50px}}
 html{scroll-padding-top:100px}
+
+.selected-videos{margin:42px 0 26px;scroll-margin-top:110px}.selected-videos h3{font-family:Karantina,cursive;font-size:42px;color:var(--yellow);margin-bottom:8px}.selected-videos>p{color:var(--muted);margin-bottom:24px;max-width:700px}.selected-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.selected-video{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--navy-900);scroll-margin-top:110px}.selected-video h4{font-size:19px;line-height:1.5;padding:18px 18px 4px}.selected-video .video-meta{padding:0 18px 18px;color:var(--muted);font-size:14px}.selected-video .video-meta a{color:var(--turq);display:inline-block;margin-top:8px}.video-embed{width:100%;aspect-ratio:16/9;background:#020b15;display:block;border:0}.video-start{width:100%;aspect-ratio:16/9;border:0;background:radial-gradient(ellipse at top right,#1B4173,#04101F);color:#fff;cursor:pointer;padding:28px;text-align:center;font:inherit}.video-start .play-symbol{display:block;margin:0 auto 16px;border:2px solid var(--turq);border-radius:50%;width:66px;height:66px;line-height:62px;font-size:28px;color:var(--yellow)}.video-start:hover,.video-start:focus-visible{outline:2px solid var(--turq);outline-offset:-3px}.video-duration{color:var(--yellow);font-weight:700}@media(max-width:640px){.selected-video-grid{grid-template-columns:1fr}.selected-videos h3{font-size:36px}.selected-video h4{font-size:18px}}
 </style>
 </head><style>.reveal{opacity:1!important;transform:none!important}.knowledge{min-height:100vh;padding-top:80px}.reader{max-width:850px;margin:0 auto;padding:40px 24px 90px;font-size:18px;line-height:1.9}.reader h1{font-size:clamp(32px,6vw,52px);line-height:1.3;margin:24px 0}.reader p,.reader h2,.reader h3{margin:20px 0}.reader a,.back{color:#50BEFA}.reader pre{white-space:pre-wrap}.reader hr{border:0;border-top:1px solid #1b4173;margin:30px 0}.reader h2{font-size:26px;line-height:1.6}.library-home{display:block;padding:20px 24px;color:#50BEFA}</style><body><a class="library-home" href="index.html">חזרה לאתר Frostig ←</a><section class="knowledge" id="knowledge">
 <img alt="" class="pattern pk1" src="https://github.com/user-attachments/assets/90a0c6aa-ed8a-4a64-8fa0-a1ad819feb85"/>
@@ -362,14 +364,14 @@ html{scroll-padding-top:100px}
 </div>
 <p class="journey-intro reveal">הספרייה גדלה כל הזמן: מאמרים, מדריכים, מחקרים וסרטונים. סננו לפי סוג, או פשוט לגלול.</p>
 <div class="lib-filter reveal">
-<button class="lib-f on" data-f="">הכל <small>33</small></button>
-<button class="lib-f" data-f="article">מאמרים <small>12</small></button>
-<button class="lib-f" data-f="guide">מדריכים <small>16</small></button>
-<button class="lib-f" data-f="research">מחקרים <small>3</small></button>
-<button class="lib-f" data-f="video">סרטונים <small>2</small></button>
+<button class="lib-f on" data-f="">הכל <small>49</small></button>
+<button class="lib-f" data-f="article">מאמרים <small>13</small></button>
+<button class="lib-f" data-f="guide">מדריכים <small>26</small></button>
+<button class="lib-f" data-f="research">מחקרים <small>2</small></button>
+<button class="lib-f" data-f="video">סרטונים <small>8</small></button>
 </div>
 <div class="lib-grid" id="libGrid"></div>
-<div class="videos-lead reveal">הסרטונים של הספרייה: לראות את זה עובד</div>
+<section class="selected-videos" id="selected-videos" aria-labelledby="selected-video-title"><h3 id="selected-video-title">מדריכי וידאו נבחרים</h3><p>מבחר קצר מהערוץ המקצועי של Frostig. לוחצים על סרטון וצופים כאן באתר. נגן YouTube נטען רק לאחר לחיצה.</p><div class="selected-video-grid"><article class="selected-video" id="video-n07lMa1Lvbc"><button class="video-start" type="button" data-embed="https://www.youtube.com/embed/n07lMa1Lvbc" aria-label="ניגון באתר: מה זה Skills - ההוראות שכותבים פעם אחת שה-AI מבצע"><span class="play-symbol" aria-hidden="true">▶</span><span>לצפייה כאן באתר</span></button><h4>מה זה Skills - ההוראות שכותבים פעם אחת שה-AI מבצע</h4><div class="video-meta"><span class="video-duration">1:49</span> דקות · בעברית<br><a href="article-skills.html">להמשך קריאה באתר ←</a></div></article><article class="selected-video" id="video-6qoBxwwSwxs"><button class="video-start" type="button" data-embed="https://www.youtube.com/embed/6qoBxwwSwxs" aria-label="ניגון באתר: MCP בעברית - איך מחברים AI לכלים ולמידע"><span class="play-symbol" aria-hidden="true">▶</span><span>לצפייה כאן באתר</span></button><h4>MCP בעברית - איך מחברים AI לכלים ולמידע</h4><div class="video-meta"><span class="video-duration">1:42</span> דקות · בעברית<br><a href="article-mcp.html">להמשך קריאה באתר ←</a></div></article><article class="selected-video" id="video-W_uwjFJoIKk"><button class="video-start" type="button" data-embed="https://www.youtube.com/embed/W_uwjFJoIKk" aria-label="ניגון באתר: Canvas ב-Gemini בעברית - לשפר מסמך בשלושה סבבים"><span class="play-symbol" aria-hidden="true">▶</span><span>לצפייה כאן באתר</span></button><h4>Canvas ב-Gemini בעברית - לשפר מסמך בשלושה סבבים</h4><div class="video-meta"><span class="video-duration">2:25</span> דקות · בעברית</div></article><article class="selected-video" id="video-QzlUAuBxmcQ"><button class="video-start" type="button" data-embed="https://www.youtube.com/embed/QzlUAuBxmcQ" aria-label="ניגון באתר: חיבור סוכני AI לאפליקציות - קונקטורים, MCP ו-API"><span class="play-symbol" aria-hidden="true">▶</span><span>לצפייה כאן באתר</span></button><h4>חיבור סוכני AI לאפליקציות - קונקטורים, MCP ו-API</h4><div class="video-meta"><span class="video-duration">1:36</span> דקות · בעברית<br><a href="guide-connectors.html">להמשך קריאה באתר ←</a></div></article><article class="selected-video" id="video-JXcdNohkj9Y"><button class="video-start" type="button" data-embed="https://www.youtube.com/embed/JXcdNohkj9Y" aria-label="ניגון באתר: הגדרות קבועות ופרסונליזציה ב־ChatGPT וב־Codex - הנחיות, סגנון, זיכרון וקובצי הגדרות"><span class="play-symbol" aria-hidden="true">▶</span><span>לצפייה כאן באתר</span></button><h4>הגדרות קבועות ופרסונליזציה ב־ChatGPT וב־Codex - הנחיות, סגנון, זיכרון וקובצי הגדרות</h4><div class="video-meta"><span class="video-duration">5:08</span> דקות · בעברית<br><a href="guide-permanent-settings.html">להמשך קריאה באתר ←</a></div></article><article class="selected-video" id="video-ScIo-P7_DUM"><button class="video-start" type="button" data-embed="https://www.youtube.com/embed/ScIo-P7_DUM" aria-label="ניגון באתר: סוכני AI לעסק - מערך סוכנים מקצועי: מנהל, מתמחים ובקרה אנושית"><span class="play-symbol" aria-hidden="true">▶</span><span>לצפייה כאן באתר</span></button><h4>סוכני AI לעסק - מערך סוכנים מקצועי: מנהל, מתמחים ובקרה אנושית</h4><div class="video-meta"><span class="video-duration">3:00</span> דקות · בעברית<br><a href="guide-social-agents.html">להמשך קריאה באתר ←</a></div></article></div></section><div class="videos-lead reveal">הסרטונים של הספרייה: לראות את זה עובד</div>
 <div class="videos reveal">
 <div class="video">
 <video controls="" id="vid1" loop="" muted="" playsinline="" poster="https://github.com/user-attachments/assets/2292aad7-f371-4b67-86ae-1fe12ee71a58" preload="metadata" src="https://github.com/user-attachments/assets/f9c8e972-3d67-42b3-8ff9-ae8fc33bc6bd"></video>
@@ -411,7 +413,7 @@ html{scroll-padding-top:100px}
 {t:'article',title:'ההופעה האחרונה של האדם',d:'מחשבות על יצירה, מקצוע, ומה שנשאר לנו.',link:"knowledge-library.html?article=last-performance"},
 {t:'article',title:'שנתיים ששינו את האדם הרגיל',d:'רטרוספקטיבה על עידן ה-AI המאיץ.',link:"knowledge-library.html?article=two-years-ordinary"},
 {t:'research',title:'כיצד בינה מלאכותית גנרטיבית משנה את תהליכי קבלת ההחלטות בארגונים - והיכן היא נכשלת באופן שיטתי?',d:'מחקר אקדמי על השילוב בין AI להחלטות ניהוליות.',link:"https://drive.google.com/file/d/1JtjfpAy0hRzuRt3sroHXeb2pW25qtD8P/view?usp=sharing"},
-{t:'research',title:'הצד האפל של הבינה המלאכותית בעולם הפיננסי',d:'הונאות, גניבת זהות ופשיעה כלכלית - וכשלי ההגנה הקיימים.'},
+{t:'article',title:'הצד האפל של הבינה המלאכותית',d:'כשהזיוף נהיה זול, האמון נהיה יקר: הונאות, דיפ-פייקים, טעויות והרשאות - ומה עושים בפועל.',link:'article-dark-side-ai.html'},
 {t:'research',title:'מגרשי הכדורגל כמיקרו-קוסמוס לחברה הישראלית',d:'הקצנת השיח, אלימות אוהדים ושיח הרשתות מאז 2020.',link:"https://drive.google.com/file/d/11bcyOaTlavIb5ihMYNkn5OwndwvYG6lC/view?usp=drive_link"},
 {t:'guide',title:'המדריך האנושי לבינה מלאכותית',d:'נקודת הפתיחה הכי ידידותית לעולם ה-AI.',link:"https://drive.google.com/file/d/1TbNsoe3HQpI6tnZY5vQNBUh_2Olj4cLt/view?usp=drive_link"},
 {t:'guide',title:'המדריך לפקודות Slash ב־GPT',d:'קיצורי דרך קטנים שמשנים הרגלים גדולים.',link:"downloads/gpt-slash-commands-guide-he.pdf"},
@@ -424,6 +426,12 @@ html{scroll-padding-top:100px}
 {t:'guide',title:'ג׳מיני קאנבס - לעבוד בסביבה סגורה',d:'סביבת עבודה ממוקדת, בלי הסחות.',link:"https://drive.google.com/file/d/1qDbkBMiTgF7-Z_9zcM7N8Yp5neolKUGx/view?usp=drive_link"},
 {t:'guide',title:'מדריך עבודה עם GPT-6 ASTRA',d:'היכולות החדשות, בשפה פשוטה.',link:"downloads/gpt-6-astra-work-guide-he.pdf"},
 {t:'guide',title:'איך ליצור סרטונים עם GPT-6 ASTRA',d:'מהוראה כתובה לוידאו עובד.',link:"downloads/gpt-6-astra-video-guide-he.pdf"},
+{t:'video',title:"מה זה Skills - ההוראות שכותבים פעם אחת שה-AI מבצע",d:'מדריך וידאו בעברית לצפייה כאן באתר.',link:'#video-n07lMa1Lvbc'},
+{t:'video',title:"MCP בעברית - איך מחברים AI לכלים ולמידע",d:'מדריך וידאו בעברית לצפייה כאן באתר.',link:'#video-6qoBxwwSwxs'},
+{t:'video',title:"Canvas ב-Gemini בעברית - לשפר מסמך בשלושה סבבים",d:'מדריך וידאו בעברית לצפייה כאן באתר.',link:'#video-W_uwjFJoIKk'},
+{t:'video',title:"חיבור סוכני AI לאפליקציות - קונקטורים, MCP ו-API",d:'מדריך וידאו בעברית לצפייה כאן באתר.',link:'#video-QzlUAuBxmcQ'},
+{t:'video',title:"הגדרות קבועות ופרסונליזציה ב־ChatGPT וב־Codex - הנחיות, סגנון, זיכרון וקובצי הגדרות",d:'מדריך וידאו בעברית לצפייה כאן באתר.',link:'#video-JXcdNohkj9Y'},
+{t:'video',title:"סוכני AI לעסק - מערך סוכנים מקצועי: מנהל, מתמחים ובקרה אנושית",d:'מדריך וידאו בעברית לצפייה כאן באתר.',link:'#video-ScIo-P7_DUM'},
 {t:'video',title:'רעיון ← פרומפט ← קוד ← אפליקציה עובדת',d:'בנייה חיה עם AI, בקצב אמיתי.',link:'#vid1'},
 {t:'video',title:'פרומפט אחד ← דשבורד שמשרת צוות שלם',d:'דשבורד עובד תוך דקות.',link:'#vid2'},
 ];
@@ -473,4 +481,10 @@ async function showArticle(){
 
 }
 showArticle();
-</script></body></html>
+</script><script>
+// Load selected video players only after an explicit visitor click.
+document.querySelectorAll('.video-start').forEach(button=>button.addEventListener('click',()=>{
+ const player=document.createElement('iframe');player.className='video-embed';player.src=button.dataset.embed+'?autoplay=1&rel=0';player.title=button.closest('article').querySelector('h4').textContent;player.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';player.allowFullscreen=true;button.replaceWith(player);
+}));
+</script>
+</body></html>
