@@ -349,12 +349,15 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
   .lectures,.contact{padding-left:24px;padding-right:24px}
 }
 @media (max-width:520px){.journey{grid-template-columns:1fr}}
+a.lec-feat{text-decoration:none;color:inherit}
+@media(max-width:820px){.photo-frame{width:min(340px,78vw)}.badge{right:-8px}nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}.topbar{position:sticky;flex-wrap:wrap;gap:12px;padding:14px 18px}.hero{padding-top:50px}}
+html{scroll-padding-top:100px}
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#">
+  <a class="brand" href="#top">
     <img src="https://github.com/user-attachments/assets/df545b51-185a-4e7b-88c3-4f95c55797aa" alt="fR">
     <span class="en">FROSTIG <b>·</b> KNOWLEDGE TRANSFER</span>
   </a>
@@ -362,13 +365,13 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
     <a href="#lectures" class="hot">הרצאות וסדנאות</a>
     <a href="#apps">מוצרים</a>
     <a href="#knowledge">ספריית ידע</a>
-    <a href="#knowledge">מאמרים</a>
+    <a href="knowledge-library.html?type=article">מאמרים</a>
     <a href="#contact">צור קשר</a>
   </nav>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <img class="pattern p1" src="https://github.com/user-attachments/assets/35cf18bb-9007-436d-9c86-75bd78bbfd18" alt="">
   <img class="pattern p2" src="https://github.com/user-attachments/assets/90a0c6aa-ed8a-4a64-8fa0-a1ad819feb85" alt="">
   <img class="pattern p3" src="https://github.com/user-attachments/assets/df545b51-185a-4e7b-88c3-4f95c55797aa" alt="">
@@ -392,7 +395,7 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
   <div class="hero-visual reveal">
     <img class="big-bg-logo" src="https://github.com/user-attachments/assets/90a0c6aa-ed8a-4a64-8fa0-a1ad819feb85" alt="">
     <div class="photo-frame">
-      <img class="photo" src="https://github.com/user-attachments/assets/2618ac53-665c-4bbb-a728-12513d378160" alt="נעם פרוסטיג על הבמה">
+      <img class="photo" src="noam-portrait-color.jpg" alt="נעם פרוסטיג">
       <div class="badge">נעם פרוסטיג<small>מרצה, יועץ ומפתח AI</small></div>
     </div>
   </div>
@@ -544,14 +547,14 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
     </div>
   </div>
   <div class="lec-grid reveal">
-    <div class="lec-feat">
+    <a class="lec-feat" href="#contact" aria-label="לפרטים על הרצאת הצד האפל של הבינה המלאכותית">
       <img src="https://github.com/user-attachments/assets/2618ac53-665c-4bbb-a728-12513d378160" alt="נעם פרוסטיג על הבמה">
       <div class="ov">
         <span class="cat y">הרצאת דגל · 01</span>
         <h3>הצד האפל של הבינה המלאכותית</h3>
         <p>Deepfake, הונאות ומניפולציות מידע — הרצאה סוחפת במיוחד לארגונים גדולים, שמייצרת מודעות וכלים אמיתיים להתגוננות.</p>
       </div>
-    </div>
+    </a>
     <div class="lec-list">
       <div class="lec-card"><div class="num">02</div><div class="mid"><h4>האלגוריתם שמאחורי הכותרות</h4><p>איך בינה מלאכותית מעצבת חדשות, מלחמות ותודעה.</p></div><span class="cat y">דגל</span></div>
       <div class="lec-card"><div class="num">03</div><div class="mid"><h4>AI בעבודה: מי יוחלף ומי יוביל</h4><p>אילו יכולות הופכות קריטיות, ואיך משתפים פעולה עם מכונות. אהובה מאוד בכנסים.</p></div><span class="cat y">דגל</span></div>
@@ -600,7 +603,7 @@ a.lib-card:hover{border-color:rgba(80,190,250,.6);transform:translateY(-2px)}
         <div class="cap">פרומפט אחד ← דשבורד שמשרת צוות שלם</div>
       </div>
     </div>
-    <a class="k-link reveal" href="#knowledge">לספריית הידע המלאה ←</a>
+    <a class="k-link reveal" href="knowledge-library.html">לספריית הידע המלאה ←</a>
   </div>
 </section>
 
@@ -739,30 +742,30 @@ const LIB=[
 {t:'guide',title:'ספריית סקילים: 80 דוגמאות מוכנות להעתקה',d:'ארבע-עשרה קטגוריות של סקילים מוכנים, כולל חדשות, כתיבת מדריכים, עריכת וידאו, הנהלת חשבונות, ניהול דואר, סקילים כלליים, פיתוח ובדיקות, וסוכנים, מסמכים ונתונים.',link:'skills-library.html'},
 {t:'article',title:'של מי הרשתות החברתיות בעצם?',d:'כשהבוט כותב והבוט מגיב - מי נשאר לחתום על המילים.',link:'article-human-out-of-the-loop.html'},
 {t:'article',title:'מה קורה כשאדם מתחיל לחשוב כמו מכונה?',d:'Reverse Alignment, Cognitive Offloading - ומי באמת מחזיק בהגה.',link:'article-reverse-alignment.html'},
-{t:'article',title:'כשהמוח עובר למודל SaaS',d:'מה קורה כשהחשיבה עצמה הופכת למנוי חודשי.'},
-{t:'article',title:'בין אדם למכונה',d:'איפה עובר הגבול, ולמה הוא פחות חד ממה שחשבנו.'},
-{t:'article',title:'הילדים שלנו מדברים אחרת',d:'דור שגדל עם AI לא כותב - שואל.'},
-{t:'article',title:'הדיפ פייק של השנאה',d:'איך מייצרים שינאה מזויפת, ואיך מזהים אותה בזמן.'},
-{t:'article',title:'איך הבינה המלאכותית יכולה להשפיע על מערכת הבחירות בישראל',d:'מיקרו-טארגטינג, פייק ניוז, ומה שביניהם.'},
-{t:'article',title:'העולם האפל של הבינה המלאכותית - בין פלא להתעוררות',d:'מההתפעלות הראשונה ועד ההתגוננות.'},
-{t:'article',title:'2030 על הגוף - כשה-AI עובר מהמסך אל החיים',d:'ממשקים לבישים, חיישנים, ומה שבא אחרי הסמארטפון.'},
-{t:'article',title:'כשהקול אמיתי, הפנים מוכרות, והאדם כלל לא היה שם',d:'שחזור קול ופנים: הטכנולוגיה, והסכנות.'},
-{t:'article',title:'ההופעה האחרונה של האדם',d:'מחשבות על יצירה, מקצוע, ומה שנשאר לנו.'},
-{t:'article',title:'שנתיים ששינו את האדם הרגיל',d:'רטרוספקטיבה על עידן ה-AI המאיץ.'},
-{t:'research',title:'כיצד בינה מלאכותית גנרטיבית משנה את תהליכי קבלת ההחלטות בארגונים - והיכן היא נכשלת באופן שיטתי?',d:'מחקר אקדמי על השילוב בין AI להחלטות ניהוליות.'},
+{t:'article',title:'כשהמוח עובר למודל SaaS',d:'מה קורה כשהחשיבה עצמה הופכת למנוי חודשי.',link:"knowledge-library.html?article=brain-as-saas"},
+{t:'article',title:'בין אדם למכונה',d:'איפה עובר הגבול, ולמה הוא פחות חד ממה שחשבנו.',link:"https://drive.google.com/file/d/1j0vzCC9F8-urDIrVl-pHA1r3Y0bghxfj/view?usp=drive_link"},
+{t:'article',title:'הילדים שלנו מדברים אחרת',d:'דור שגדל עם AI לא כותב - שואל.',link:"https://drive.google.com/file/d/1cpzdsMXugPhWqdYmhpYncRj5lPS_tHDe/view?usp=drive_link"},
+{t:'article',title:'הדיפ פייק של השנאה',d:'איך מייצרים שינאה מזויפת, ואיך מזהים אותה בזמן.',link:"https://drive.google.com/file/d/1ZzrUkDfa4w3uq2H6BTMEWV8RD5iHFHiV/view?usp=drive_link"},
+{t:'article',title:'איך הבינה המלאכותית יכולה להשפיע על מערכת הבחירות בישראל',d:'מיקרו-טארגטינג, פייק ניוז, ומה שביניהם.',link:"knowledge-library.html?article=ai-elections"},
+{t:'article',title:'העולם האפל של הבינה המלאכותית - בין פלא להתעוררות',d:'מההתפעלות הראשונה ועד ההתגוננות.',link:"https://drive.google.com/file/d/1VkXXOZGZF7PmbtTCCsTtvvofVa5LuIuv/view?usp=drive_link"},
+{t:'article',title:'2030 על הגוף - כשה-AI עובר מהמסך אל החיים',d:'ממשקים לבישים, חיישנים, ומה שבא אחרי הסמארטפון.',link:"https://drive.google.com/file/d/1R3aW3cNRGIGibNyQIMkVcYgMhIcjJaMC/view?usp=drive_link"},
+{t:'article',title:'כשהקול אמיתי, הפנים מוכרות, והאדם כלל לא היה שם',d:'שחזור קול ופנים: הטכנולוגיה, והסכנות.',link:"knowledge-library.html?article=voice-real"},
+{t:'article',title:'ההופעה האחרונה של האדם',d:'מחשבות על יצירה, מקצוע, ומה שנשאר לנו.',link:"knowledge-library.html?article=last-performance"},
+{t:'article',title:'שנתיים ששינו את האדם הרגיל',d:'רטרוספקטיבה על עידן ה-AI המאיץ.',link:"knowledge-library.html?article=two-years-ordinary"},
+{t:'research',title:'כיצד בינה מלאכותית גנרטיבית משנה את תהליכי קבלת ההחלטות בארגונים - והיכן היא נכשלת באופן שיטתי?',d:'מחקר אקדמי על השילוב בין AI להחלטות ניהוליות.',link:"https://drive.google.com/file/d/1JtjfpAy0hRzuRt3sroHXeb2pW25qtD8P/view?usp=sharing"},
 {t:'research',title:'הצד האפל של הבינה המלאכותית בעולם הפיננסי',d:'הונאות, גניבת זהות ופשיעה כלכלית - וכשלי ההגנה הקיימים.'},
-{t:'research',title:'מגרשי הכדורגל כמיקרו-קוסמוס לחברה הישראלית',d:'הקצנת השיח, אלימות אוהדים ושיח הרשתות מאז 2020.'},
-{t:'guide',title:'המדריך האנושי לבינה מלאכותית',d:'נקודת הפתיחה הכי ידידותית לעולם ה-AI.'},
-{t:'guide',title:'המדריך לפקודות Slash ב־GPT',d:'קיצורי דרך קטנים שמשנים הרגלים גדולים.'},
-{t:'guide',title:'ג׳מיני בסביבת העבודה של גוגל',d:'שילוב AI בתוך Docs, Gmail ו-Sheets.'},
-{t:'guide',title:'לדבר עם ג׳מיני',d:'שיחה טבעית עם המודל, צעד אחר צעד.'},
-{t:'guide',title:'חמשת מודולי הבינה הגדולים',d:'השוואה פרקטית: ובמה טוב כל אחד מהם.'},
-{t:'guide',title:'מטקסט לוידאו - מדריך ליצירת סרטונים מטקסט',d:'מהקלדה של משפט לסרטון מוכן.'},
+{t:'research',title:'מגרשי הכדורגל כמיקרו-קוסמוס לחברה הישראלית',d:'הקצנת השיח, אלימות אוהדים ושיח הרשתות מאז 2020.',link:"https://drive.google.com/file/d/11bcyOaTlavIb5ihMYNkn5OwndwvYG6lC/view?usp=drive_link"},
+{t:'guide',title:'המדריך האנושי לבינה מלאכותית',d:'נקודת הפתיחה הכי ידידותית לעולם ה-AI.',link:"https://drive.google.com/file/d/1TbNsoe3HQpI6tnZY5vQNBUh_2Olj4cLt/view?usp=drive_link"},
+{t:'guide',title:'המדריך לפקודות Slash ב־GPT',d:'קיצורי דרך קטנים שמשנים הרגלים גדולים.',link:"downloads/gpt-slash-commands-guide-he.pdf"},
+{t:'guide',title:'ג׳מיני בסביבת העבודה של גוגל',d:'שילוב AI בתוך Docs, Gmail ו-Sheets.',link:"https://drive.google.com/file/d/1_L4qUuz69W4tLcDdEhVMC2F3I6U0yY_0/view?usp=drive_link"},
+{t:'guide',title:'לדבר עם ג׳מיני',d:'שיחה טבעית עם המודל, צעד אחר צעד.',link:"https://drive.google.com/file/d/1IkT0ezVIAIRweRqI0zTuFB8saf-Q_DR0/view?usp=drive_link"},
+{t:'guide',title:'חמשת מודולי הבינה הגדולים',d:'השוואה פרקטית: ובמה טוב כל אחד מהם.',link:"https://drive.google.com/file/d/1JU9Q__rm7dW2nfsx1R5SXyFqxPrGgYwn/view?usp=drive_link"},
+{t:'guide',title:'מטקסט לוידאו - מדריך ליצירת סרטונים מטקסט',d:'מהקלדה של משפט לסרטון מוכן.',link:"https://drive.google.com/file/d/1SlUoZH6VgqdR-JGXJAIZ7uORHGAeNYXK/view?usp=drive_link"},
 {t:'guide',title:'המדריך לכתיבת תוכן עם ChatGPT',d:'מבנה, סגנון, ועריכה נכונה של תוצרים.'},
-{t:'guide',title:'עיצוב וריאליזם בעולם הבינה המלאכותית',d:'על יצירה של תמונות ריאליסטיות מטקסט.'},
-{t:'guide',title:'ג׳מיני קאנבס - לעבוד בסביבה סגורה',d:'סביבת עבודה ממוקדת, בלי הסחות.'},
-{t:'guide',title:'מדריך עבודה עם GPT-6 ASTRA',d:'היכולות החדשות, בשפה פשוטה.'},
-{t:'guide',title:'איך ליצור סרטונים עם GPT-6 ASTRA',d:'מהוראה כתובה לוידאו עובד.'},
+{t:'guide',title:'עיצוב וריאליזם בעולם הבינה המלאכותית',d:'על יצירה של תמונות ריאליסטיות מטקסט.',link:"https://drive.google.com/file/d/1H64q2fry_CHsCdx3N25vNFSvIcm4hrbe/view?usp=drive_link"},
+{t:'guide',title:'ג׳מיני קאנבס - לעבוד בסביבה סגורה',d:'סביבת עבודה ממוקדת, בלי הסחות.',link:"https://drive.google.com/file/d/1qDbkBMiTgF7-Z_9zcM7N8Yp5neolKUGx/view?usp=drive_link"},
+{t:'guide',title:'מדריך עבודה עם GPT-6 ASTRA',d:'היכולות החדשות, בשפה פשוטה.',link:"downloads/gpt-6-astra-work-guide-he.pdf"},
+{t:'guide',title:'איך ליצור סרטונים עם GPT-6 ASTRA',d:'מהוראה כתובה לוידאו עובד.',link:"downloads/gpt-6-astra-video-guide-he.pdf"},
 {t:'video',title:'רעיון ← פרומפט ← קוד ← אפליקציה עובדת',d:'בנייה חיה עם AI, בקצב אמיתי.',link:'#vid1'},
 {t:'video',title:'פרומפט אחד ← דשבורד שמשרת צוות שלם',d:'דשבורד עובד תוך דקות.',link:'#vid2'},
 ];
@@ -779,8 +782,8 @@ function renderLib(f){
   });
   document.querySelectorAll('.lib-f').forEach(b=>b.classList.toggle('on',b.dataset.f===(f||'')));
 }
-document.querySelectorAll('.lib-f').forEach(b=>b.addEventListener('click',()=>renderLib(b.dataset.f)));
-renderLib('');
+document.querySelectorAll('.lib-f').forEach(b=>{b.querySelector('small').textContent=LIB.filter(x=>!b.dataset.f||x.t===b.dataset.f).length;b.addEventListener('click',()=>renderLib(b.dataset.f));});
+renderLib(new URLSearchParams(location.search).get('type')||'');
 
 document.querySelectorAll('.facade').forEach(f=>f.addEventListener('click',()=>{
   if(!f.dataset.yt)return;
@@ -799,5 +802,7 @@ if(ctSend)ctSend.addEventListener('click',()=>{
 });
 </script>
 
+<script src="portrait-source-a.js"></script>
+<script src="portrait-source-b.js"></script>
 </body>
-</html>
+  </html>
