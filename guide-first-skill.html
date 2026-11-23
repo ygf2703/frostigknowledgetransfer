@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>הסקיל הראשון שלכם: מדריך מעשי לכתיבת SKILL.md | נעם פרוסטיג</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&amp;family=Karantina:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#04101F;color:#F5F8FC;font-family:'Heebo',sans-serif;line-height:1.9;overflow-x:hidden}
+.pat{position:fixed;inset:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10' y='80' font-family='Arial Black' font-size='70' font-weight='900' fill='%2350BEFA'%3EfR%3C/text%3E%3C/svg%3E");background-size:120px 120px;transform:rotate(-8deg) scale(1.2)}
+.wrap{max-width:820px;margin:0 auto;padding:48px 24px 96px;position:relative}
+.back{display:inline-block;color:#50BEFA;text-decoration:none;font-weight:500;margin-bottom:40px;border:1px solid #1B4173;padding:8px 18px;border-radius:999px;transition:.2s}
+.back:hover{background:#50BEFA;color:#04101F}
+.kicker{color:#FFD400;font-weight:700;letter-spacing:.12em;font-size:14px;margin-bottom:14px}
+h1{font-family:'Karantina',cursive;font-weight:700;font-size:clamp(52px,8vw,88px);line-height:1.02;color:#F5F8FC;margin-bottom:8px}
+.sub{font-size:clamp(20px,3vw,28px);color:#50BEFA;font-weight:700;margin-bottom:22px}
+.byline{color:#9DB2CF;font-size:15px;padding-bottom:28px;border-bottom:1px solid #123058;margin-bottom:36px}
+h3.sec{font-size:22px;color:#50BEFA;margin:30px 0 10px}
+p,li{font-size:18px;font-weight:300;color:#E8EEF7}
+p{margin-bottom:16px}
+ul{margin:0 0 20px;padding-right:24px}
+li{margin-bottom:10px}
+li strong,p strong{color:#FFD400;font-weight:700}
+.box{background:#0B2242;border:1px solid #1B4173;border-radius:16px;padding:22px 26px;margin:28px 0;font-size:17px}
+.box strong{color:#FFD400}
+pre{direction:ltr;text-align:left;background:#020A16;border:1px solid #1B4173;border-radius:14px;padding:20px 22px;margin:18px 0 26px;font-family:'Consolas',monospace;font-size:14.5px;line-height:1.7;color:#7dd3fc;white-space:pre-wrap;overflow-x:auto}
+code{font-family:'Consolas',monospace;color:#7dd3fc}
+a{color:#50BEFA}
+.cta{margin-top:48px;padding:36px;border:1px solid #1B4173;border-radius:20px;background:linear-gradient(135deg,#0B2242,#04101F);text-align:center}
+.cta h3{font-family:'Karantina',cursive;font-size:40px;color:#F5F8FC;margin-bottom:10px}
+.cta p{color:#9DB2CF;font-size:16px;margin-bottom:22px}
+.btn{display:inline-block;background:#FFD400;color:#04101F;font-weight:900;font-size:18px;padding:14px 38px;border-radius:999px;text-decoration:none;transition:.2s;margin:4px}
+.btn:hover{background:#50BEFA}
+@media(max-width:640px){.wrap{padding:32px 18px 64px}p,li{font-size:16.5px}}
+</style>
+</head>
+<body>
+<div class="pat"></div>
+<div class="wrap">
+<a class="back" href="knowledge-library.html">→ חזרה לספריית הידע</a>
+<div class="kicker">מדריך • בינה מלאכותית בשפה אנושית</div>
+<img alt="fRostig Knowledge Transfer" src="fr-logo-light.png" style="width:70px;height:auto;margin-bottom:24px"/><h1>הסקיל הראשון שלכם</h1>
+<div class="sub">מדריך מעשי לכתיבת SKILL.md: מהקובץ הראשון ועד סקיל שעובד</div>
+<div class="byline">מאת: נעם פרוסטיג | 23 בנובמבר 2026</div>
+<div class="box"><strong>מה יוצאים מכאן עם:</strong> הבנה של מבנה הסקיל, קובץ SKILL.md מלא שאפשר להעתיק ולהתאים, שיטה לבדוק שהסקיל באמת עובד, ורשימת הטעויות שכדאי לדלג עליהן. לרקע התיאורטי - <a href="article-skills.html">Skills: ההוראות שכותבים פעם אחת</a>.</div>
+
+<h3 class="sec">1. מה זה סקיל, בשני משפטים</h3>
+<p>סקיל הוא חבילת הוראות קבועה שמלמדת את ה-AI לבצע משימה אחת בצורה עקבית, בלי להסביר מחדש בכל פעם. ברוב הסביבות שתומכות בסקילים, סקיל הוא תיקייה אחת שבמרכזה קובץ בשם <code>SKILL.md</code>.</p>
+<p>איפה שמים את התיקייה משתנה בין סביבות (Claude, Codex, Gemini ואחרות). ההבדלים המדויקים מפורטים במדריכי ההתאמה האישית באתר: <a href="guide-claude-personalization.html">Claude ו-Claude Code</a>, <a href="guide-gemini-personalization.html">Gemini ו-Gemini CLI</a>, ו-<a href="guide-permanent-settings.html">ChatGPT ו-Codex</a>. כאן נתמקד במה שמשותף לכולם: התוכן של הקובץ.</p>
+
+<h3 class="sec">2. המבנה: כותרת קצרה, גוף ממוקד</h3>
+<p>קובץ SKILL.md נפתח בכותרת מסודרת (frontmatter) עם שני שדות מרכזיים, ואחריה גוף ההוראות:</p>
+<ul>
+<li><strong>name</strong> - שם קצר באנגלית, באותיות קטנות ומקפים, שמזהה את הסקיל.</li>
+<li><strong>description</strong> - משפט או שניים שאומרים מה הסקיל עושה ומתי להשתמש בו. זה השדה שה-AI קורא כשהוא מחליט אם להפעיל את הסקיל, ולכן הוא החלק הכי חשוב בקובץ.</li>
+</ul>
+<p>אחרי הכותרת בא גוף ההוראות: איך לבצע את המשימה, באיזה פורמט להחזיר, ומה הגבולות.</p>
+
+<h3 class="sec">3. התיאור הוא הטריגר</h3>
+<p>טעות נפוצה היא לכתוב תיאור כללי כמו "עוזר בכתיבה". תיאור כזה לא אומר ל-AI מתי להפעיל את הסקיל, אז הוא יופעל באקראי או לא יופעל בכלל. תיאור טוב עונה על שתי שאלות: <strong>מה</strong> הסקיל עושה, ו-<strong>באילו בקשות</strong> להפעיל אותו.</p>
+<ul>
+<li>חלש: <code>description: סיכומים</code></li>
+<li>חזק: <code>description: סיכום שבועי מסודר מתוך רשימת משימות ופגישות. להשתמש כשמבקשים סיכום שבוע, רטרו שבועי, או הכנה לישיבת צוות.</code></li>
+</ul>
+
+<h3 class="sec">4. הגוף: הוראות עבודה, לא מאמר</h3>
+<p>הגוף הוא לא הסבר תיאורטי על המשימה, אלא הוראות ביצוע. שלושה כללים:</p>
+<ul>
+<li><strong>פורמט פלט מפורש</strong> - כותרות, טבלה, אורך מקסימלי. מה שלא מוגדר יוצא בכל פעם אחרת.</li>
+<li><strong>סדר פעולות</strong> - מה בודקים קודם, מה אחר כך, ומה עושים כשחסר מידע.</li>
+<li><strong>גבולות</strong> - מה הסקיל לא עושה, ואיזה מקרים להחזיר לאדם עם שאלה במקום לנחש.</li>
+</ul>
+
+<h3 class="sec">5. דוגמה מלאה להעתקה</h3>
+<p>סקיל פשוט לסיכום שבועי. מעתיקים, משנים את התחום, ויש סקיל ראשון:</p>
+<pre>---
+name: weekly-review
+description: סיכום שבועי מסודר מתוך רשימת משימות ופגישות. להשתמש כשמבקשים סיכום שבוע, רטרו שבועי או הכנה לישיבת צוות.
+---
+
+# סיכום שבועי
+
+## מה לייצר
+סיכום בעברית, עד 250 מילים, בשלוש כותרות:
+1. מה הושלם השבוע
+2. מה נדחה ולמה
+3. מוקדים לשבוע הבא
+
+## סדר פעולות
+1. קוראים את רשימת המשימות והפגישות שסופקה.
+2. ממיינים לפי הכותרות, בלי להוסיף אירועים שלא מופיעים בחומר.
+3. מסמנים בבירור כל סעיף שחסר עליו מידע.
+
+## גבולות
+- לא ממציאים הישגים ולא מעגלים תאריכים.
+- אם החומר מסתפק בפחות משלוש משימות, אומרים זאת במפורש במקום למלא את החסר.</pre>
+
+<h3 class="sec">6. איך בודקים שזה עובד</h3>
+<ul>
+<li><strong>בדיקת טריגר</strong> - מבקשים את הבקשה במילים של משתמש אמיתי ("תעשה לי סיכום שבוע"), לא בשם הסקיל, ובודקים שהסקיל נטען.</li>
+<li><strong>בדיקת פורמט</strong> - בודקים שהפלט עומד במבנה שהוגדר: כותרות, אורך, סדר.</li>
+<li><strong>בדיקת קצה</strong> - נותנים חומר חסר או סותר ובודקים שהסקיל מסמן את החסר במקום להמציא.</li>
+</ul>
+<p>אם אחת מהבדיקות נכשלת, מתקנים את ההוראה הרלוונטית ובודקים שוב. רוב הכשלים נובעים מתיאור חלש או מפורמט פלט שלא הוגדר.</p>
+
+<h3 class="sec">7. הטעויות שחוזרות</h3>
+<ul>
+<li><strong>תיאור כללי מדי</strong> - הסקיל לא נטען כשצריך. הפתרון: לכתוב את הבקשות המדויקות שצריכות להפעיל אותו.</li>
+<li><strong>גוף שנכתב כתיעוד</strong> - "הסקיל מספק פתרון מקיף ל..." במקום הוראות ביצוע. הפתרון: לכתוב בגוף פקודות, לא שיווק.</li>
+<li><strong>סקיל שעושה הכול</strong> - משימה אחת מוגדרת עובדת טוב יותר מחמש משימות בקובץ אחד. הפתרון: לפצל.</li>
+<li><strong>בלי גבולות</strong> - בלי "מה לא לעשות", הסקיל ימלא חסר בביטחון. הפתרון: רשימת גבולות קצרה ומפורשת.</li>
+</ul>
+
+<h3 class="sec">8. מה הלאה</h3>
+<p>אחרי שהסקיל הראשון עובד, אפשר לקצר דרך: <a href="skills-library.html">ספריית הסקילים</a> באתר מחזיקה עשרות דוגמאות מוכנות להעתקה בקטגוריות שונות, ו<a href="agents-library.html">ספריית הסוכנים</a> כוללת את skill-creator, סוכן שבונה סקילים חדשים לפי בקשה.</p>
+
+<div class="cta">
+<h3>מוכנים להתחיל?</h3>
+<p>מעתיקים את הדוגמה, מתאימים לתחום שלכם, ובודקים. זה הכול.</p>
+<a class="btn" href="skills-library.html">לספריית הסקילים</a>
+<a class="btn" href="agents-library.html">לספריית הסוכנים</a>
+</div>
+</div>
+</body>
+</html>
